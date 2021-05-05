@@ -1,0 +1,17 @@
+site_name: SimCES
+site_description: Documentation of Simulation Environment of Complex Energy System (SimCES)
+copyright: Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland
+docs_dir: markdown
+site_dir: docs
+extra_css:
+    - css/extra.css
+nav:
+    - Home: index.md
+    - Features: features.md
+    - Getting started: getting_started.md
+    - Core:
+        - Index: core_index.md
+        - Manual for User: core_manual_for_user.md
+        - Manual for Developer: core_manual_for_developer.md
+    - Domain:
+        - Index: domain_index.md
