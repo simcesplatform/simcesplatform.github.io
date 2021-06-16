@@ -6,8 +6,6 @@ site_dir: docs
 extra_css:
     - css/extra.css
 nav:
-    - Home: index.md
-    - Features: features.md
     - Getting started: getting_started.md
     - Core:
         - Index: core_index.md
