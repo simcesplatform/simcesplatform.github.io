@@ -25,7 +25,7 @@ nav:
             - Management exchange: core_exchange-mgmt.md
             - Simulation-specific exchanges: core_exchange-sim.md
         - Message structures:
-            - Overview: core_msg.md
+            - Message structures: core_msg.md
     - Domain-specific parts:
         - Index: domain_index.md
         - Domain-specific conventions: domain_conventions.md

@@ -2,7 +2,9 @@
 
 This page gathers all message structures of the platform core.
 
-Type inheritance
+
+## Type inheritance
+
 To save the re-use of specifications and software, the message structures apply inheritance similar to object-oriented programming. This is illustrated in the following figure:
 
 - AbstractMessage is the base class of all messages
@@ -16,3 +18,16 @@ To save the re-use of specifications and software, the message structures apply 
         - Epoch
         - Status
         - All actual result messages
+
+![Message hierarchy](images/msg_hierarchy.png)
+
+
+## Re-usable blocks
+
+Certain structures are generic and re-usable in multiple message structures. These are explained in the following table.
+
+| Structure | Description |
+|-|-|
+| Quantity array block | Contains an array of quantity values with a unit of measure. |
+| Quantity block | Contains a quantity value with a unit of measure. |
+| Time series block | Contains one or more time series. |
