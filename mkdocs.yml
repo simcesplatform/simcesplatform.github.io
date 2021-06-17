@@ -20,6 +20,12 @@ nav:
         - Communication with topics, queues and exchanges: core_dev_topics-etc.md
         - Conventions of messaging: core_dev_conventions-msg.md
         - Conventions of naming: core_dev_conventions-naming.md
+        - Creating new component: core_dev_create_cmp.md
+        - Exchanges:
+            - Management exchange: core_dev_exchange_mgmt.md
+            - Simulation-specific exchanges: core_dev_exchange_sim.md
+        - Message structures:
+            - Overview: core_dev_msg.md
     - Domain-specific parts:
         - Index: domain_index.md
         - Domain-specific conventions: domain_conventions.md
