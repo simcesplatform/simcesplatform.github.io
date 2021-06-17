@@ -39,7 +39,7 @@ When creating new items, a question arises how to formulate names. See the page 
 
 The developer SHOULD avoid creating a new structure if there is a suitable existing structure. For example, if you want to include a timeseries in a message, use the _Time series block_.
 
-For existing structures, see the page [Message structures](core_dev_msg.md) the related pages under it.
+For existing structures, see the page [Message structures](core_msg.md) the related pages under it.
 
 ## SHOULD: Time zone
 
@@ -53,7 +53,7 @@ The same applies to duration values.
 
 ## SHOULD: Units of measure
 
-Certain values have an associated unit of measure. As these values are serialized as a message, the unit SHOULD be explicit and follow these rules: [Unit of measure (UCUM)](core_dev_msg_ucum.md).
+Certain values have an associated unit of measure. As these values are serialized as a message, the unit SHOULD be explicit and follow these rules: [Unit of measure (UCUM)](core_ucum.md).
 
 ## SHOULD: Omitting optional fields
 
