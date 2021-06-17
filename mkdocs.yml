@@ -11,21 +11,21 @@ theme:
     custom_dir: overrides/
 nav:
     - Manual for User:
-        - Installation: core_user_install.md
-        - Running a simulation: core_user_run-sim.md
-        - Getting logged data: core_user_logger.md
-        - Platform-managed and externally managed components: core_user_platf-ext-mgm.md
-        - Time and synchronization: core_user_time-sync.md
+        - Installation: core_install.md
+        - Running a simulation: core_run.md
+        - Getting logged data: core_logger.md
+        - Platform-managed and externally managed components: core_cmp-mgmt.md
+        - Time and synchronization: core_time.md
     - Manual for Developer:
-        - Communication with topics, queues and exchanges: core_dev_topics-etc.md
-        - Conventions of messaging: core_dev_conventions-msg.md
-        - Conventions of naming: core_dev_conventions-naming.md
-        - Creating new component: core_dev_create_cmp.md
+        - Communication with topics, queues and exchanges: core_communication.md
+        - Conventions of messaging: core_conv-msg.md
+        - Conventions of naming: core_conv-name.md
+        - Creating new component: core_create-cmp.md
         - Exchanges:
-            - Management exchange: core_dev_exchange_mgmt.md
-            - Simulation-specific exchanges: core_dev_exchange_sim.md
+            - Management exchange: core_exchange-mgmt.md
+            - Simulation-specific exchanges: core_exchange-sim.md
         - Message structures:
-            - Overview: core_dev_msg.md
+            - Overview: core_msg.md
     - Domain-specific parts:
         - Index: domain_index.md
         - Domain-specific conventions: domain_conventions.md
