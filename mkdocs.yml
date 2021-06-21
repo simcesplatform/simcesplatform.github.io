@@ -13,13 +13,13 @@ theme:
     
 # See README.txt for the naming convention of files!
 nav:
-    - Manual for User:
+    - User manual:
         - Installation: core_install.md
         - Running a simulation: core_run.md
         - Getting logged data: core_logger.md
         - Platform-managed and externally managed components: core_cmp-mgmt.md
         - Time and synchronization: core_time.md
-    - Manual for Developer:
+    - Developer manual:
         - Communication with topics, queues and exchanges: core_communication.md
         - Conventions of messaging: core_conv-msg.md
         - Conventions of naming: core_conv-name.md
