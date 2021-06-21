@@ -1,0 +1,1 @@
+# Message type names (core)
