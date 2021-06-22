@@ -33,7 +33,7 @@ Please note that this only applies to full message structures. That is, any re-u
 
 ## SHOULD: Naming
 
-When creating new items, a question arises how to formulate names. See the page [Conventions of naming](core_dev_conventions-naming.md).
+When creating new items, a question arises how to formulate names. See the page [Conventions of naming](core_conv-name.md).
 
 ## SHOULD: Re-use existing structures where possible
 

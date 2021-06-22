@@ -1,6 +1,4 @@
-# Simulation Environment of Complex Energy System
-
-SimCES = Simulation Environment of Complex Energy System
+# SimCES | Simulation Environment of Complex Energy System
 
 Features in short:
 
