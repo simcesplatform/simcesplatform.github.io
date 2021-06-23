@@ -31,6 +31,7 @@ nav:
             - Message structures (core): core_msg.md
             - Units of measure (UCUM): core_ucum.md
         - Message type names (core): core_msgtype.md
+        - Pseudocode reference: core_pseudocode.md
     - Domain-specific parts:
         - Domain-specific conventions: domain_conventions.md
         - Message structures (domain):
