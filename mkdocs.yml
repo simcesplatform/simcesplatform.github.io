@@ -33,6 +33,7 @@ nav:
         - Message type names (core): core_msgtype.md
         - Pseudocode reference: core_pseudocode.md
         - Service-oriented architecture: core_soa.md
+        - Simulation Tools package: core_sim-tools.md
     - Domain-specific parts:
         - Domain-specific conventions: domain_conventions.md
         - Message structures (domain):
