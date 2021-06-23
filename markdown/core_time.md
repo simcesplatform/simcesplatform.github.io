@@ -4,7 +4,7 @@ The simulator components are distributed but should still simulate together, whi
 
 For all epochs it holds that ("Eno" is the ordinal number of the epoch):
 
-```
+```nohighlight
 epoch.StartTime < epoch.EndTime
 epoch'.Eno = epoch.Eno + 1 => epoch'.StartTime = epoch.EndTime
 ```

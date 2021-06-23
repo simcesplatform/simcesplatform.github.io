@@ -21,14 +21,14 @@ What are the advantages? Pseudocode:
 
 ## Comments
 
-```
+```nohighlight
 // This is a comment
 ```
 
 
 ## Variables and strings
 
-```
+```nohighlight
 // Declaring a string variable:
 my_var = "Example string"
  
@@ -40,7 +40,7 @@ my_var_longer = my_var + " is nice"
 
 ## Calculation (calc)
 
-```
+```nohighlight
 // "calc result" indicates that the component generates a result to be published.
 // Often, this includes calculation (such as simulation)
 // but the component may as well supply a constant value.
@@ -50,7 +50,7 @@ calc result
 
 ## Messaging (publ, recv)
 
-```
+```nohighlight
 // The component receives a message with some input to calculation.
 // This does not specify where the input comes from.
 recv input
@@ -65,7 +65,7 @@ publ result
 
 Often, pseudocode does not specify to which topic to publish. This is to avoid redundancy with another page or location that specifies the exact topic. However, if there is a need to specify the topic explicitly, you can say:
 
-```
+```nohighlight
 topic = "TopicX"
 publ result to topic
  
@@ -76,7 +76,7 @@ publ result to "TopicX"
 
 ## If conditions (if, else)
 
-```
+```nohighlight
 // Indentation indicates which lines belong to which code block (if and else).
 if x
   // This line is executed if condition "x" matches
@@ -91,7 +91,7 @@ else
 
 ## Looping (loop, break)
 
-```
+```nohighlight
 loop
   // This line is executed as long as "break loop" has not occurred.
   // Indentation indicates which lines are within the loop.
@@ -105,7 +105,7 @@ loop
 
 ## Wait for events
 
-```
+```nohighlight
 // Wait for one of events to occur first
 wait for one of
   recv x
@@ -121,7 +121,7 @@ wait for one of
 
 ## Quitting (quit)
 
-```
+```nohighlight
 // To quit execution, say:
 quit
 ```
@@ -131,7 +131,7 @@ quit
 
 Functions are defined as follows:
 
-```
+```nohighlight
 function my_function()
    
   // This is some code within the function.
@@ -140,6 +140,6 @@ function my_function()
 
 The function above is called as follows:
 
-```
+```nohighlight
 my_function()
 ```

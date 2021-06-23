@@ -6,7 +6,7 @@ As soon as there has been communication between simulation components, you can a
 
 To verify that a simulation has been executed, you can retrieve simulation information. Type this address into your web browser:
 
-```
+```nohighlight
 http://localhost:8080/simulations
 ```
 
