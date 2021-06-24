@@ -15,7 +15,8 @@ theme:
 nav:
     - User manual:
         - Installation: core_install.md
-        - Running a simulation: core_run.md
+        - Running a simulation:
+            - Following a running simulation: core_follow-run.md
         - Getting logged data: core_logger.md
         - Platform-managed and externally managed components: core_cmp-mgmt.md
         - Time and synchronization: core_time.md
@@ -32,8 +33,11 @@ nav:
         - Message type names (core): core_msgtype.md
         - Pseudocode reference: core_pseudocode.md
         - Service-oriented architecture: core_soa.md
-        - Simulation Tools package: core_sim-tools.md
+        - Simulation Tools package:
+            - Simulation Tools package: core_sim-tools.md
+        - Topics (core): core_topics.md
         - Units of measure (UCUM): core_ucum.md
+        - Workflow of component in simulation: core_workflow-sim.md
     - Domain-specific parts:
         - Domain-specific conventions: domain_conventions.md
         - Message structures (domain):

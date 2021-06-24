@@ -1,3 +1,0 @@
-# Running a simulation
-
-Ville! :)
