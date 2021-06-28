@@ -2,6 +2,12 @@
 
 The simulation platform communicates in a publish-subscribe fashion to realize loose coupling. This means that the components do not directly request anything from each other but rather announce which information they are interested in. Then, the platform delivers this information.
 
+Advantages:
+
+- The sender/producer does not need to know which receivers/consumers gets the message. All interested consumers get it.
+- The consumer does not need to know the sender - only the type of data.
+- The consumer does not need to process the incoming immediately, the message can stay in the queue until the consumer has time to process it. This is sometimes called store-and-forward paradigm.
+
 ## Topics and queues
 
 Publish-subscribe communication is implemented with a message bus that routes messages with topics and message queues. A topic is a string that identifies a subject of interest. Any piece of software can publish to the topic, and any piece of software can subscribe to receive messages from the topic. To receive messages, each subscriber creates a message queue and associates this to one or more topics. The motivation of queues is to enable asynchronous message processing, as the recipient can delay message reception without blocking any other node. Each topic can have an arbitrary number of subscriber queues associated. If a topic has no subscribers, no one receives message from the topic. Respectively, if there are multiple subscribers, the message bus clones each message for each subscriber.
@@ -12,7 +18,7 @@ The following figure illustrates message routing with topics and queues. The mes
 
 ## Exchanges
 
-To implement the message bus, the simulation platform uses AMQP 0-9-1 and RabbitMQ. Topic-based communication is only one communication mode in AMQP 0-9-1, but the others are irrelevant here.
+To implement the message bus, the simulation platform uses AMQP 0-9-1 as the protocol and RabbitMQ as the product. Topic-based communication is only one communication mode in AMQP 0-9-1, but the others are irrelevant here. In addition, please note that AMQP has multiple versions that are mutually incompatible.
 
 In AMQP 0-9-1, each topic resides in an exchange. Exchanges can realize a sandbox that isolates topics from each other. This is a useful mechanism, for example, when the intention is to run concurrent simulations in the same platform.
 
