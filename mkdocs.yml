@@ -46,9 +46,10 @@ nav:
             - Workflow of component in simulation: core_workflow-sim.md
             - Workflow of start and end: core_workflow-start-end.md
         - Platforms internals:
-            - Deployment: core_deployment.md
             - Logging system: core_logging-system.md
+            - LogWriter: core_logwriter.md
             - PlatformManager: core_platformmanager.md
+            - Simulation lifecycle: core_lifecycle.md
             - SimulationManager: core_simulationmanager.md
     - Energy domain:
         - Domain-specific conventions: domain_conventions.md

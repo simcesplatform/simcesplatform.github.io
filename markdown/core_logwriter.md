@@ -1,0 +1,3 @@
+# LogWriter
+
+TODO! Ville
