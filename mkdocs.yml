@@ -15,9 +15,9 @@ theme:
 nav:
     - Use:
         - Installation: core_install.md
-        - Running a simulation:
-            - Running a simulation: core_run.md
-            - Following a running simulation: core_follow-run.md
+        - Run simulation:
+            - Run simulation: core_run.md
+            - Follow running simulation: core_follow-run.md
         - Log API: core_log-api.md
         - Platform-managed and externally managed components: core_cmp-mgmt.md
         - Time and synchronization: core_time.md

@@ -1,6 +1,7 @@
 # Log API
 
-As soon as there has been communication between simulation components, you can access the published messages using the log API.
+Once you have run a simulation, you can access the messages published by your components with the log API.
+
 
 ## Get simulation information
 
