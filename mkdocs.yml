@@ -21,24 +21,26 @@ nav:
         - Platform-managed and externally managed components: core_cmp-mgmt.md
         - Time and synchronization: core_time.md
     - Developer manual:
-        - Communication with topics, queues and exchanges: core_communication.md
         - Conventions of messaging: core_conv-msg.md
         - Conventions of naming: core_conv-name.md
-        - Creating new component: core_create-cmp.md
-        - Exchanges:
-            - Management exchange: core_exchange-mgmt.md
-            - Simulation-specific exchanges: core_exchange-sim.md
+        - Communication:
+            - Topics, queues and exchanges: core_communication.md
+            - Exchange, management: core_exchange-mgmt.md
+            - Exchange, simulation-specific: core_exchange-sim.md
+            - Topics (core): core_topics.md
         - Message structures (core):
             - Message structures (core): core_msg.md
-        - Message type names (core): core_msgtype.md
-        - Pseudocode reference: core_pseudocode.md
-        - Service-oriented architecture: core_soa.md
-        - Simulation Tools package:
-            - Simulation Tools package: core_sim-tools.md
-        - Topics (core): core_topics.md
-        - Units of measure (UCUM): core_ucum.md
-        - Workflow of component in simulation: core_workflow-sim.md
-        - Workflow of start and end: core_workflow-start-end.md
+            - Message type names (core): core_msgtype.md
+            - Units of measure (UCUM): core_ucum.md
+        - How to develop:
+            - Creating new component: core_create-cmp.md
+            - Pseudocode reference: core_pseudocode.md
+            - Service-oriented architecture: core_soa.md
+            - Simulation Tools package:
+                - Simulation Tools package: core_sim-tools.md
+                - AbstractSimulationComponent: core_abstractsimulationcomponent
+            - Workflow of component in simulation: core_workflow-sim.md
+            - Workflow of start and end: core_workflow-start-end.md
     - Domain-specific parts:
         - Domain-specific conventions: domain_conventions.md
         - Message structures (domain):
