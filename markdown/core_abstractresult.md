@@ -6,7 +6,6 @@ This page specifies the common base of all messages that represent a value calcu
 ## JSON structure
 
 ```nohighlight
-
 (Fields of AbstractMessage must appear too!)
 
 "EpochNumber" : 14,
