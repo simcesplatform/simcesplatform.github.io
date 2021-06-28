@@ -1,6 +1,6 @@
-# Getting logged data
+# Log API
 
-As soon as there has been communication between simulation components, you can access the published messages using the Log Reader API.
+As soon as there has been communication between simulation components, you can access the published messages using the log API.
 
 ## Get simulation information
 
@@ -17,4 +17,5 @@ In the returned markup, you can verify that a simulation has occurred by looking
 
 
 ## Detailed instructions
-The full API documentation is available in the page Read/Export API. **TODO: link!**
+
+**TODO:** describe log API here!
