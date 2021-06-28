@@ -24,10 +24,12 @@ nav:
         - Conventions of messaging: core_conv-msg.md
         - Conventions of naming: core_conv-name.md
         - Communication:
-            - Topics, queues and exchanges: core_communication.md
+            - Topics, queues and exchanges: core_topics-queues-exchanges.md
             - Exchange, management: core_exchange-mgmt.md
             - Exchange, simulation-specific: core_exchange-sim.md
             - Topics (core): core_topics.md
+            - Reliable messaging in RabbitMQ: core_rabbitmq-reliability.md
+            - Footprint of AMQP items: core_amqp-footprint.md
         - Message structures (core):
             - Message structures (core): core_msg.md
             - Message type names (core): core_msgtype.md
