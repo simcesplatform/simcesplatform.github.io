@@ -34,6 +34,15 @@ nav:
             - Message structures (core): core_msg.md
             - Message type names (core): core_msgtype.md
             - Units of measure (UCUM): core_ucum.md
+            - AbstractMessage: core_abstractmessage.md
+            - AbstractResult: core_abstractresult.md
+            - Epoch: core_epoch.md
+            - Quantity block: core_quantity.md
+            - Quantity array block: core_quantity-array.md
+            - SimState: core_simstate.md
+            - Start: core_start.md
+            - Status: core_status.md
+            - Time series block: core_time-series.md
         - How to develop:
             - Creating new component: core_create-cmp.md
             - Conventions of messaging: core_conv-msg.md
