@@ -19,11 +19,10 @@ nav:
             - Run simulation: core_run.md
             - Follow running simulation: core_follow-run.md
         - Log API: core_log-api.md
-        - Platform-managed and externally managed components: core_cmp-mgmt.md
-        - Time and synchronization: core_time.md
     - Develop:
-        - Conventions of messaging: core_conv-msg.md
-        - Conventions of naming: core_conv-name.md
+        - Basic concepts:
+            - Time and synchronization with epochs: core_time.md
+            - Platform-managed and externally managed components: core_cmp-mgmt.md
         - Communication:
             - Topics, queues and exchanges: core_topics-queues-exchanges.md
             - Exchange, management: core_exchange-mgmt.md
@@ -37,6 +36,8 @@ nav:
             - Units of measure (UCUM): core_ucum.md
         - How to develop:
             - Creating new component: core_create-cmp.md
+            - Conventions of messaging: core_conv-msg.md
+            - Conventions of naming: core_conv-name.md
             - Pseudocode reference: core_pseudocode.md
             - Service-oriented architecture: core_soa.md
             - Simulation Tools package:
