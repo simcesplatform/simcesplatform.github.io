@@ -28,7 +28,7 @@ This page specifies the common base of all messages that represent a value calcu
 
 | Field | Type | Multiplicity | Explanation |
 |-|-|-|-|
-| (All fields from AbstractMessage) | | | Fields from the "abstract base class" |
+| (All fields from [AbstractMessage](core_abstractmessage.md)) |  |  | Fields from the "abstract base class" |
 | EpochNumber | UInt | 1 (REQUIRED) | Indicates the running ID of the epoch |
 | IterationStatus | String | 0..1; see (1) | Indicates the status of iteration, either "intermediate" or "final" |
 | LastUpdatedInEpoch | UInt | 0..1 (OPTIONAL) | Indicates the epoch number when this information was last updated; see (2) |
