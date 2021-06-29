@@ -34,15 +34,15 @@ nav:
             - Message structures (core): core_msg.md
             - Message type names (core): core_msgtype.md
             - Units of measure (UCUM): core_ucum.md
-            - AbstractMessage: core_abstractmessage.md
-            - AbstractResult: core_abstractresult.md
-            - Epoch: core_epoch.md
-            - Quantity block: core_quantity.md
-            - Quantity array block: core_quantity-array.md
-            - SimState: core_simstate.md
-            - Start: core_start.md
-            - Status: core_status.md
-            - Time series block: core_time-series.md
+            - Message - AbstractMessage: core_msg-abstractmessage.md
+            - Message - AbstractResult: core_msg-abstractresult.md
+            - Message - Epoch: core_msg-epoch.md
+            - Message - SimState: core_msg-simstate.md
+            - Message - Start: core_msg-start.md
+            - Message - Status: core_msg-status.md
+            - Block - Quantity: core_block-quantity.md
+            - Block - Quantity array: core_block-quantity-array.md
+            - Block - Time series: core_block-time-series.md
         - How to develop:
             - Creating new component: core_create-cmp.md
             - Conventions of messaging: core_conv-msg.md
@@ -51,7 +51,7 @@ nav:
             - Service-oriented architecture: core_soa.md
             - Simulation Tools package:
                 - Simulation Tools package: core_sim-tools.md
-                - AbstractSimulationComponent: core_abstractsimulationcomponent
+                - AbstractSimulationComponent: core_abstractsimulationcomponent.md
             - Workflow of component in simulation: core_workflow-sim.md
             - Workflow of start and end: core_workflow-start-end.md
         - Platforms internals:

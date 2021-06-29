@@ -1,4 +1,4 @@
-# Status
+# Status message
 
 ## JSON structure
 
@@ -29,7 +29,7 @@
 
 | Field | Type | Multiplicity | Explanation |
 |-|-|-|-|
-| (All fields from [AbstractResult](core_abstractresult.md) and [AbstractMessage](core_abstractmessage.md)) | | | Fields from the "abstract base class" |
+| (All fields from [AbstractResult](core_msg-abstractresult.md) and [AbstractMessage](core_msg-abstractmessage.md)) | | | Fields from the "abstract base class" |
 | Value | String | 1 (REQUIRED) | The status value being reported. This MUST be one of the following: "ready" or "error". |
 | Description | String | 0..1 (OPTIONAL) | Status description; see (1) |
 

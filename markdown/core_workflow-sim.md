@@ -127,7 +127,7 @@ A component MAY publish results (i.e., output data) as the developers consider a
 
 For example, let component C have the capability to publish a result of type R. If C publishes an R in any epoch, it SHOULD publish an R in all epochs during the simulation run. The motivation is that the other components may not know when to expect R and when not. Therefore, it is most straightforward to always publish an R.
 
-Depending on the simulation scenario, the data enclosed in R can remain unchanged between certain epochs. For instance, if the resolution of a timeseries is 60 minutes and epoch length 15 minutes, a change will occur only in every fourth epoch. To follow the SIEE rule, C would re-send the same result data again when no changes have occurred. To help other components in saving resources and possibly avoid redundant calculation, C SHOULD assign the value of the field "LastUpdatedInEpoch" to indicate when the most recent change has occurred (see [AbstractResult](core_abstractresult.md)). Still, C MUST update the other metadata as specified in page [AbstractResult](core_abstractresult.md).
+Depending on the simulation scenario, the data enclosed in R can remain unchanged between certain epochs. For instance, if the resolution of a timeseries is 60 minutes and epoch length 15 minutes, a change will occur only in every fourth epoch. To follow the SIEE rule, C would re-send the same result data again when no changes have occurred. To help other components in saving resources and possibly avoid redundant calculation, C SHOULD assign the value of the field "LastUpdatedInEpoch" to indicate when the most recent change has occurred (see [AbstractResult](core_msg-abstractresult.md)). Still, C MUST update the other metadata as specified in page [AbstractResult](core_msg-abstractresult.md).
 
 ### Without input data
 
@@ -209,7 +209,7 @@ Still, the scheme MAY be even more complex, that is, contain more components and
 
 In a multi-component iteration scheme, all iterating components MUST communicate the status of iteration in each result message. The component MUST indicate this in two ways:
 
-- (1) Using the field "IterationStatus" (see [AbstractMessage](core_abstractmessage.md)) **and**
+- (1) Using the field "IterationStatus" (see [AbstractMessage](core_msg-abstractmessage.md)) **and**
 - (2) Using the suffix ".Iter" in topic name when the result is intermediate and omitting this suffix when the result is final
     - Please see the naming conventions in page [Conventions of naming](core_conv-name.md)
     
@@ -348,7 +348,7 @@ When a warning occurs, the process MAY, depending on the situation:
 
 ### How to indicate warning
 
-When a component thinks a warning has occurred, it SHOULD indicate this in the result message. Please see [AbstractResult](core_abstractresult.md).
+When a component thinks a warning has occurred, it SHOULD indicate this in the result message. Please see [AbstractResult](core_msg-abstractresult.md).
 
 
 ## Logging

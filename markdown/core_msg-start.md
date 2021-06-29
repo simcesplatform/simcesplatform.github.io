@@ -1,4 +1,4 @@
-# Start
+# Start message
 
 This message notifiers about the startup of a simulation run. It communicates simulation-run-specific parameters.
 

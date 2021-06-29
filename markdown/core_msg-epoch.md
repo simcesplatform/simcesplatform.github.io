@@ -1,4 +1,4 @@
-# Epoch
+# Epoch message
 
 This page specifies the "Epoch" message.
 
@@ -19,6 +19,6 @@ This page specifies the "Epoch" message.
 
 | Field | Type | Multiplicity | Explanation |
 |-|-|-|-|
-| (All fields from [AbstractResult](core_abstractresult.md) and [AbstractMessage](core_abstractmessage.md)) | | | Fields from the "abstract base class" |
+| (All fields from [AbstractResult](core_msg-abstractresult.md) and [AbstractMessage](core_msg-abstractmessage.md)) | | | Fields from the "abstract base class" |
 | StartTime | ISO 8601 (Date and time, UTC zone) | 1 (REQUIRED) | Simulated start time of the epoch |
 | EndTime | ISO 8601 (Date and time, UTC zone) | 1 (REQUIRED) | Simulated end time of the epoch |

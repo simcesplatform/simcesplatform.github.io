@@ -1,4 +1,4 @@
-# AbstractMessage
+# AbstractMessage message
 
 This page specifies the common fields of all messages. This structure is not meaningful as a standalone message, so it is analogous to an abstract base class in object-oriented programming.
 

@@ -1,4 +1,4 @@
-# SimState
+# SimState message
 
 This message notifies about starting and ending a simulation run.
 
@@ -19,7 +19,7 @@ This message notifies about starting and ending a simulation run.
 
 | Field | Type | Multiplicity | Explanation |
 |-|-|-|-|
-| (All fields from [AbstractMessage](core_abstractmessage.md)) |  |  | Fields from the "abstract base class" |
+| (All fields from [AbstractMessage](core_msg-abstractmessage.md)) |  |  | Fields from the "abstract base class" |
 | SimulationState | String | 1 (REQUIRED) | Simulation state, either "running" or "stopped" |
 | Name | String | 0..1 (OPTIONAL) | A human-friendly name for the simulation |
 | Description | String | 0..1 (OPTIONAL) | A longer description of the simulation run meant for humans |
