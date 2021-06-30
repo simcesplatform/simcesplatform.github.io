@@ -14,6 +14,7 @@ theme:
 # See README.txt for the naming convention of files!
 nav:
     - Use:
+        - Features: core_features.md
         - Installation: core_install.md
         - Run simulation:
             - Run simulation: core_run.md
