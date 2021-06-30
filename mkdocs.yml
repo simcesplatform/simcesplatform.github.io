@@ -63,8 +63,13 @@ nav:
             - SimulationManager: core_simulationmanager.md
     - Energy domain:
         - Domain-specific conventions: domain_conventions.md
+        - Message type names (domain): domain_msgtype.md
         - Message structures (domain):
             - ControlState.PowerSetpoint: domain_controlstate-powersetpoint.md
             - DMSNetworkState.Current: domain_dmsnetworkstate-current.md
-        - Message type names (domain): domain_msgtype.md
+        - Components (domain):
+            - Grid (DSS): domain_grid-dss.md
+        - Software packages: domain_software-pkg.md
+        - Topics (domain):
+            - Topics (domain): domain_topics.md
     - About...: about.md
