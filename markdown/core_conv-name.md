@@ -47,8 +47,8 @@ Examples:
 - Case: Pascal case
 - You SHOULD use periods to separate the levels of a hierarchy or other logical sections, because this enables wildcards to match a section.
 - All words SHOULD be in singular.
-- Any topic that has the purpose "initialization" SHOULD start with string "Init.". Any other topic SHOULD NOT start with "Init.". (For more information about initialization, see Workflow of component in simulation.) **TODO: link**
-- Any topic meant for the intermediate results of iteration MUST end with ".Iter" added to the topic name that delivers the final result of iteration. Any other topic SHOULD NOT end with ".Iter". (For more information about iteration, see Workflow of component in simulation.) **TODO: link**
+- Any topic that has the purpose "initialization" SHOULD start with string "Init.". Any other topic SHOULD NOT start with "Init.". (For more information about initialization, see [Workflow of component in simulation](core_workflow-sim.md).)
+- Any topic meant for the intermediate results of iteration MUST end with ".Iter" added to the topic name that delivers the final result of iteration. Any other topic SHOULD NOT end with ".Iter". (For more information about iteration, see [Workflow of component in simulation](core_workflow-sim.md).)
 
 Examples:
 

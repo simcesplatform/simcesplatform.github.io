@@ -1,6 +1,6 @@
 # Start message
 
-This message notifiers about the startup of a simulation run. It communicates simulation-run-specific parameters.
+This message notifies components about the startup of a simulation run, delivering simulation-run-specific parameters.
 
 ## JSON structure
 
@@ -87,4 +87,44 @@ This message notifiers about the startup of a simulation run. It communicates si
     - UTC zone
 - (2): REQUIRED if there are any process-specific parameters to deliver. For each object, the name is a string that matches to the identifier of the process referred to. The value is a structure defined in "process parameter blocks" section.
 
-TODO: blocks
+
+## Process parameter blocks
+
+This section explains the process parameter blocks used by platform core. This excludes any domain-specific blocks.
+
+Note: the Platform Manager passes these parameters directly to the Simulation Manager instance through environmental variables. They are included as part of the Start message to make the used parameters visible to the other components as well as to the Logging System.
+
+### Simulation Manager block
+
+| Field | Type | Multiplicity | Explanation |
+|-|-|-|-|
+| ManagerName | String | 1 (REQUIRED) | The identifier, i.e. the SourceProcessId, for the Simulation Manager instance. |
+| InitialStartTime | ISO 8601; see (a) | 1 (REQUIRED) | The start time for the first epoch as ISO 8601 formatted datetime string. |
+| EpochLength | Integer (> 0) | 1 (REQUIRED) | The epoch length in seconds. |
+| MaxEpochCount | Integer (> 0) | 1 (REQUIRED) | The maximum number of epochs in the simulation run. |
+| Components | Array of strings | 1..* (at least one REQUIRED) | An array of the names of the components participating in the simulation. The names MUST correspond to the identifiers (i.e. the SourceProcessId) used by the components. |
+| EpochTimerInterval | Float | 0..1 (OPTIONAL) | The time interval in seconds until Simulation Manager resends an Epoch message if some component has not responded with Status message. The default value is 120 seconds. |
+| MaxEpochResendCount | Integer | 0..1 (OPTIONAL) | The maximum number of Epoch message resends Simulation Manager can try. The default value is 5 resends. |
+
+- (a)
+    - Date and time included
+    - Accuracy 1 ms
+    - Time zone information MUST be included
+
+### Log Writer block
+
+| Field | Type | Multiplicity | Explanation |
+|-|-|-|-|
+| MessageBufferMaxDocumentCount	 | Integer (> 0) | 1 (OPTIONAL) | The maximum number of messages the buffer in Log Writer can hold before the messages are written to the database and the buffer is cleared. The default value is 20. |
+| MessageBufferMaxInterval | Float | 1 (OPTIONAL) | The maximum time interval in seconds before the message buffer in Log Writer is cleared and the messages written to the database. The default value is 10 seconds. |
+
+### Dummy Component block
+
+| Field | Type | Multiplicity | Explanation |
+|-|-|-|-|
+| MinSleepTime | Float | 1 (OPTIONAL) | The minimum time in seconds the Dummy component waits after receiving an Epoch message before sending the Status message. The default value is 2 seconds. |
+| MaxSleepTime | Float | 1 (OPTIONAL) | The maximum time in seconds the Dummy component waits after receiving an Epoch message before sending the Status message. The default value is 15 seconds. |
+| WarningChance | Float | 1 (OPTIONAL) | The probability that a warning is included in the Status message sent to the Simulation Manager. 1 means that a warning is always included and 0 means that a warning is never included. The default value is 0. |
+| SendMissChance | Float | 1 (OPTIONAL) | The probability that the Dummy component does not send the Status message after processing the epoch to the simulation manager. 1 means that the Status messages are never sent and 0 means that they are always sent. The default value is 0. |
+| ReceiveMissChance | Float | 1 (OPTIONAL) | The probability that the Dummy component ignores a received Epoch message. 1 means that the Epoch messages are always ignored and 0 means that they are never ignored. The default value is 0. |
+| ErrorChance | Float | 1 (OPTIONAL) | The probability that the Dummy component sends an error message after a received Epoch message. 1 means that an error message is always sent and 0 means that an error message is never included. The default value is 0. |
