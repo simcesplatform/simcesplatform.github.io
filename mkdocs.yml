@@ -23,6 +23,17 @@ nav:
         - Basic concepts:
             - Time and synchronization with epochs: core_time.md
             - Platform-managed and externally managed components: core_cmp-mgmt.md
+            - Service-oriented architecture: core_soa.md
+        - How to develop:
+            - Creating new component: core_create-cmp.md
+            - Conventions of messaging: core_conv-msg.md
+            - Conventions of naming: core_conv-name.md
+            - Pseudocode reference: core_pseudocode.md
+            - Simulation Tools package:
+                - Simulation Tools package: core_sim-tools.md
+                - AbstractSimulationComponent: core_abstractsimulationcomponent.md
+            - Workflow of component in simulation: core_workflow-sim.md
+            - Workflow of start and end: core_workflow-start-end.md
         - Communication:
             - Topics, queues and exchanges: core_topics-queues-exchanges.md
             - Exchange, management: core_exchange-mgmt.md
@@ -43,17 +54,6 @@ nav:
             - Block - Quantity: core_block-quantity.md
             - Block - Quantity array: core_block-quantity-array.md
             - Block - Time series: core_block-time-series.md
-        - How to develop:
-            - Creating new component: core_create-cmp.md
-            - Conventions of messaging: core_conv-msg.md
-            - Conventions of naming: core_conv-name.md
-            - Pseudocode reference: core_pseudocode.md
-            - Service-oriented architecture: core_soa.md
-            - Simulation Tools package:
-                - Simulation Tools package: core_sim-tools.md
-                - AbstractSimulationComponent: core_abstractsimulationcomponent.md
-            - Workflow of component in simulation: core_workflow-sim.md
-            - Workflow of start and end: core_workflow-start-end.md
         - Platforms internals:
             - Logging system: core_logging-system.md
             - LogWriter: core_logwriter.md
