@@ -1,4 +1,4 @@
-# Time and synchronization
+# Time and synchronization with epochs
 
 The simulator components are distributed but should still simulate together, which necessitates a mechanism to synchronize time. This is implemented with _epochs_. An epoch represents a period of simulated time, e.g., today between 12:00 and 12:15 p.m. The length of epoch can be varied depending on the desired resolution of simulation. As epochs always represent simulated time, the duration is different in real time. This depends mainly on how fast the slowest component can simulate.
 
