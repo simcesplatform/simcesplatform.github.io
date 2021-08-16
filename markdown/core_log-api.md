@@ -15,7 +15,7 @@ http://localhost:8080/simulations
 - This assumes that you run the simulation platform locally
 - This will return the information of all simulation runs this far
 
-In the returned markup, you can verify that a simulation has occurred by looking
+From the response, you can verify that a simulation has occurred by looking
 at StartTime and EndTime strings. These should have a time value that matches
 the time you executed the simulation.
 
