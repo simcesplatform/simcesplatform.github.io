@@ -18,6 +18,6 @@ TODO
 
 SimCES and its parts have been developed in the following projects.
 
-- [ProCemPlus](https://www.senecc.fi/projects/procemplus), "Prosumer Centric Energy Communities – towards Energy Ecosystem", 2019-2021, Business Finland
+- [ProCemPlus](https://www.senecc.fi/projects/procemplus), "Prosumer Centric Energy Communities – towards Energy Ecosystem", 2019-2021, funded by Business Finland
 
-- [INTERRFACE](http://www.interrface.eu/), "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, H2020 European Commission
+- [INTERRFACE](http://www.interrface.eu/), "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, funded by H2020 European Commission
