@@ -257,6 +257,10 @@
 <li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
+            
+<li>
+    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+</li>
     </ul>
   </li>
                                     
@@ -265,11 +269,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../energy_controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+    <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
 </li>
             
 <li>
-    <a href="../energy_dmsnetworkstate-current/" class="dropdown-item">DMSNetworkState.Current</a>
+    <a href="../energy_msg-networkstate-loss/" class="dropdown-item">NetworkState.Loss</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkstate-voltage/" class="dropdown-item">NetworkState.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-priceforecaststate/" class="dropdown-item">PriceForecastState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
 </li>
     </ul>
   </li>
@@ -289,6 +305,18 @@
 <li>
     <a href="../energy_topics/" class="dropdown-item">Topics (energy)</a>
 </li>
+            
+<li>
+    <a href="../energy_topic-priceforecaststate/" class="dropdown-item">PriceForecastState.(MarketId).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourceforecaststate/" class="dropdown-item">ResourceForecastState.(ResourceCategory).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourcestate/" class="dropdown-item">ResourceState.(ResourceCategory).(ResourceId)</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -305,7 +333,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../energy_dmsnetworkstate-current/" class="nav-link">
+                                <a rel="prev" href="../energy_msg-resourcestate/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -342,7 +370,88 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="message-type-names-energy">Message type names (energy)</h1>
-<p>TODO</p></div>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Type name (case sensitive)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ControlState.PowerSetpoint</td>
+<td>ControlState</td>
+</tr>
+<tr>
+<td>DMSNetworkStatus</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>FlexibilityNeed</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>Init.CIS.CustomerInfo</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>Init.NIS.NetworkBusInfo</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>Init.NIS.NetworkComponentInfo</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>LFMMarketResult</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>LFMOffering</td>
+<td>?</td>
+</tr>
+<tr>
+<td>NetworkState.Current</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>NetworkState.Loss</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>NetworkState.Voltage</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>Offer</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>PriceForecastState</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>ResourceForecastState.Dispatch</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>ResourceForecastState.Power</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>ResourceState</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>(same as message name)</td>
+</tr>
+<tr>
+<td>SelectedOffer</td>
+<td>(same as message name)</td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 
