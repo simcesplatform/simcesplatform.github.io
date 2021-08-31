@@ -66,8 +66,11 @@ nav:
         - Components (energy):
             - Grid (DSS): energy_grid-dss.md
         - Message structures (energy):
-            - ControlState.PowerSetpoint: energy_controlstate-powersetpoint.md
-            - DMSNetworkState.Current: energy_dmsnetworkstate-current.md
+            - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
+            - DMSNetworkState.Current: energy_msg-dmsnetworkstate-current.md
+            - NetworkState.Current: energy_msg-networkstate-current.md
+            - NetworkState.Loss: energy_msg-networkstate-loss.md
+            - NetworkState.Voltage: energy_msg-networkstate-voltage.md
         - Message type names (energy): energy_msgtype.md
         - Software packages: energy_software-pkg.md
         - Topics (energy):
