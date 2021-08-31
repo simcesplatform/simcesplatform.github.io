@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/energy_dmsnetworkstate-current/">
+        <link rel="canonical" href="http://foo/energy_msg-networkstate-current/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>DMSNetworkState.Current - SimCES</title>
+        <title>NetworkState.Current - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -257,6 +257,10 @@
 <li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
+            
+<li>
+    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+</li>
     </ul>
   </li>
                                     
@@ -265,11 +269,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../energy_controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+    <a href="./" class="dropdown-item active">NetworkState.Current</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">DMSNetworkState.Current</a>
+    <a href="../energy_msg-networkstate-loss/" class="dropdown-item">NetworkState.Loss</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkstate-voltage/" class="dropdown-item">NetworkState.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-priceforecaststate/" class="dropdown-item">PriceForecastState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
 </li>
     </ul>
   </li>
@@ -289,6 +305,18 @@
 <li>
     <a href="../energy_topics/" class="dropdown-item">Topics (energy)</a>
 </li>
+            
+<li>
+    <a href="../energy_topic-priceforecaststate/" class="dropdown-item">PriceForecastState.(MarketId).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourceforecaststate/" class="dropdown-item">ResourceForecastState.(ResourceCategory).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourcestate/" class="dropdown-item">ResourceState.(ResourceCategory).(ResourceId)</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -305,12 +333,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../energy_controlstate-powersetpoint/" class="nav-link">
+                                <a rel="prev" href="../energy_resources/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../energy_msgtype/" class="nav-link">
+                                <a rel="next" href="../energy_msg-networkstate-loss/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -332,8 +360,16 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#dmsnetworkstatecurrent" class="nav-link">DMSNetworkState.Current</a>
+            <li class="nav-item" data-level="1"><a href="#networkstatecurrent" class="nav-link">NetworkState.Current</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#json-structure" class="nav-link">JSON structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fields-and-multiplicity" class="nav-link">Fields and multiplicity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -341,7 +377,74 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="dmsnetworkstatecurrent">DMSNetworkState.Current</h1></div>
+<h1 id="networkstatecurrent">NetworkState.Current</h1>
+<h2 id="json-structure">JSON structure</h2>
+<pre><code class="language-nohighlight">{
+  (Fields of AbstractMessage and AbstractResult must appear too!)
+
+  &quot;MagnitudeSendingEnd&quot; : { &quot;Value&quot;: 0.1, &quot;UnitOfMeasure&quot;: &quot;A&quot; },
+  &quot;MagnitudeReceivingEnd&quot; : { &quot;Value&quot;: 0.2, &quot;UnitOfMeasure&quot;: &quot;A&quot; },
+  &quot;AngleSendingEnd&quot; : { &quot;Value&quot;: 10.0, &quot;UnitOfMeasure&quot;: &quot;deg&quot; },
+  &quot;AngleReceivingEnd&quot; : { &quot;Value&quot;: 20.0, &quot;UnitOfMeasure&quot;: &quot;deg&quot; },
+  &quot;DeviceId&quot; : &quot;xyz-3&quot;,
+  &quot;Phase&quot; : 3
+}
+</code></pre>
+<h2 id="fields-and-multiplicity">Fields and multiplicity</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Multiplicity</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(All fields from <a href="../core_msg-abstractresult/">AbstractResult</a> and <a href="../core_msg-abstractmessage/">AbstractMessage</a>)</td>
+<td></td>
+<td></td>
+<td>Fields from the "abstract base class"</td>
+</tr>
+<tr>
+<td>MagnitudeSendingEnd</td>
+<td>Quantity block</td>
+<td>1 (REQUIRED)</td>
+<td>Always in "A". Sign is towards the branch. Sending end.</td>
+</tr>
+<tr>
+<td>MagnitudeReceivingEnd</td>
+<td>Quantity block</td>
+<td>1 (REQUIRED)</td>
+<td>Always in "A". Sign is towards the branch. Receiving end.</td>
+</tr>
+<tr>
+<td>AngleSendingEnd</td>
+<td>Quantity block</td>
+<td>1 (REQUIRED)</td>
+<td>Always in degrees ("deg" as specified in UCUM); sending end</td>
+</tr>
+<tr>
+<td>AngleReceivingEnd</td>
+<td>Quantity block</td>
+<td>1 (REQUIRED)</td>
+<td>Always in degrees ("deg" as specified in UCUM); receiving end</td>
+</tr>
+<tr>
+<td>DeviceId</td>
+<td>String</td>
+<td>1 (REQUIRED)</td>
+<td>Must correspond to an entry in network model branches</td>
+</tr>
+<tr>
+<td>Phase</td>
+<td>Integer</td>
+<td>1 (REQUIRED)</td>
+<td>Allowed values 1,2 and 3</td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 

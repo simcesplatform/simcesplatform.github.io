@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_block-quantity-array/">
+        <link rel="canonical" href="http://foo/energy_msg-networkstate-voltage/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Block - Quantity array - SimCES</title>
+        <title>NetworkState.Voltage - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -206,7 +206,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Block - Quantity array</a>
+    <a href="../core_block-quantity-array/" class="dropdown-item">Block - Quantity array</a>
 </li>
             
 <li>
@@ -242,7 +242,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -277,7 +277,7 @@
 </li>
             
 <li>
-    <a href="../energy_msg-networkstate-voltage/" class="dropdown-item">NetworkState.Voltage</a>
+    <a href="./" class="dropdown-item active">NetworkState.Voltage</a>
 </li>
             
 <li>
@@ -333,12 +333,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../core_block-quantity/" class="nav-link">
+                                <a rel="prev" href="../energy_msg-networkstate-loss/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../core_block-time-series/" class="nav-link">
+                                <a rel="next" href="../energy_msg-priceforecaststate/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -360,7 +360,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#quantity-array-block" class="nav-link">Quantity array block</a>
+            <li class="nav-item" data-level="1"><a href="#networkstatevoltage" class="nav-link">NetworkState.Voltage</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#json-structure" class="nav-link">JSON structure</a>
               <ul class="nav flex-column">
@@ -377,18 +377,22 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="quantity-array-block">Quantity array block</h1>
-<p>Quantity array block is neither a topic nor message but a JSON block that can be included in any message. Use it whenever there is an array of measurement values or another quantities with an associated unit of measure.</p>
+<h1 id="networkstatevoltage">NetworkState.Voltage</h1>
 <h2 id="json-structure">JSON structure</h2>
 <pre><code class="language-nohighlight">{
-  &quot;UnitOfMeasure&quot;: &quot;kW&quot;,
-  &quot;Values&quot;:
-  [
-    &quot;0.1&quot;,
-    &quot;0.2&quot;,
-    &quot;0.3&quot;,
-    &quot;0.4&quot;
-  ]
+  (Fields of AbstractMessage and AbstractResult must appear too!)
+
+  ...
+  &quot;Magnitude&quot; : {
+    &quot;Value&quot; : 227.6,
+    &quot;UnitOfMeasure&quot; : &quot;kV&quot;
+  },
+  &quot;Angle&quot; : {
+    &quot;Value&quot; : 119.5,
+    &quot;UnitOfMeasure&quot; : &quot;deg&quot;
+  },
+  &quot;Bus&quot; : &quot;loadbus&quot;,
+  &quot;Node&quot; : 2
 }
 </code></pre>
 <h2 id="fields-and-multiplicity">Fields and multiplicity</h2>
@@ -403,16 +407,34 @@
 </thead>
 <tbody>
 <tr>
-<td>UnitOfMeasure</td>
-<td>String</td>
-<td>1 (REQUIRED)</td>
-<td>Unit of measure. This SHOULD follow the <a href="../core_ucum/">UCUM specification</a>.</td>
+<td>(All fields from <a href="../core_msg-abstractresult/">AbstractResult</a> and <a href="../core_msg-abstractmessage/">AbstractMessage</a>)</td>
+<td></td>
+<td></td>
+<td>Fields from the "abstract base class"</td>
 </tr>
 <tr>
-<td>Value</td>
-<td>Array of floats</td>
+<td>Magnitude</td>
+<td>Quantity block</td>
 <td>1 (REQUIRED)</td>
-<td>The values. The array MUST exist, but the number of values is arbitrary.</td>
+<td>Always in "kV"</td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>Quantity block</td>
+<td>1 (REQUIRED)</td>
+<td>Always in degrees ("deg")</td>
+</tr>
+<tr>
+<td>Bus</td>
+<td>String</td>
+<td>1 (REQUIRED)</td>
+<td></td>
+</tr>
+<tr>
+<td>Node</td>
+<td>Integer</td>
+<td>1 (REQUIRED)</td>
+<td>Allowed values 1, 2 and 3</td>
 </tr>
 </tbody>
 </table></div>
