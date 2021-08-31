@@ -65,9 +65,8 @@ nav:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
             - Grid (DSS): energy_grid-dss.md
+            - Resources: energy_resources.md
         - Message structures (energy):
-            - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
-            - DMSNetworkState.Current: energy_msg-dmsnetworkstate-current.md
             - NetworkState.Current: energy_msg-networkstate-current.md
             - NetworkState.Loss: energy_msg-networkstate-loss.md
             - NetworkState.Voltage: energy_msg-networkstate-voltage.md
@@ -77,4 +76,7 @@ nav:
         - Software packages: energy_software-pkg.md
         - Topics (energy):
             - Topics (energy): energy_topics.md
+            - PriceForecastState.(MarketId).(ResourceId): energy_topic-priceforecaststate.md
+            - ResourceForecastState.(ResourceCategory).(ResourceId): energy_topic-resourceforecaststate.md
+            - ResourceState.(ResourceCategory).(ResourceId): energy_topic-resourcestate.md
     - About...: about.md
