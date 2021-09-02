@@ -380,8 +380,36 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#price-forecaster" class="nav-link">Price Forecaster</a>
+            <li class="nav-item" data-level="1"><a href="#price-forecaster" class="nav-link">Price Forecaster</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#functionalities" class="nav-link">Functionalities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#input-file" class="nav-link">Input file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#environment-variables" class="nav-link">Environment variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#workflow-of-the-component" class="nav-link">Workflow of the component</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#epoch-workflow-of-the-component" class="nav-link">Epoch workflow of the component</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#external-packages" class="nav-link">External packages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,14 +417,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="price-forecaster"><strong>Price Forecaster</strong></h2>
-<h5 id="description">Description</h5>
+<h1 id="price-forecaster"><strong>Price Forecaster</strong></h1>
+<h2 id="description">Description</h2>
 <p>PriceForecaster component predicts / takes a value from historian / etc. for the future status of the price. It subscribes to SimState and Epoch topics and publishes to PriceForecastState topic. </p>
-<h5 id="functionalities">Functionalities</h5>
+<h2 id="functionalities">Functionalities</h2>
 <ol>
 <li>Predicts the future prices</li>
 </ol>
-<h6 id="input-file">Input file</h6>
+<h2 id="input-file">Input file</h2>
 <p>The component has pricedata.csv as an input file. The CSV file should contain MarketId, ResourceId, PricingType, UnitOfMeasure, time slots, and prices associated with time slots. Each time slot needs a column and time slots are named as Time1, Time2, Time3, so on. Price associated with each time slot needs a column and time slot prices are named as Price1, Price2, Price3, so on. Needless to mention, the value in PriceX column belongs to the time in TimeX column. Each row contains values which represent data for one epoch. There should be at least as many data rows as the number of simulation epochs. In the CSV file, "." is the decimal separator.</p>
 <p>Example content for an input file with 2 epoches and 3 time slots (the first two rows are used for the two epoches):
                             Time4   </p>
@@ -442,7 +470,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="environment-variables">Environment variables</h6>
+<h2 id="environment-variables">Environment variables</h2>
 <table>
 <thead>
 <tr>
@@ -464,7 +492,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="workflow-of-the-component">Workflow of the component</h5>
+<h2 id="workflow-of-the-component">Workflow of the component</h2>
 <ol>
 <li>Simulation is started</li>
 <li>PriceForecaster receives SimState message "running" from SimulationManager.</li>
@@ -477,7 +505,7 @@
 <li>PriceForecaster receives a SimState message "stopped" from SimulationManager.</li>
 <li>PriceForecaster closes itself.</li>
 </ol>
-<h5 id="epoch-workflow-of-the-component">Epoch workflow of the component</h5>
+<h2 id="epoch-workflow-of-the-component">Epoch workflow of the component</h2>
 <ol>
 <li>Read next line from CSV file</li>
 <li>Create a PriceForecastState message based on the data taken from the CSV file</li>
@@ -485,7 +513,7 @@
     a. Re-publish PriceForecastState message if Epoch message is received for the running epoch again</li>
 <li>Publish status ready message</li>
 </ol>
-<h6 id="external-packages">External packages</h6>
+<h2 id="external-packages">External packages</h2>
 <p>The following packages are needed.</p>
 <table>
 <thead>
@@ -519,6 +547,7 @@
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
+            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
