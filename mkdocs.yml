@@ -65,6 +65,8 @@ nav:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
             - Grid (DSS): energy_grid-dss.md
+            - Economic Dispatch: energy_economicdispatch.md
+            - Resource Forecaster: energy_resourceforecaster.md
             - Resources: energy_resources.md
         - Message structures (energy):
             - NetworkState.Current: energy_msg-networkstate-current.md
