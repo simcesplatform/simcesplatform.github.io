@@ -2,277 +2,297 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://foo/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/about/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_abstractsimulationcomponent/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_amqp-footprint/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_block-quantity-array/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_block-quantity/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_block-time-series/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_cmp-mgmt/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_conv-msg/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_conv-name/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_create-cmp/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_exchange-mgmt/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_exchange-sim/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_features/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_follow-run/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_install/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_lifecycle/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_log-api/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_logging-system/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_logwriter/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-abstractmessage/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-abstractresult/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-epoch/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-simstate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-start/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg-status/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msg/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_msgtype/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_platformmanager/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_pseudocode/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_rabbitmq-reliability/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_run/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_sim-tools/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_simulationmanager/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_soa/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_time/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_topics-queues-exchanges/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_topics/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_ucum/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_workflow-sim/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/core_workflow-start-end/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_conventions/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://foo/energy_economicdispatch/</loc>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_grid-dss/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msg-networkstate-current/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msg-networkstate-loss/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msg-networkstate-voltage/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://foo/energy_msg-offer/</loc>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msg-priceforecaststate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://foo/energy_msg-resourceforecaststatedispatch/</loc>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msg-resourcestate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_msgtype/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://foo/energy_resourceforecaster/</loc>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_resources/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_software-pkg/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_topic-priceforecaststate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_topic-resourceforecaststate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_topic-resourcestate/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://foo/energy_topics/</loc>
-         <lastmod>2021-08-31</lastmod>
+         <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

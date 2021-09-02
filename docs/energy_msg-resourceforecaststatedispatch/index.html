@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_msg-abstractresult/">
+        <link rel="canonical" href="http://foo/energy_msg-resourceforecaststatedispatch/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Message - AbstractResult - SimCES</title>
+        <title>ResourceForecastState.Dispatch - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -182,7 +182,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Message - AbstractResult</a>
+    <a href="../core_msg-abstractresult/" class="dropdown-item">Message - AbstractResult</a>
 </li>
             
 <li>
@@ -242,7 +242,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -297,7 +297,7 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="./" class="dropdown-item active">ResourceForecastState.Dispatch</a>
 </li>
             
 <li>
@@ -349,12 +349,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../core_msg-abstractmessage/" class="nav-link">
+                                <a rel="prev" href="../energy_msg-priceforecaststate/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../core_msg-epoch/" class="nav-link">
+                                <a rel="next" href="../energy_msg-resourcestate/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -376,21 +376,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#abstractresult-message" class="nav-link">AbstractResult message</a>
+            <li class="nav-item" data-level="1"><a href="#resourceforecaststatedispatch" class="nav-link">ResourceForecastState.Dispatch</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#json-structure" class="nav-link">JSON structure</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#fields-and-multiplicity" class="nav-link">Fields and multiplicity</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#warning-causes" class="nav-link">Warning causes</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#open-issues" class="nav-link">Open issues</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -401,24 +393,73 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="abstractresult-message">AbstractResult message</h1>
-<p>This page specifies the common base of all messages that represent a value calculated, measured or generated in a process. This structure is not meaningful as a standalone message, so it is analogous to an abstract base class in object-oriented programming.</p>
+<h1 id="resourceforecaststatedispatch">ResourceForecastState.Dispatch</h1>
 <h2 id="json-structure">JSON structure</h2>
-<pre><code class="language-nohighlight">(Fields of AbstractMessage must appear too!)
+<pre><code class="language-nohighlight">{
 
-&quot;EpochNumber&quot; : 14,
-&quot;IterationStatus&quot; : &quot;final&quot;, // leave out when not iterating
-&quot;LastUpdatedInEpoch&quot; : 14, // OPTIONAL field
-&quot;TriggeringMessageIds&quot; : // TriggeringMessageIds are irrelevant in Epoch messages?
-[
-  &quot;epoch-14&quot;,
-  &quot;someprocess-14&quot;,
-  &quot;anotherprocess-14&quot;
-],
-&quot;Warnings&quot; : // If warnings precede an error, it can be beneficial to provide them as well in the Error message
-[
-  &quot;warning.convergence&quot;
-],
+  // *** Messages MUST be encoded in UTF-8! ***
+
+  // --- Fields of AbstractMessage begin ---
+  &quot;Type&quot; : &quot;set-message-type-here&quot;,
+  &quot;Timestamp&quot; : &quot;2020-06-03T04:04:21.045Z&quot;,
+  &quot;SimulationId&quot; : &quot;2020-06-03T04:01:52.345Z&quot;,
+  &quot;SourceProcessId&quot; : &quot;set-process-id-here&quot;,
+  &quot;MessageId&quot; : &quot;set-message-id-here&quot;,
+  // --- Fields of AbstractMessage end ---
+
+  // --- Fields of AbstractResult begin ---
+  &quot;EpochNumber&quot; : 14,
+  &quot;IterationStatus&quot; : &quot;final&quot;, // leave out when not iterating
+  &quot;LastUpdatedInEpoch&quot; : 14, // OPTIONAL field
+  &quot;TriggeringMessageIds&quot; : // TriggeringMessageIds are irrelevant in Epoch messages?
+  [
+    &quot;epoch-14&quot;,
+    &quot;someprocess-14&quot;,
+    &quot;anotherprocess-14&quot;
+  ],
+  &quot;Warnings&quot; : // If warnings precede an error, it can be beneficial to provide them as well in the Error message
+  [
+    &quot;warning.convergence&quot;
+  ],
+  // --- Fields of AbstractResult end ---
+
+&quot;Dispatch&quot; : {
+  &quot;ResourceA&quot; : {
+    &quot;TimeIndex&quot; :
+    [
+      &quot;2020-06-25T00:00:00Z&quot;,
+      &quot;2020-06-25T01:00:00Z&quot;
+    ],
+    &quot;Series&quot; : {
+      &quot;RealPower&quot; : {
+        &quot;UnitOfMeasure&quot; : &quot;kW&quot;,
+        &quot;Values&quot; :
+        [
+          0.2,
+          0.27
+        ]
+        }
+      }
+    },
+  &quot;ResourceB&quot; : {
+    &quot;TimeIndex&quot; :
+    [
+      &quot;2020-06-25T00:00:00Z&quot;,
+      &quot;2020-06-25T01:00:00Z
+    ],
+    &quot;Series&quot; : {
+      &quot;RealPower&quot; : {
+        &quot;UnitOfMeasure&quot; : &quot;kW&quot;,
+        &quot;Values&quot; :
+        [
+          0.27,
+          0.2
+        ]
+        }
+      }
+    }
+  }
+}
 </code></pre>
 <h2 id="fields-and-multiplicity">Fields and multiplicity</h2>
 <table>
@@ -432,73 +473,19 @@
 </thead>
 <tbody>
 <tr>
-<td>(All fields from <a href="../core_msg-abstractmessage/">AbstractMessage</a>)</td>
+<td>All fields from <a href="../core_msg-abstractresult/">AbstractResult</a></td>
 <td></td>
 <td></td>
-<td>Fields from the "abstract base class"</td>
+<td>Fields from "abstract base class"</td>
 </tr>
 <tr>
-<td>EpochNumber</td>
-<td>UInt</td>
+<td>Dispatch</td>
+<td>Dictionary; key is string, value is <a href="../core_block-time-series/">Time series block</a></td>
 <td>1 (REQUIRED)</td>
-<td>Indicates the running ID of the epoch</td>
-</tr>
-<tr>
-<td>IterationStatus</td>
-<td>String</td>
-<td>0..1; see (1)</td>
-<td>Indicates the status of iteration, either "intermediate" or "final"</td>
-</tr>
-<tr>
-<td>LastUpdatedInEpoch</td>
-<td>UInt</td>
-<td>0..1 (OPTIONAL)</td>
-<td>Indicates the epoch number when this information was last updated; see (2)</td>
-</tr>
-<tr>
-<td>TriggeringMessageIds</td>
-<td>Array of strings</td>
-<td>1..* (at least one REQUIRED)</td>
-<td>The ID of messages that were involved in triggering the calculation of this result</td>
-</tr>
-<tr>
-<td>Warnings</td>
-<td>Array of strings</td>
-<td>* (OPTIONAL)</td>
-<td>Indicates any warnings that occurred while resolving the Result; see (4)</td>
+<td>The key is the process identifier, value is a time series (power)</td>
 </tr>
 </tbody>
-</table>
-<ul>
-<li>(1): This field is REQUIRED if the component participates in iteration. Otherwise, this field SHOULD be omitted.</li>
-<li>(2): If this field is not present, the recipient SHOULD consider that the information was updated in the current epoch.</li>
-<li>(3)<ul>
-<li>This MUST include the triggering message that was received last</li>
-<li>This SHOULD include Epoch message if it is among triggering messages</li>
-<li>As long as the obligatory messages are there, the designer of each process can consider which additional messages to include.</li>
-<li>This field can be irrelevant in the Epoch message. (Alternatively, Epoch could include the Result received last.)</li>
-</ul>
-</li>
-<li>(4): See the explanation of causes below. The process SHOULD omit the entire array if no warnings are relevant.</li>
-</ul>
-<h2 id="warning-causes">Warning causes</h2>
-<p>Each warning MUST specify a cause. The cause MUST either belong to base causes or be a user-defined cause.</p>
-<h3 id="base-causes">Base causes</h3>
-<p>The following specifies the base causes. Each base cause has two parts, (1) "warning" followed by period as the separator and (2) a descriptive set of words separated with hyphens.</p>
-<h4 id="warningconvergence">warning.convergence</h4>
-<p>The calculation failed to converge, or the control has not completely finished. The outcome is either is a default value or calculated with some secondary logic.</p>
-<h4 id="warninginput">warning.input</h4>
-<p>Input is somehow invalid.</p>
-<h4 id="warninginput-range">warning.input-range</h4>
-<p>One or more inputs are out of range.</p>
-<h4 id="warninginput-unreliable">warning.input-unreliable</h4>
-<p>Input is unreliable, because the data source (e.g., another process) has indicated a warning.</p>
-<h4 id="warninginternal">warning.internal</h4>
-<p>There is something wrong with the internal functionality of the process.</p>
-<h4 id="warningother">warning.other</h4>
-<p>Other reason; the processes SHOULD NOT use this in the output.</p>
-<h2 id="open-issues">Open issues</h2>
-<p>Should there be more information about the warnings, e.g., a more elaborate description for humans to read?</p></div>
+</table></div>
             </div>
         </div>
 

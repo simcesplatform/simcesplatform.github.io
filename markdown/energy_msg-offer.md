@@ -76,10 +76,10 @@
 | --- | --- | --- | --- |
 | All fields from [AbstractResult](core_msg-abstractresult.md) | | | Fields from "abstract base class" |
 | ActivationTime | ISO 8601, Date and time included, Accuracy 1 ms, UTC zone | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | The time when the flexibility requires to be activated |
-| Duration | [Quantity block](core_msg-block-quantity.md) | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | The duration when the flexibility requires to keep activated. The value MUST equal to a positive-integer coefficient of 15 minutes (e.g., 15, 30, 45, 60, 75 etc) |
+| Duration | [Quantity block](core_block-quantity.md) | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | The duration when the flexibility requires to keep activated. The value MUST equal to a positive-integer coefficient of 15 minutes (e.g., 15, 30, 45, 60, 75 etc) |
 | Direction | String | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | Allowed values: "upregulation", "downregulation" |
 | RealPower | [Time series block](core_block-time-series.md) | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | Offered values of regulation always in "kW". Series "Regulation" |
-| Price | [Quantity block](core_msg-block-quantity.md) | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | |
+| Price | [Quantity block](core_block-quantity.md) | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | |
 | CongestionId | String | 1 (REQUIRED) | The value corresponds to the unique identifier of the congestion problem determined by DSO (PGO) |
 | CustomerIds | Array of strings | 1 (REQUIRED) | Lists the CustomerIds participating in the offer. |
 | OfferId | String | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | The unique Id specific for the offer |
