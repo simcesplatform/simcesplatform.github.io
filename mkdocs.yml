@@ -66,6 +66,7 @@ nav:
         - Components (energy):
             - Grid (DSS): energy_grid-dss.md
             - Economic Dispatch: energy_economicdispatch.md
+            - Price Forecaster: energy_priceforecaster.md
             - Resource Forecaster: energy_resourceforecaster.md
             - Resources: energy_resources.md
         - Message structures (energy):

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_block-quantity-array/">
+        <link rel="canonical" href="http://foo/energy_priceforecaster/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Block - Quantity array - SimCES</title>
+        <title>Price Forecaster - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -206,7 +206,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Block - Quantity array</a>
+    <a href="../core_block-quantity-array/" class="dropdown-item">Block - Quantity array</a>
 </li>
             
 <li>
@@ -242,7 +242,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -263,7 +263,7 @@
 </li>
             
 <li>
-    <a href="../energy_priceforecaster/" class="dropdown-item">Price Forecaster</a>
+    <a href="./" class="dropdown-item active">Price Forecaster</a>
 </li>
             
 <li>
@@ -353,12 +353,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../core_block-quantity/" class="nav-link">
+                                <a rel="prev" href="../energy_economicdispatch/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../core_block-time-series/" class="nav-link">
+                                <a rel="next" href="../energy_resourceforecaster/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -380,16 +380,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#quantity-array-block" class="nav-link">Quantity array block</a>
+            <li class="nav-item" data-level="2"><a href="#price-forecaster" class="nav-link">Price Forecaster</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#json-structure" class="nav-link">JSON structure</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#fields-and-multiplicity" class="nav-link">Fields and multiplicity</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -397,42 +389,125 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="quantity-array-block">Quantity array block</h1>
-<p>Quantity array block is neither a topic nor message but a JSON block that can be included in any message. Use it whenever there is an array of measurement values or another quantities with an associated unit of measure.</p>
-<h2 id="json-structure">JSON structure</h2>
-<pre><code class="language-nohighlight">{
-  &quot;UnitOfMeasure&quot;: &quot;kW&quot;,
-  &quot;Values&quot;:
-  [
-    &quot;0.1&quot;,
-    &quot;0.2&quot;,
-    &quot;0.3&quot;,
-    &quot;0.4&quot;
-  ]
-}
-</code></pre>
-<h2 id="fields-and-multiplicity">Fields and multiplicity</h2>
+<h2 id="price-forecaster"><strong>Price Forecaster</strong></h2>
+<h5 id="description">Description</h5>
+<p>PriceForecaster component predicts / takes a value from historian / etc. for the future status of the price. It subscribes to SimState and Epoch topics and publishes to PriceForecastState topic. </p>
+<h5 id="functionalities">Functionalities</h5>
+<ol>
+<li>Predicts the future prices</li>
+</ol>
+<h6 id="input-file">Input file</h6>
+<p>The component has pricedata.csv as an input file. The CSV file should contain MarketId, ResourceId, PricingType, UnitOfMeasure, time slots, and prices associated with time slots. Each time slot needs a column and time slots are named as Time1, Time2, Time3, so on. Price associated with each time slot needs a column and time slot prices are named as Price1, Price2, Price3, so on. Needless to mention, the value in PriceX column belongs to the time in TimeX column. Each row contains values which represent data for one epoch. There should be at least as many data rows as the number of simulation epochs. In the CSV file, "." is the decimal separator.</p>
+<p>Example content for an input file with 2 epoches and 3 time slots (the first two rows are used for the two epoches):
+                            Time4   </p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Type</th>
-<th>Multiplicity</th>
-<th>Explanation</th>
+<th>MarketId</th>
+<th>ResourceId</th>
+<th>PricingType</th>
+<th>UnitOfMeasure</th>
+<th>Time1</th>
+<th>Time2</th>
+<th>Time3</th>
+<th>Price1</th>
+<th>Price2</th>
+<th>Price3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>UnitOfMeasure</td>
-<td>String</td>
-<td>1 (REQUIRED)</td>
-<td>Unit of measure. This SHOULD follow the <a href="../core_ucum/">UCUM specification</a>.</td>
+<td>MyMarket</td>
+<td>NoResource</td>
+<td>TOU</td>
+<td>{EUR}/(kW.h)</td>
+<td>2020-02-17T10:00:00Z</td>
+<td>2020-02-17T11:00:00Z</td>
+<td>2020-02-17T12:00:00Z</td>
+<td>14.3</td>
+<td>15.8</td>
+<td>15.8</td>
 </tr>
 <tr>
-<td>Value</td>
-<td>Array of floats</td>
-<td>1 (REQUIRED)</td>
-<td>The values. The array MUST exist, but the number of values is arbitrary.</td>
+<td>MyMarket</td>
+<td>NoResource</td>
+<td>TOU</td>
+<td>{EUR}/(kW.h)</td>
+<td>2020-02-17T11:00:00Z</td>
+<td>2020-02-17T12:00:00Z</td>
+<td>2020-02-17T13:00:00Z</td>
+<td>15.8</td>
+<td>15.7</td>
+<td>14.9</td>
+</tr>
+</tbody>
+</table>
+<h6 id="environment-variables">Environment variables</h6>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Example value</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIMULATION_COMPONENT_NAME</td>
+<td>PriceForecaster</td>
+<td></td>
+</tr>
+<tr>
+<td>PRICE_FORECASTER_STATE_CSV_FILE</td>
+<td>pricedata.csv</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="workflow-of-the-component">Workflow of the component</h5>
+<ol>
+<li>Simulation is started</li>
+<li>PriceForecaster receives SimState message "running" from SimulationManager.</li>
+<li>PriceForecaster responds to SimulationManager with Status message "ready".</li>
+<li>PriceForecaster receives an Epoch message for a new epoch. The epoch number for the first epoch is 1.</li>
+<li>PriceForecaster publishes PriceForecastState
+    a. PriceForecaster re-publishes PriceForecastState if it receives Epoch message for the running epoch again</li>
+<li>PriceForecaster sends a Status message with value "ready"</li>
+<li>Repeat steps 4-6 for each epoch with growing epoch number.</li>
+<li>PriceForecaster receives a SimState message "stopped" from SimulationManager.</li>
+<li>PriceForecaster closes itself.</li>
+</ol>
+<h5 id="epoch-workflow-of-the-component">Epoch workflow of the component</h5>
+<ol>
+<li>Read next line from CSV file</li>
+<li>Create a PriceForecastState message based on the data taken from the CSV file</li>
+<li>Publish the PriceForecastState message
+    a. Re-publish PriceForecastState message if Epoch message is received for the running epoch again</li>
+<li>Publish status ready message</li>
+</ol>
+<h6 id="external-packages">External packages</h6>
+<p>The following packages are needed.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+<th>Why needed</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation Tools</td>
+<td></td>
+<td>Component implementation based on AbstractSimulationComponent</td>
+<td>https://git.ain.rd.tut.fi/procemplus/simulation-tools</td>
+</tr>
+<tr>
+<td>Domain messages</td>
+<td></td>
+<td>Uses the PriceForecastStateMessage class</td>
+<td>https://git.ain.rd.tut.fi/procemplus/domain-messages</td>
 </tr>
 </tbody>
 </table></div>
