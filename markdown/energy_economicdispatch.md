@@ -1,10 +1,10 @@
-## **Economic Dispatch**
+# Economic Dispatch
 
-###### Description
+## Description
 
-Optimises dispatch of energy production, consumption and storage units.
+Optimises dispatch of energy purchase and energy storage units given predictions on consumption and production.
 
-###### Data
+## Data
 
 Input for optimisation
 
@@ -18,57 +18,57 @@ Input for optimisation
 
 Scenario/configuration parameters:
 
-ED and resource parameters given at startup in Start message blocks
+ED and resource parameters given at startup described in Start message blocks
 
 - ED component name from environment variable SIMULATION_COMPONENT_NAME
-- Forecast horizon and optimisation time step length from Start message blocks (or defaults)
-- List of resources to be included is read from Start message blocks
+- Forecast horizon and optimisation time step length as described in Start message blocks (or defaults)
+- List of resources to be included as described in Start message blocks
 - Resource parameters for optimisation are read from Start message blocs
 
-    - At least storage resource kwh, max capacity
+    - At least storage resource initial kwh, max capacity, etc are read from Start message
 
 - LFM market id (if applicable)
 
-Outside start message, the following is needed for flexibility implementation:
+Outside initialisation, the following is needed for flexibility implementation:
 
 - CustomerId relation to resource names (for connection to PGO flexibility Request) is read from Init.CIS.CustomerInfo message
 
 Example configuration file:
 
 ```nohighlight
-EconomicDispatch: \
-      EconomicDispatchA:\
-            Horizon: PT23H\
-            Timestep: PT1H\
-            Resources:\
-                   - - StaticTimeSeriesResource\
-                     - Load1\
-                   - - StaticTimeSeriesResource\
-                     - Load2\
-                   - - StaticTimeSeriesResource\
-                     - Load3\
-                   - - StaticTimeSeriesResource\
-                     - Load4\
-                   - - PriceForecaster\
-                     - MarketA\
-                   - - StaticTimeSeriesResource\
-                     - EV\
-                   - - StaticTimeSeriesResource\
-                     - PV_large\
-                   - - StaticTimeSeriesResource\
-                     - PV_small\
-                   - - StorageResource\
+EconomicDispatch: 
+      EconomicDispatchA:
+            Horizon: PT23H
+            Timestep: PT1H
+            Resources:
+                   - - StaticTimeSeriesResource
+                     - Load1
+                   - - StaticTimeSeriesResource
+                     - Load2
+                   - - StaticTimeSeriesResource
+                     - Load3
+                   - - StaticTimeSeriesResource
+                     - Load4
+                   - - PriceForecaster
+                     - MarketA
+                   - - StaticTimeSeriesResource
+                     - EV
+                   - - StaticTimeSeriesResource
+                     - PV_large
+                   - - StaticTimeSeriesResource
+                     - PV_small
+                   - - StorageResource
                      - StorageA
 ```
 
-###### Publish
+## Publish
 
 | Topic | Payload |
 | --- | --- |
 | ResourceForecastState.Dispatch | The dispatch/schedule |
 | Offer.(MarketId) | Flexibility bids to LFM (if applicable) |
 
-###### Optimised Resources
+## Optimised Resources
 
 The following units are included:
 
@@ -90,7 +90,7 @@ Dispatch includes:
 - Amount to charge/discharge storage per time interval
 - Amount of energy bought from markets per time interval
 
-###### Workflow
+## Workflow
 
 ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:
 
