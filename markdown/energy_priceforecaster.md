@@ -1,14 +1,14 @@
-## **Price Forecaster**
+# **Price Forecaster**
 
-##### Description
+## Description
 
 PriceForecaster component predicts / takes a value from historian / etc. for the future status of the price. It subscribes to SimState and Epoch topics and publishes to PriceForecastState topic. 
 
-##### Functionalities
+## Functionalities
 
 1. Predicts the future prices
 
-###### Input file
+## Input file
 
 The component has pricedata.csv as an input file. The CSV file should contain MarketId, ResourceId, PricingType, UnitOfMeasure, time slots, and prices associated with time slots. Each time slot needs a column and time slots are named as Time1, Time2, Time3, so on. Price associated with each time slot needs a column and time slot prices are named as Price1, Price2, Price3, so on. Needless to mention, the value in PriceX column belongs to the time in TimeX column. Each row contains values which represent data for one epoch. There should be at least as many data rows as the number of simulation epochs. In the CSV file, "." is the decimal separator.
 
@@ -20,14 +20,14 @@ Example content for an input file with 2 epoches and 3 time slots (the first two
 | MyMarket | NoResource | TOU | {EUR}/(kW.h) | 2020-02-17T10:00:00Z | 2020-02-17T11:00:00Z | 2020-02-17T12:00:00Z | 14.3 | 15.8 | 15.8 |
 | MyMarket | NoResource | TOU | {EUR}/(kW.h) | 2020-02-17T11:00:00Z | 2020-02-17T12:00:00Z | 2020-02-17T13:00:00Z | 15.8 | 15.7 | 14.9 |
 
-###### Environment variables
+## Environment variables
 
 | Variable | Example value | Note |
 | --- | --- | --- |
 | SIMULATION_COMPONENT_NAME | PriceForecaster | |
 | PRICE_FORECASTER_STATE_CSV_FILE | pricedata.csv | |
 
-##### Workflow of the component
+## Workflow of the component
 
 1. Simulation is started
 2. PriceForecaster receives SimState message "running" from SimulationManager.
@@ -40,7 +40,7 @@ Example content for an input file with 2 epoches and 3 time slots (the first two
 8. PriceForecaster receives a SimState message "stopped" from SimulationManager.
 9. PriceForecaster closes itself.
 
-##### Epoch workflow of the component
+## Epoch workflow of the component
 
 1. Read next line from CSV file
 2. Create a PriceForecastState message based on the data taken from the CSV file
@@ -48,7 +48,7 @@ Example content for an input file with 2 epoches and 3 time slots (the first two
     a. Re-publish PriceForecastState message if Epoch message is received for the running epoch again
 4. Publish status ready message
 
-###### External packages
+## External packages
 
 The following packages are needed.
 
