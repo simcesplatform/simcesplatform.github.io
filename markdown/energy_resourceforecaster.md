@@ -50,7 +50,9 @@ Publish
 3. ResourceForecaster responds to SimulationManager with Status message "ready".
 4. ResourceForecaster receives an Epoch message for a new epoch. The epoch number for the first epoch is 1.
 5. ResourceForecaster publishes ResourceForecast.Power message to ResourceForecastState topic. Real powers are selected from imported timeseries. Running epoch start time \+ variable 'forecast\_horizon' determines how many real power values are sended. 
+
     a. ResourceForecaster re-sends ResourceForecast if it receives Epoch message for the running epoch again
+	
 6. ResourceForecaster sends a Status message with value "ready"
 7. Repeat steps 4-6 for each epoch with growing epoch number.
 8. ResourceForecaster receives a SimState message "stopped" from SimulationManager.
