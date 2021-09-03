@@ -10,7 +10,11 @@ extra_css:
 theme:
     name: mkdocs
     custom_dir: overrides/
-    
+
+markdown_extensions:
+    codehilite:
+        use_pygments: False
+
 # See README.txt for the naming convention of files!
 nav:
     - Use:
