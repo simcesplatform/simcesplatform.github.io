@@ -511,8 +511,9 @@ run.</p>
 <h3 id="example">Example</h3>
 <p>Get list of simulations executed on or after 3th of June 2020 at 10:00.</p>
 <h4 id="request">Request</h4>
-<pre><code>http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
+<pre class="codehilite"><code>http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
 </code></pre>
+
 <h4 id="response_1">Response</h4>
 <pre><code>[
   {
@@ -560,8 +561,9 @@ simulations response item.</p>
 <h3 id="example_1">Example</h3>
 <p>Get information about simulation with id 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_1">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
 </code></pre>
+
 <h4 id="response_3">Response</h4>
 <pre><code>{
   &quot;Description&quot;: &quot;This is a test simulation with some example messages.&quot;,
@@ -619,8 +621,9 @@ metadata. The messages will be sorted in ascending order by timestamp.</p>
 energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_2">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
 </code></pre>
+
 <h4 id="response_5">Response</h4>
 <pre><code>[
   {
@@ -690,8 +693,9 @@ timestamp. The following attributes can be  available for each message:</p>
 <h3 id="example_3">Example</h3>
 <p>Get all invalid messages for simulation with id 2020-06-03T04:01:52.345Z. </p>
 <h4 id="request_3">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
 </code></pre>
+
 <h4 id="response_7">Response</h4>
 <pre><code>[
   {
@@ -795,8 +799,9 @@ to topic energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z. The messages which are the source for this time series
 are shown in the response of example for Get messages for simulation. </p>
 <h4 id="request_4">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
 </code></pre>
+
 <h4 id="response_9">Response</h4>
 <pre><code>{
   &quot;TimeIndex&quot;: [
@@ -826,8 +831,9 @@ are shown in the response of example for Get messages for simulation. </p>
 <h3 id="example-2">Example 2</h3>
 <p>Same as example 1 except the time series should be in the csv format.</p>
 <h4 id="request_5">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
 </code></pre>
+
 <h4 id="response_10">Response</h4>
 <pre><code>epoch;timestamp;energy.production.solar:solarPlant1.RealPower;energy.production.solar:solarPlant1.ReactivePower
 1;2020-06-03T13:00:00Z;5.0;0.2
@@ -872,8 +878,9 @@ following:</p>
 }
 </code></pre>
 <h4 id="request_6">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
 </code></pre>
+
 <h4 id="response_11">Response</h4>
 <pre><code>{
   &quot;TimeIndex&quot;: [
@@ -921,8 +928,9 @@ following:</p>
 <h3 id="example-4">Example 4</h3>
 <p>Same as example 3 except timeseries is created in the csv format.</p>
 <h4 id="request_7">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
 </code></pre>
+
 <h4 id="response_12">Response</h4>
 <pre><code>epoch;timestamp;energy.storage.state:battery1.batteryState.chargePercentage;energy.storage.state:battery2.batteryState.chargePercentage
 1;2020-06-03T13:00:00Z;90;40

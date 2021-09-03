@@ -380,8 +380,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#economic-dispatch" class="nav-link">Economic Dispatch</a>
+            <li class="nav-item" data-level="1"><a href="#economic-dispatch" class="nav-link">Economic Dispatch</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data" class="nav-link">Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#publish" class="nav-link">Publish</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#optimised-resources" class="nav-link">Optimised Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#workflow" class="nav-link">Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,10 +409,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="economic-dispatch"><strong>Economic Dispatch</strong></h2>
-<h6 id="description">Description</h6>
-<p>Optimises dispatch of energy production, consumption and storage units.</p>
-<h6 id="data">Data</h6>
+<h1 id="economic-dispatch">Economic Dispatch</h1>
+<h2 id="description">Description</h2>
+<p>Optimises dispatch of energy purchase and energy storage units given predictions on consumption and production.</p>
+<h2 id="data">Data</h2>
 <p>Input for optimisation</p>
 <table>
 <thead>
@@ -431,51 +451,51 @@
 </tbody>
 </table>
 <p>Scenario/configuration parameters:</p>
-<p>ED and resource parameters given at startup in Start message blocks</p>
+<p>ED and resource parameters given at startup described in Start message blocks</p>
 <ul>
 <li>ED component name from environment variable SIMULATION_COMPONENT_NAME</li>
-<li>Forecast horizon and optimisation time step length from Start message blocks (or defaults)</li>
-<li>List of resources to be included is read from Start message blocks</li>
+<li>Forecast horizon and optimisation time step length as described in Start message blocks (or defaults)</li>
+<li>List of resources to be included as described in Start message blocks</li>
 <li>
 <p>Resource parameters for optimisation are read from Start message blocs</p>
 <ul>
-<li>At least storage resource kwh, max capacity</li>
+<li>At least storage resource initial kwh, max capacity, etc are read from Start message</li>
 </ul>
 </li>
 <li>
 <p>LFM market id (if applicable)</p>
 </li>
 </ul>
-<p>Outside start message, the following is needed for flexibility implementation:</p>
+<p>Outside initialisation, the following is needed for flexibility implementation:</p>
 <ul>
 <li>CustomerId relation to resource names (for connection to PGO flexibility Request) is read from Init.CIS.CustomerInfo message</li>
 </ul>
 <p>Example configuration file:</p>
-<pre><code class="language-nohighlight">EconomicDispatch: \
-      EconomicDispatchA:\
-            Horizon: PT23H\
-            Timestep: PT1H\
-            Resources:\
-                   - - StaticTimeSeriesResource\
-                     - Load1\
-                   - - StaticTimeSeriesResource\
-                     - Load2\
-                   - - StaticTimeSeriesResource\
-                     - Load3\
-                   - - StaticTimeSeriesResource\
-                     - Load4\
-                   - - PriceForecaster\
-                     - MarketA\
-                   - - StaticTimeSeriesResource\
-                     - EV\
-                   - - StaticTimeSeriesResource\
-                     - PV_large\
-                   - - StaticTimeSeriesResource\
-                     - PV_small\
-                   - - StorageResource\
+<pre><code class="language-nohighlight">EconomicDispatch: 
+      EconomicDispatchA:
+            Horizon: PT23H
+            Timestep: PT1H
+            Resources:
+                   - - StaticTimeSeriesResource
+                     - Load1
+                   - - StaticTimeSeriesResource
+                     - Load2
+                   - - StaticTimeSeriesResource
+                     - Load3
+                   - - StaticTimeSeriesResource
+                     - Load4
+                   - - PriceForecaster
+                     - MarketA
+                   - - StaticTimeSeriesResource
+                     - EV
+                   - - StaticTimeSeriesResource
+                     - PV_large
+                   - - StaticTimeSeriesResource
+                     - PV_small
+                   - - StorageResource
                      - StorageA
 </code></pre>
-<h6 id="publish">Publish</h6>
+<h2 id="publish">Publish</h2>
 <table>
 <thead>
 <tr>
@@ -494,7 +514,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="optimised-resources">Optimised Resources</h6>
+<h2 id="optimised-resources">Optimised Resources</h2>
 <p>The following units are included:</p>
 <ul>
 <li>
@@ -524,7 +544,7 @@
 <li>Amount to charge/discharge storage per time interval</li>
 <li>Amount of energy bought from markets per time interval</li>
 </ul>
-<h6 id="workflow">Workflow</h6>
+<h2 id="workflow">Workflow</h2>
 <p>ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:</p>
 <ol>
 <li>Simulation is started</li>
