@@ -64,11 +64,13 @@ nav:
     - Energy domain:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
+            - Controller: energy_controller.md
             - Grid (DSS): energy_grid-dss.md
             - Economic Dispatch: energy_economicdispatch.md
             - Price Forecaster: energy_priceforecaster.md
             - Resource Forecaster: energy_resourceforecaster.md
         - Message structures (energy):
+            - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
             - NetworkState.Current: energy_msg-networkstate-current.md
             - NetworkState.Loss: energy_msg-networkstate-loss.md
             - NetworkState.Voltage: energy_msg-networkstate-voltage.md
@@ -85,4 +87,6 @@ nav:
             - PriceForecastState.(MarketId).(ResourceId): energy_topic-priceforecaststate.md
             - ResourceForecastState.(ResourceCategory).(ResourceId): energy_topic-resourceforecaststate.md
             - ResourceState.(ResourceCategory).(ResourceId): energy_topic-resourcestate.md
-    - About...: about.md
+    - About...:
+      - About...: about.md
+      - Maintenance plan: maintenance-plan.md

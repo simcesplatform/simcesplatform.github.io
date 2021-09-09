@@ -1,4 +1,4 @@
-# Start message blocks
+Start message blocks
 
 This page contains the domain-specific parameter blocks included in the start message (see [Start (message)](core_msg-start.md)).
 
@@ -64,66 +64,64 @@ This page contains the domain-specific parameter blocks included in the start me
 
     "PredictiveGridOptimization": // Include this if relevant
     {
-         "PredictiveGridOptimizationA": // Use a name because there can be multiple grids
- {
-"MonitoredGridName" : "GridA",
-  "RelativeSensitivity" : 70 ,
-  "MaxVoltage" : 1.05,
-  "MinVoltage" : 0.95,
-  "UpperAmberBandVoltage" : 0.01,
-  "LowerAmberBandVoltage" : 0.01,
-  "OverloadingBaseline" : 1,
-  "AmberLoadingBaseline" : 0.9
- },
- "PredictiveGridOptimizationB":
- {
-"MonitoredGridName" : "GridB",
-  "RelativeSensitivity" : 45 ,
-  "MaxVoltage" : 1.05,
-  "MinVoltage" : 0.95,
-  "UpperAmberBandVoltage" : 0.01,
-  "LowerAmberBandVoltage" : 0.01,
-  "OverloadingBaseline" : 1,
-  "AmberLoadingBaseline" : 0.9
- }
-},
+      "PredictiveGridOptimizationA": // Use a name because there can be multiple grids
+      {
+        "MonitoredGridName" : "GridA",
+        "RelativeSensitivity" : 70 ,
+        "MaxVoltage" : 1.05,
+        "MinVoltage" : 0.95,
+        "UpperAmberBandVoltage" : 0.01,
+        "LowerAmberBandVoltage" : 0.01,
+        "OverloadingBaseline" : 1,
+        "AmberLoadingBaseline" : 0.9
+      },
+      "PredictiveGridOptimizationB":
+      {
+        "MonitoredGridName" : "GridB",
+        "RelativeSensitivity" : 45 ,
+        "MaxVoltage" : 1.05,
+        "MinVoltage" : 0.95,
+        "UpperAmberBandVoltage" : 0.01,
+        "LowerAmberBandVoltage" : 0.01,
+        "OverloadingBaseline" : 1,
+        "AmberLoadingBaseline" : 0.9
+      }
+    },
 
-"StateMonitoring": // Include this if relevant
-{
- "SM_A": // Use a name because there can be multiple grids
- {
-  "MonitoredGridName" : "GridA",
-  "MaxVoltage" : 1.05,
-  "MinVoltage" : 0.95,
-  "UpperAmberBandVoltage" : 0.01,
-  "LowerAmberBandVoltage" : 0.01,
-  "OverloadingBaseline" : 1,
-  "AmberLoadingBaseline" : 0.9
- },
- "SM_B":
- {
-  "MonitoredGridName" : "GridB",
-  "MaxVoltage" : 1.05,
-  "MinVoltage" : 0.95,
-  "UpperAmberBandVoltage" : 0.01,
-  "LowerAmberBandVoltage" : 0.01,
-  "OverloadingBaseline" : 1,
-  "AmberLoadingBaseline" : 0.9
- }
-},
+    "StateMonitoring": // Include this if relevant
+    {
+      "SM_A": // Use a name because there can be multiple grids
+      {
+        "MonitoredGridName" : "GridA",
+        "MaxVoltage" : 1.05,
+        "MinVoltage" : 0.95,
+        "UpperAmberBandVoltage" : 0.01,
+        "LowerAmberBandVoltage" : 0.01,
+        "OverloadingBaseline" : 1,
+        "AmberLoadingBaseline" : 0.9
+      },
+      "SM_B":
+      {
+        "MonitoredGridName" : "GridB",
+        "MaxVoltage" : 1.05,
+        "MinVoltage" : 0.95,
+        "UpperAmberBandVoltage" : 0.01,
+        "LowerAmberBandVoltage" : 0.01,
+        "OverloadingBaseline" : 1,
+        "AmberLoadingBaseline" : 0.9
+      }
+    },
 
-"StaticTimeSeriesResourceForecaster": // Include this if it is relevant
-{
-"ResourceForecaster": // The identifier for the resource forecaster
-{
-"ResourceForecastComponentIds": "load1, generator1",
-"ResourceTypes": "Load, Generator",
-"ResourceForecastStateCsvFolder": "/resources/forecasts/"
-}
-},
+    "StaticTimeSeriesResourceForecaster": // Include this if it is relevant
+    {
+      "ResourceForecaster": // The identifier for the resource forecaster
+      {
+        "ResourceForecastComponentIds": "load1, generator1",
+        "ResourceTypes": "Load, Generator",
+        "ResourceForecastStateCsvFolder": "/resources/forecasts/"
+      }
+    },
 
-
-    
     "StaticTimeSeriesResource":  // Include this if it is relevant
     {
       "LoadA":  // The identifier for the resource
@@ -141,12 +139,12 @@ This page contains the domain-specific parameter blocks included in the start me
 
     "PriceForecaster": // Include this if it is relevant
     {
-    "PriceForecasterA": // Use a name because there can be multiple price forecasters
+      "PriceForecasterA": // Use a name because there can be multiple price forecasters
       {
         "PriceForecasterStateCsvFile": "priceA.csv",
         "PriceForecasterStateCsvDelimiter": "," // optional, default value is ","
       },
-    "PriceForecasterB": 
+      "PriceForecasterB": 
       {
         "PriceForecasterStateCsvFile": "priceB.csv"
       }
@@ -168,8 +166,18 @@ This page contains the domain-specific parameter blocks included in the start me
         "KwRated": 100.0,
         "SelfDischarge": 0.0
       }
-
-
+    }
+      
+    "ProcemLFM":
+    {
+      "LFM1":
+      {
+        "MarketOpeningTime": 14,
+        "MarketClosingTime": 17,
+        "FlexibilityProviderList": ["economic-dispatch1","economic-dispatch1"],
+        "FlexibilityProcurerList": ["pgo1"]
+      }
+    }
   }
 }
 ```
@@ -196,15 +204,13 @@ Note: the Platform Manager passes these parameters directly to the Economic Disp
 
 For example:
 ```nohighlight
-"Weights":  {
-
-    "storageA":  // Identifier for resource component  {
-
-         "TerminalSOCBound": 50.0
-
+"Weights":  
+  {
+    "storageA":  // Identifier for resource component  
+    {
+      "TerminalSOCBound": 50.0
     }
-
-}
+  }
 ```
 
 - Case 2: TerminalSOCBound, TerminalSOCTarget, TerminalWeight given
@@ -214,19 +220,15 @@ For example:
 
 For example:
 ```nohighlight
-"Weights":  {
-
-    "storageB":  // Identifier for resource component  {
-
-        "TerminalSOCBound": 10.0,
-
-        "TerminalSOCTarget": 40.0,
-
-        "TerminalWeight": 30.0
-
+"Weights": 
+  {
+    "storageB":  // Identifier for resource component  
+    {
+      "TerminalSOCBound": 10.0,
+      "TerminalSOCTarget": 40.0,
+      "TerminalWeight": 30.0
     }
-
-}
+  }
 ```
 
 ### Grid block
@@ -309,4 +311,11 @@ Note: the Platform Manager passes these parameters directly to the Static Time S
 | ForecastHorizon | String | 0..1 (OPTIONAL) | If this environment variable is not present then default "PT36H" is used. |
 | UnitOfMeasure | String | 0..1 (OPTIONAL) | If this environment variable is not present then default "kW" is used. |
 
+### LFM block
 
+| Field | Type | Multiplicity | Explanation |
+| --- | --- | --- | --- |
+| MarketOpeningTime | Integer [0 ... 24] | 1 (REQUIRED) | Hour of day when market opens |
+| MarketClosingTime | Integer [0 ... 24] | 1 (REQUIRED) | Hour of day when market closes |
+| FlexibilityProviderList | Array of String | 1 (REQUIRED) | List of SourceProcessIds for processes that are expected to send FlexibilityNeed msgs |
+| FlexibilityProcurerList | Array of String | 1 (REQUIRED) | List of SourceProcessIds for processes that are expected to send Offer msgs |
