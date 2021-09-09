@@ -9,17 +9,17 @@ To achieve modularity and extendability, as mentioned, DMS functionalities are s
 
 |DMS application systems   |
 | ----------- |
-| *State monitoring (SM)|
-| *Predictive grid optimization (PGO):  Network forecast state monitoring and evaluation, utilizing market and non-market based solutions for congestion management, TSO-DSO coordination|
-| *State estimation (SE)|
-| *Real-time congestion management (RTCM)|
-| *Operational grid optimization (OGO)|
-| *Long-term operational planning|
-| *Fault management:  Fault location isolation supply restoration (FLISR), outage information to web and customers, reporting to regulator, ...|
-| *Workforce management|
-| *Maintenance management|
-| *Asset management|
+| State monitoring (SM)|
+| Predictive grid optimization (PGO):  Network forecast state monitoring and evaluation, utilizing market and non-market based solutions for congestion management, TSO-DSO coordination|
+| State estimation (SE)|
+| Real-time congestion management (RTCM)|
+| Operational grid optimization (OGO)|
+| Long-term operational planning|
+| Fault management:  Fault location isolation supply restoration (FLISR), outage information to web and customers, reporting to regulator, ...|
+| Workforce management|
+| Maintenance management|
+| Asset management|
 
 ## Simulation environment's architecture including DMS
 
-![image](C:\Users\attar\OneDrive - TUNI.fi\Desktop\Desktop 04.01.2021\Desktop\Test\Simulationenvironment\simces-website\markdown\images)
+![image](C:\Users\attar\OneDrive - TUNI.fi\Desktop\Desktop 04.01.2021\Desktop\Test\Simulationenvironment\simces-website\markdown\images\dms-structure)
