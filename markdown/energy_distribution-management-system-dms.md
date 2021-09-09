@@ -22,4 +22,4 @@ To achieve modularity and extendability, as mentioned, DMS functionalities are s
 
 ## Simulation environment's architecture including DMS
 
-![image](images/dms-structure)
+![image](images/dms-structure.jpg)
