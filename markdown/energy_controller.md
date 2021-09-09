@@ -12,7 +12,7 @@ This component is used to regulate the power setpoint of the resources based on 
 ## Publish
 | Exact Topic Name | Link to topic page(s) | Payload of interest|
 | --- | --- | --- |
-|ControlState.PowerSetpoint| [energy_msg-ControlState.PowerSetpoint](energy_msg-ControlState.PowerSetpoint)| Real Power and Reactive Power |
+|ControlState.PowerSetpoint| [energy_msg-controlstate-powersetpoint.md](energy_msg-ControlState.PowerSetpoint)| Real Power and Reactive Power |
 
 ## Input Files
 This component does not have any input files.
