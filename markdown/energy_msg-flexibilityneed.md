@@ -45,12 +45,12 @@
 | --- | --- | --- | --- |
 | All fields from [AbstractResult](core_msg-abstractresult.md) | | | Fields from "abstract base class" |
 | ActivationTime | ISO 8601, Date and time included, Accuracy 1 ms, UTC zone | 1 (REQUIRED), (OPTIONAL if OfferCount = 0) | The time when the flexibility requires to be activated |
-| Duration | [Quantity block](core_block-quantity.md) | 1 (REQUIRED)| The duration when the flexibility requires to keep activated. The value MUST equal to a positive-integer coefficient of 15 minutes (e.g., 15, 30, 45, 60, 75 etc) |
+| Duration | [Quantity block](core_block-quantity.md) | 1 (REQUIRED)| The duration when the flexibility requires to keep activated.  The value MUST equal to a positive-integer coefficient of 15 minutes (e.g., 15, 30, 45, 60, 75 etc) |
 | Direction | String | 1 (REQUIRED)| Allowed values: "upregulation", "downregulation" |
-| RealPowerMin | [Time series block](core_block-time-series.md) | 1 (REQUIRED) | The value (always in kW) MUST: equal to a positive-integer coefficient of BidResolution (i.e., simulation run parameter), equal or larger than min bid size (i.e., simulation run parameter)|
-| RealPowerRequest | [Time series block](core_block-time-series.md) | 1 (REQUIRED) | The value (always in kW) MUST: equal to a positive-integer coefficient of BidResolution (i.e., simulation run parameter), equal or larger than min bid size (i.e., simulation run parameter)|
+| RealPowerMin | [Time series block](core_block-time-series.md) | 1 (REQUIRED) | The value (always in kW) MUST:  equal to a positive-integer coefficient of BidResolution (i.e., simulation run parameter),  equal or larger than min bid size (i.e., simulation run parameter)|
+| RealPowerRequest | [Time series block](core_block-time-series.md) | 1 (REQUIRED) | The value (always in kW) MUST:  equal to a positive-integer coefficient of BidResolution (i.e., simulation run parameter),  equal or larger than min bid size (i.e., simulation run parameter)|
 | CustomerIds | Array of strings | 1 (REQUIRED) | The value corresponds to all the CustomerIds within the congestion area.|
 | CongestionId | String | 1 (REQUIRED) | The value corresponds to the unique identifier of the congestion problem determined by DSO (PGO) |
-| BidResolution | [Quantity block](core_block-quantity.md) | 1 (OPTIONAL)| In kW, possible bid values between RealPowerMin and RealPowerRequest.e.g. if RealPowerMin = 1 kW and RealPowerRequest = 10 kW and BidResolution = 1 kW, allowable bids are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 kW |
+| BidResolution | [Quantity block](core_block-quantity.md) | 1 (OPTIONAL)| In kW, possible bid values between RealPowerMin and RealPowerRequest  .e.g., if RealPowerMin = 1 kW and RealPowerRequest = 10 kW and BidResolution = 1 kW, allowable bids are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 kW |
 
 
