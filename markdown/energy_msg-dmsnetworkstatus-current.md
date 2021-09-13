@@ -66,8 +66,8 @@
 | Phase | Integer | 1 (REQUIRED) | Phase values can be: 1, 2, 3 |
 | StatusSendingEnd | String | 1 (REQUIRED) | State values can be:  acceptable,  close-to-limits,  unacceptable|
 | StatusReceivingEnd | String | 1 (REQUIRED) | State values can be:  acceptable,  close-to-limits,  unacceptable|
-| ViolationSendingEnd | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits statues,  positive for over-loading|
-| ViolationReceivingEnd | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits statues,  positive for over-loading|
+| ViolationSendingEnd | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits states,  positive for over-loading state|
+| ViolationReceivingEnd | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits states,  positive for over-loading state|
 
 
 
