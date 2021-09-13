@@ -1,6 +1,6 @@
 # Init.NIS.NetworkBusInfo
 
-##Description
+## Description
 
 This message contains the list of electricity distribution components to be delivered in simulation initialization stage.
 
@@ -47,8 +47,8 @@ This message contains the list of electricity distribution components to be deli
 | Field | Type | Multiplicity | Notes |
 | --- | --- | --- | --- |
 | All fields from [AbstractResult](core_msg-abstractresult.md) | | | Fields from "abstract base class" |
-| BusName | Array of strings | N by 1 (REQUIRED) | System bus name, referenced by NetworkState.Voltage PUB |
-| BusType | Array of strings (enumerated) | N by 1 (REQUIRED) | Allowed values for elements:  "dummy" : This bus has no resources connected to it, it only has a topology purpose,  "root" : This is the feed-in bus of the network, it is assumed to be connected to a constant voltage source.  "usage-point" : This bus has resource(s) connected to it, power will be injected to or draw fron grid at this bus|
+| BusName | Array of strings | N by 1 (REQUIRED) | System bus name, referenced by NetworkState.Voltage |
+| BusType | Array of strings (enumerated) | N by 1 (REQUIRED) | Allowed values for elements: **"dummy"** : This bus has no resources connected to it, it only has a topology purpose, **"root"** : This is the feed-in bus of the network, it is assumed to be connected to a constant voltage source. **"usage-point"** : This bus has resource(s) connected to it, power will be injected to or draw fron grid at this bus|
 | BusVoltageBase | [Quantity array block](core_block-quantity-array.md)  | N by 1 (REQUIRED) | Unit of measure is always "kV" |
 
 

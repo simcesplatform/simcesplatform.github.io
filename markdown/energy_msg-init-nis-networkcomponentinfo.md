@@ -1,6 +1,6 @@
 # Init.NIS.NetworkComponentInfo
 
-##Description
+## Description
 
 This message contains the list of electricity distribution components to be delivered in simulation initialization stage.
 
