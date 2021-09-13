@@ -65,17 +65,20 @@ nav:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
             - Controller: energy_controller.md
+            - Distribution management system (DMS): energy_distribution-management-system-dms.md
             - Grid (DSS): energy_grid-dss.md
             - Economic Dispatch: energy_economicdispatch.md
             - Price Forecaster: energy_priceforecaster.md
             - Resource Forecaster: energy_resourceforecaster.md
         - Message structures (energy):
             - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
+            - FlexibilityNeed: energy_msg-flexibilityneed.md
             - NetworkState.Current: energy_msg-networkstate-current.md
             - NetworkState.Loss: energy_msg-networkstate-loss.md
             - NetworkState.Voltage: energy_msg-networkstate-voltage.md
             - Offer: energy_msg-offer.md
             - PriceForecastState: energy_msg-priceforecaststate.md
+            - SelectedOffer: energy_msg-selectedoffer.md
             - ResourceForecastState.Dispatch: energy_msg-resourceforecaststate-dispatch.md
             - ResourceForecastState.Power: energy_msg-resourceforecaststate-power.md
             - ResourceState: energy_msg-resourcestate.md

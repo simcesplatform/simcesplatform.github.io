@@ -1,4 +1,4 @@
-# FleibilityNeed
+# FlexibilityNeed
 
 ## JSON structure
 ```nohighlight

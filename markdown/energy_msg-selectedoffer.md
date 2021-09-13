@@ -1,4 +1,4 @@
-# FleibilityNeed
+# SelectedOffer
 
 ## JSON structure
 ```nohighlight
