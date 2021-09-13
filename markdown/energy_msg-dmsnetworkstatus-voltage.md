@@ -61,7 +61,7 @@
 | BusName | String | 1 (REQUIRED) | BusNames are the same as defined in Init.NIS.NetworkBusInfo |
 | Node | Integer | 1 (REQUIRED) | Node values can be: 1, 2, 3 |
 | Status | String | 1 (REQUIRED) | State values can be:  acceptable,  close-to-limits,  unacceptable|
-| Violation | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits statues,  positive for over-voltage,  negative for under-voltage|
+| Violation | Float | 1 (REQUIRED) | The value can be :  0 for acceptable and close-to-limits states,  positive for over-voltage state,  negative for under-voltage state|
 
 
 
