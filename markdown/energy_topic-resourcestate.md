@@ -6,8 +6,7 @@ This topic uses subtopics to enable finer-grained message routing. The naming is
 ResourceState.(ResourceCategory).(ResourceId)
 ```
 
-- The supported resource categories are specified in the page of the components [Resources](energy_resources.md).
-- For a particular message, the ResourceId part MUST match SourceProcessId in the message!
+For a particular message, the ResourceId part MUST match SourceProcessId in the message!
 
 Example:
 
