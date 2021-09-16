@@ -24,13 +24,17 @@ In many cases, each message structure only occurs in one topic, but a message st
 |  |  | Results |  |  |
 |  |  | Results |  |  |
 |  |  | Results |  |  |
-|  |  | Results |  |  |
-| Offer.(MarketID) | [Offer](energy_msg-offer.md) | Results | [Economic Dispatch](energy_economicdispatch.md) | LFM? |
-| Request.(MarketID) | [Request](energy_msg-request.md) | Results | LFM? | [Economic Dispatch](energy_economicdispatch.md) |
+| NetworkForecastState.(GridId).Voltage.(BusName) | [NetworkForecastState.Voltage](energy_msg-networkforecaststate-voltage.md) | Results | [Grid (DSS)](energy_grid-dss.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) |
+| NetworkForecastState.(GridId).Current.(DeviceId) | [NetworkForecastState.Current](energy_msg-networkforecaststate-current.md) | Results | [Grid (DSS)](energy_grid-dss.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) |
+| NetworkState.(GridId).Current.(DeviceId) | [NetworkState.Current](energy_msg-networkstate-current.md) | Results | [Grid (DSS)](energy_grid-dss.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) |
+| NetworkState.(GridId).Voltage.(BusName) | [NetworkState.Voltage](energy_msg-networkstate-voltage.md) | Results | [Grid (DSS)](energy_grid-dss.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) |
+| NetworkState.(GridId).Loss.(DeviceId) | [NetworkState.Loss](energy_msg-networkstate-loss.md) | Results | [Grid (DSS)](energy_grid-dss.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) |
+| Offer.(MarketID) | [Offer](energy_msg-offer.md) | Results | [Economic Dispatch](energy_economicdispatch.md) | [Procem-LFM](energy_procem-lfm.md) |
+| Request.(MarketID) | [Request](energy_msg-request.md) | Results | [Procem-LFM](energy_procem-lfm.md) | [Economic Dispatch](energy_economicdispatch.md) |
 | [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceForecastState.Power](energy_msg-resourceforecaststate-power.md) | Results | [ResourceForecaster](energy_resourceforecaster.md) | [Economic Dispatch](energy_economicdispatch.md) |
 | ResourceForecastState.Dispatch | [ResourceForecastState.Dispatch	](energy_msg-resourceforecaststate-dispatch.md) | Results |  |  |
 | [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceState](energy_msg-resourcestate.md) | Results | (Resources) | [Grid (DSS)](energy_grid-dss.md) |
-| SelectedOffer.(MarketID) | [SelectedOffer](energy_msg-selectedoffer.md) | Results |  |  |
+| SelectedOffer.(MarketID) | [SelectedOffer](energy_msg-selectedoffer.md) | Results | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) | [Procem-LFM](energy_procem-lfm.md) |
 
 TODO: add table content
 

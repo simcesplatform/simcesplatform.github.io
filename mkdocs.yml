@@ -69,6 +69,7 @@ nav:
             - Grid (DSS): energy_grid-dss.md
             - Economic Dispatch: energy_economicdispatch.md
             - Price Forecaster: energy_priceforecaster.md
+            - Procem-LFM: energy_procem-lfm.md
             - Resource Forecaster: energy_resourceforecaster.md
         - Message structures (energy):
             - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
