@@ -8,7 +8,29 @@ In many cases, each message structure only occurs in one topic, but a message st
 
 | Topic | Message type | Purpose; see (1) | Publisher(s) | Subscriber(s) |
 |-|-|-|-|-|
-|  |  |  |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+|  |  | Results |  |  |
+| Offer.(MarketID) | [Offer](energy_msg-offer.md) | Results | [Economic Dispatch](energy_economicdispatch.md) | LFM? |
+| Request.(MarketID) | [Request](energy_msg-request.md) | Results | LFM? | [Economic Dispatch](energy_economicdispatch.md) |
+| [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceForecastState.Power](energy_msg-resourceforecaststate-power.md) | Results | [ResourceForecaster](energy_resourceforecaster.md) | [Economic Dispatch](energy_economicdispatch.md) |
+| ResourceForecastState.Dispatch | [ResourceForecastState.Dispatch	](energy_msg-resourceforecaststate-dispatch.md) | Results |  |  |
+| [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceState](energy_msg-resourcestate.md) | Results | (Resources) | [Grid (DSS)](energy_grid-dss.md) |
+| SelectedOffer.(MarketID) | [SelectedOffer](energy_msg-selectedoffer.md) | Results |  |  |
 
 TODO: add table content
 
