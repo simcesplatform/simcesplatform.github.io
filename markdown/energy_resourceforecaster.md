@@ -1,24 +1,24 @@
-## **Resource Forecaster**
+# **Resource Forecaster**
 
-##### Description
+## Description
 
 ResourceForecaster component predicts / takes a value from historian / etc. for the future status of the resource.
 
 Note! This is static time series version of Resource Forecaster.  
 
-##### Functionalities
+## Functionalities
 
 1. Predicts the future status of resource
 
-##### ResourceForecaster definition
+## ResourceForecaster definition
 
-###### Input parameters
+### Input parameters
 
 | Property | Datatype | Example |
 | --- | --- | --- |
 | forecasting\_horizon | ISO 8601 duration | PT36H |
 
-###### Environment variables
+### Environment variables
 
 | Variable | Example value | Note |
 | --- | --- | --- |
@@ -28,7 +28,7 @@ Note! This is static time series version of Resource Forecaster.
 | RESOURCE\_FORECAST\_STATE\_CSV\_FOLDER | \./ | |
 | FORECAST\_HORIZON | PT36H | |
 
-##### Data
+## Data
 
 Subscribe
 
@@ -43,7 +43,7 @@ Publish
 | --- | --- |
 | ResourceForecastState.\(ResourceCategory\).\(ResourceId\) | Real power |
 
-##### Workflow
+## Workflow
 
 1. Simulation is started
 2. ResourceForecaster receives SimState message "running" from SimulationManager.
