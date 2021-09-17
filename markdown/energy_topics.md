@@ -24,7 +24,7 @@ In many cases, each message structure only occurs in one topic, but a message st
 | Offer.(MarketID) | [Offer](energy_msg-offer.md) | [Economic Dispatch](energy_economicdispatch.md) | [Procem-LFM](energy_procem-lfm.md) |
 | Request.(MarketID) | [Request](energy_msg-request.md) | [Procem-LFM](energy_procem-lfm.md) | [Economic Dispatch](energy_economicdispatch.md) |
 | [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceForecastState.Power](energy_msg-resourceforecaststate-power.md) | [ResourceForecaster](energy_resourceforecaster.md) | [Economic Dispatch](energy_economicdispatch.md) |
-| ResourceForecastState.Dispatch | [ResourceForecastState.Dispatch	](energy_msg-resourceforecaststate-dispatch.md) |  |  |
+| ResourceForecastState.Dispatch | [ResourceForecastState.Dispatch	](energy_msg-resourceforecaststate-dispatch.md) | [Economic Dispatch](energy_economicdispatch.md) | [Controller](energy_controller.md) |
 | [ResourceForecastState.(ResourceCategory).(ResourceId)](energy_topic-resourceforecaststate.md) | [ResourceState](energy_msg-resourcestate.md) | (Resources) | [Grid (DSS)](energy_grid-dss.md) |
 | SelectedOffer.(MarketID) | [SelectedOffer](energy_msg-selectedoffer.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - PGO | [Procem-LFM](energy_procem-lfm.md) |
 
