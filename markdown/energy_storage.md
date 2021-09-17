@@ -72,5 +72,7 @@ In each epoch, the component does the following:
 ### Language and platform
 
 | Programming language | Python |
+| --- | --- |
 | Platform | Python 3.7.6 |
+| --- | --- |
 | Operating system | Docker Debian 10 (python:3.7.6) |
