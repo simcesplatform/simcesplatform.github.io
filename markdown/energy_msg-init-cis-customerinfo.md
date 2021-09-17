@@ -1,4 +1,4 @@
-# Init.NIS.CustomerInfo
+# Init.CIS.CustomerInfo
 
 ## Description
 

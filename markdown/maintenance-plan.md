@@ -19,7 +19,7 @@ The responsible persons (RP) and the areas of responsibility are as follows:
 
 - Sami Repo, Tampere University
     - coordination of research projects that exploit SimCES
-- **???**, Tampere University
+- **???** TODO, Tampere University
     - ???
 - Petri Kannisto, Tampere University
     - coordination of software-related tasks and issues
