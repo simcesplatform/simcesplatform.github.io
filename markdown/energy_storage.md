@@ -58,6 +58,7 @@ In each epoch, the component does the following:
 1. Get control state information from either:
 
     a. If a CSV file is not used receive a ContRolState message from topic ControlState\.process_id
+	
 	b. If a CSV file is used read next line from it
 
 2. Calculate new state for the storage based on real power from control information and the duration of current epoch.
