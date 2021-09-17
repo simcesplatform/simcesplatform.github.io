@@ -6,8 +6,6 @@ This topic uses subtopics to enable finer-grained message routing. The naming is
 ResourceForecastState.(ResourceCategory).(ResourceId)
 ```
 
-The supported resource categories are specified in the page of the component [Resources](energy_resources.md).
-
 For example:
 
 ```nohighlight

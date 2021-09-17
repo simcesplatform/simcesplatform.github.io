@@ -1,5 +1,6 @@
 # SimCES | Simulation Environment of Complex Energy System
 
+SimCES is a distributed simulation platform to enable the management of complex simulation scenarios.
 Features in short:
 
 - Distribute your simulation to components
@@ -7,10 +8,10 @@ Features in short:
 - Run the components on any platform
 - Create and manage simulation configurations in one file
     - Simulate varying scenarios easily
-- Retrieve simulation results from logging interface
+- Retrieve simulation results from a logging interface
 - Optionally, run components as containers for easier development
 
-![Features illustrated](images/features.png)
+![Features illustrated](images/features.svg)
 
 
 ## Motivation

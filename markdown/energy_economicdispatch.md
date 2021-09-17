@@ -1,10 +1,10 @@
-## **Economic Dispatch**
+# Economic Dispatch
 
-###### Description
+## Description
 
-Optimises dispatch of energy production, consumption and storage units.
+Optimises dispatch of energy purchase and energy storage units given predictions on consumption and production.
 
-###### Data
+## Data
 
 Input for optimisation
 
@@ -18,57 +18,61 @@ Input for optimisation
 
 Scenario/configuration parameters:
 
-ED and resource parameters given at startup in Start message blocks
+ED and resource parameters given at startup as declared in [Start message blocks](energy_msg-startmessageblocks.md):
 
 - ED component name from environment variable SIMULATION_COMPONENT_NAME
-- Forecast horizon and optimisation time step length from Start message blocks (or defaults)
-- List of resources to be included is read from Start message blocks
-- Resource parameters for optimisation are read from Start message blocs
 
-    - At least storage resource kwh, max capacity
+At least the following in the environment variables:
 
+- Forecast horizon and optimisation time step length (or defaults)
+- List of resources to be included
 - LFM market id (if applicable)
 
-Outside start message, the following is needed for flexibility implementation:
+Some resource parameter values are read from [Start message blocks](energy_msg-startmessageblocks.md)
+
+- At least storage resource initial kwh, max capacity
+- ( Defaults are implemented internally in the Economic Dispatch - note this if defaults change! )
+
+Outside initialisation, the following is needed for flexibility implementation:
 
 - CustomerId relation to resource names (for connection to PGO flexibility Request) is read from Init.CIS.CustomerInfo message
 
 Example configuration file:
 
-Example configuration file:
+```nohighlight
+EconomicDispatch: 
+      EconomicDispatchA:
+            Horizon: PT23H
+            Timestep: PT1H
+            Resources:
+                   - - StaticTimeSeriesResource
+                     - Load1
+                   - - StaticTimeSeriesResource
+                     - Load2
+                   - - StaticTimeSeriesResource
+                     - Load3
+                   - - StaticTimeSeriesResource
+                     - Load4
+                   - - PriceForecaster
+                     - MarketA
+                   - - StaticTimeSeriesResource
+                     - EV
+                   - - StaticTimeSeriesResource
+                     - PV_large
+                   - - StaticTimeSeriesResource
+                     - PV_small
+                   - - StorageResource
+                     - StorageA
+```
 
-EconomicDispatch: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EconomicDispatchA:\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horizon: PT23H\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Timestep: PT1H\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources:\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Load1\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Load2\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Load3\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Load4\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - PriceForecaster\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- MarketA\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- EV\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- PV_large\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StaticTimeSeriesResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- PV_small\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - StorageResource\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- StorageA
-
-###### Publish
+## Publish
 
 | Topic | Payload |
 | --- | --- |
 | ResourceForecastState.Dispatch | The dispatch/schedule |
 | Offer.(MarketId) | Flexibility bids to LFM (if applicable) |
 
-###### Optimised Resources
+## Optimised Resources
 
 The following units are included:
 
@@ -90,7 +94,7 @@ Dispatch includes:
 - Amount to charge/discharge storage per time interval
 - Amount of energy bought from markets per time interval
 
-###### Workflow
+## Workflow
 
 ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:
 

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://foo/energy_economicdispatch/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Economic Dispatch - SimCES</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">SimCES</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_features/" class="dropdown-item">Features</a>
+</li>
+                                    
+<li>
+    <a href="../core_install/" class="dropdown-item">Installation</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Run simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+</li>
+            
+<li>
+    <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../core_log-api/" class="dropdown-item">Log API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Basic concepts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_time/" class="dropdown-item">Time and synchronization with epochs</a>
+</li>
+            
+<li>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+</li>
+            
+<li>
+    <a href="../core_soa/" class="dropdown-item">Service-oriented architecture</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">How to develop</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+</li>
+            
+<li>
+    <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
+</li>
+            
+<li>
+    <a href="../core_conv-name/" class="dropdown-item">Conventions of naming</a>
+</li>
+            
+<li>
+    <a href="../core_pseudocode/" class="dropdown-item">Pseudocode reference</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Simulation Tools package</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_sim-tools/" class="dropdown-item">Simulation Tools package</a>
+</li>
+            
+<li>
+    <a href="../core_abstractsimulationcomponent/" class="dropdown-item">AbstractSimulationComponent</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_workflow-sim/" class="dropdown-item">Workflow of component in simulation</a>
+</li>
+            
+<li>
+    <a href="../core_workflow-start-end/" class="dropdown-item">Workflow of start and end</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Communication</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_topics-queues-exchanges/" class="dropdown-item">Topics, queues and exchanges</a>
+</li>
+            
+<li>
+    <a href="../core_exchange-mgmt/" class="dropdown-item">Exchange, management</a>
+</li>
+            
+<li>
+    <a href="../core_exchange-sim/" class="dropdown-item">Exchange, simulation-specific</a>
+</li>
+            
+<li>
+    <a href="../core_topics/" class="dropdown-item">Topics (core)</a>
+</li>
+            
+<li>
+    <a href="../core_rabbitmq-reliability/" class="dropdown-item">Reliable messaging in RabbitMQ</a>
+</li>
+            
+<li>
+    <a href="../core_amqp-footprint/" class="dropdown-item">Footprint of AMQP items</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Message structures (core)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_msg/" class="dropdown-item">Message structures (core)</a>
+</li>
+            
+<li>
+    <a href="../core_msgtype/" class="dropdown-item">Message type names (core)</a>
+</li>
+            
+<li>
+    <a href="../core_ucum/" class="dropdown-item">Units of measure (UCUM)</a>
+</li>
+            
+<li>
+    <a href="../core_msg-abstractmessage/" class="dropdown-item">Message - AbstractMessage</a>
+</li>
+            
+<li>
+    <a href="../core_msg-abstractresult/" class="dropdown-item">Message - AbstractResult</a>
+</li>
+            
+<li>
+    <a href="../core_msg-epoch/" class="dropdown-item">Message - Epoch</a>
+</li>
+            
+<li>
+    <a href="../core_msg-simstate/" class="dropdown-item">Message - SimState</a>
+</li>
+            
+<li>
+    <a href="../core_msg-start/" class="dropdown-item">Message - Start</a>
+</li>
+            
+<li>
+    <a href="../core_msg-status/" class="dropdown-item">Message - Status</a>
+</li>
+            
+<li>
+    <a href="../core_block-quantity/" class="dropdown-item">Block - Quantity</a>
+</li>
+            
+<li>
+    <a href="../core_block-quantity-array/" class="dropdown-item">Block - Quantity array</a>
+</li>
+            
+<li>
+    <a href="../core_block-time-series/" class="dropdown-item">Block - Time series</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Platforms internals</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_logging-system/" class="dropdown-item">Logging system</a>
+</li>
+            
+<li>
+    <a href="../core_logwriter/" class="dropdown-item">LogWriter</a>
+</li>
+            
+<li>
+    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+</li>
+            
+<li>
+    <a href="../core_lifecycle/" class="dropdown-item">Simulation lifecycle</a>
+</li>
+            
+<li>
+    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Components (energy)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Economic Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_priceforecaster/" class="dropdown-item">Price Forecaster</a>
+</li>
+            
+<li>
+    <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
+</li>
+            
+<li>
+    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Message structures (energy)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkstate-loss/" class="dropdown-item">NetworkState.Loss</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkstate-voltage/" class="dropdown-item">NetworkState.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-offer/" class="dropdown-item">Offer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-priceforecaststate/" class="dropdown-item">PriceForecastState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../energy_msgtype/" class="dropdown-item">Message type names (energy)</a>
+</li>
+                                    
+<li>
+    <a href="../energy_software-pkg/" class="dropdown-item">Software packages</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Topics (energy)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_topics/" class="dropdown-item">Topics (energy)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-priceforecaststate/" class="dropdown-item">PriceForecastState.(MarketId).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourceforecaststate/" class="dropdown-item">ResourceForecastState.(ResourceCategory).(ResourceId)</a>
+</li>
+            
+<li>
+    <a href="../energy_topic-resourcestate/" class="dropdown-item">ResourceState.(ResourceCategory).(ResourceId)</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About...</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../energy_grid-dss/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../energy_priceforecaster/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#economic-dispatch" class="nav-link">Economic Dispatch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="economic-dispatch"><strong>Economic Dispatch</strong></h2>
+<h6 id="description">Description</h6>
+<p>Optimises dispatch of energy production, consumption and storage units.</p>
+<h6 id="data">Data</h6>
+<p>Input for optimisation</p>
+<table>
+<thead>
+<tr>
+<th>Subscription</th>
+<th>Topic</th>
+<th>Payload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResourceForecast.Load.# and ResourceForecast.Generator.#</td>
+<td>ResourceForecastState.(ResourceCategory).(ResourceId)</td>
+<td>Forecasts for (non-controllable) resource utilisation</td>
+</tr>
+<tr>
+<td>PriceForecastState.#</td>
+<td>PriceForecastState.(MarketId).(ResourceId)</td>
+<td>Electricity price forecasts for each hour</td>
+</tr>
+<tr>
+<td>ResourceState.Storage.#</td>
+<td>ResourceState.Storage.(ResourceId)</td>
+<td>Resource initial state (battery state of charge)</td>
+</tr>
+<tr>
+<td>Request.(MarketId)</td>
+<td></td>
+<td>Flexibility needs from LFM</td>
+</tr>
+<tr>
+<td>LFMMarketResult.(MarketId)</td>
+<td></td>
+<td>Flexibility results from LFM</td>
+</tr>
+</tbody>
+</table>
+<p>Scenario/configuration parameters:</p>
+<p>ED and resource parameters given at startup in Start message blocks</p>
+<ul>
+<li>ED component name from environment variable SIMULATION_COMPONENT_NAME</li>
+<li>Forecast horizon and optimisation time step length from Start message blocks (or defaults)</li>
+<li>List of resources to be included is read from Start message blocks</li>
+<li>
+<p>Resource parameters for optimisation are read from Start message blocs</p>
+<ul>
+<li>At least storage resource kwh, max capacity</li>
+</ul>
+</li>
+<li>
+<p>LFM market id (if applicable)</p>
+</li>
+</ul>
+<p>Outside start message, the following is needed for flexibility implementation:</p>
+<ul>
+<li>CustomerId relation to resource names (for connection to PGO flexibility Request) is read from Init.CIS.CustomerInfo message</li>
+</ul>
+<p>Example configuration file:</p>
+<pre><code class="language-nohighlight">EconomicDispatch: \
+      EconomicDispatchA:\
+            Horizon: PT23H\
+            Timestep: PT1H\
+            Resources:\
+                   - - StaticTimeSeriesResource\
+                     - Load1\
+                   - - StaticTimeSeriesResource\
+                     - Load2\
+                   - - StaticTimeSeriesResource\
+                     - Load3\
+                   - - StaticTimeSeriesResource\
+                     - Load4\
+                   - - PriceForecaster\
+                     - MarketA\
+                   - - StaticTimeSeriesResource\
+                     - EV\
+                   - - StaticTimeSeriesResource\
+                     - PV_large\
+                   - - StaticTimeSeriesResource\
+                     - PV_small\
+                   - - StorageResource\
+                     - StorageA
+</code></pre>
+<h6 id="publish">Publish</h6>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Payload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResourceForecastState.Dispatch</td>
+<td>The dispatch/schedule</td>
+</tr>
+<tr>
+<td>Offer.(MarketId)</td>
+<td>Flexibility bids to LFM (if applicable)</td>
+</tr>
+</tbody>
+</table>
+<h6 id="optimised-resources">Optimised Resources</h6>
+<p>The following units are included:</p>
+<ul>
+<li>
+<p>Static loads and generators</p>
+</li>
+<li>
+<p>Forecasts from Static time series resource, message ResourceForecastState.Power</p>
+</li>
+<li>Includes predictions for consumption and production</li>
+<li>
+<p>Electricity markets</p>
+</li>
+<li>
+<p>Forecasts from PriceForecaster, message PriceForecastState</p>
+</li>
+<li>Includes predictions on the price of power to the ED units</li>
+<li>
+<p>Storages</p>
+</li>
+<li>
+<p>Initial state from Storage resource, message ResourceState</p>
+</li>
+<li>Max storage, charge/discharge efficiencies, etc read from start message</li>
+</ul>
+<p>Dispatch includes:</p>
+<ul>
+<li>Amount to charge/discharge storage per time interval</li>
+<li>Amount of energy bought from markets per time interval</li>
+</ul>
+<h6 id="workflow">Workflow</h6>
+<p>ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:</p>
+<ol>
+<li>Simulation is started</li>
+<li>Initialisation as declared above in "Scenario/configuration parameters"</li>
+<li>Epoch message is received for a new epoch. ED resets barrier arrive counter.</li>
+<li>ED waits for input data. Arrive counter keeps track of what has arrived. When all input data that is needed has arrived ED solves its optimisation problem. (Input data: Power, Price (, etc) forecasts involved resources.)</li>
+<li>LFM: If accepted Offers from previous epochs, will receive LFMMarketResult for those</li>
+<li>ED sends its results in Dispatch message.</li>
+<li>ED receives state information (StorageResources, state for start of next epoch)</li>
+<li>LFM: Flexibility Request received → Publish Offer (multiple / if none → publish Offer with zero count)</li>
+<li>LFM: LFMMarketResult received</li>
+<li>Status: "Ready"        (If LFM status = "Ready")</li>
+<li>Repeat steps 3-9.</li>
+<li>Resource receives a SimState message "stopped" from SimulationManager.</li>
+<li>Resource closes itself.</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>SimCES | Simulation Environment of Complex Energy System</p>
+                <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
+            <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
+            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

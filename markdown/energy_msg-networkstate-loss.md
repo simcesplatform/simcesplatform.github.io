@@ -6,8 +6,11 @@
 {
   (Fields of AbstractMessage and AbstractResult must appear too!)
 
-  ...
-  "DeviceId" : "xyz-3"
+  "RealPowerShunt" : { "Value": 1.0, "UnitOfMeasure": "?" },
+  "RealPowerSeries" : { "Value": 1.0, "UnitOfMeasure": "?" },
+  "ReactivePowerShunt" : { "Value": 1.0, "UnitOfMeasure": "?" },
+  "ReactivePowerSeries" : { "Value": 1.0, "UnitOfMeasure": "?" },
+  "DeviceId" : "xyz"
 }
 ```
 

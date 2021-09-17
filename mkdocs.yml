@@ -64,14 +64,36 @@ nav:
     - Energy domain:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
+            - Controller: energy_controller.md
+            - Distribution management system (DMS): energy_distribution-management-system-dms.md
             - Grid (DSS): energy_grid-dss.md
-            - Resources: energy_resources.md
+            - Economic Dispatch: energy_economicdispatch.md
+            - Price Forecaster: energy_priceforecaster.md
+            - Procem-LFM: energy_procem-lfm.md
+            - Resource Forecaster: energy_resourceforecaster.md
         - Message structures (energy):
+            - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
+            - DMSNetworkStatus.Current: energy_msg-dmsnetworkstatus-current.md
+            - DMSNetworkStatus.Voltage: energy_msg-dmsnetworkstatus-voltage.md
+            - FlexibilityNeed: energy_msg-flexibilityneed.md
+            - Init.NIS.CustomerInfo: energy_msg-init-cis-customerinfo.md
+            - Init.NIS.NetworkBusInfo: energy_msg-init-nis-networkbusinfo.md
+            - Init.NIS.NetworkComponentInfo: energy_msg-init-nis-networkcomponentinfo.md
+            - LFMMarketResult: energy_msg-lfmmarketresult.md
+            - LFMOffering: energy_msg-lfmoffering.md
+            - NetworkForecastState.Current: energy_msg-networkforecaststate-current.md
+            - NetworkForecastState.Voltage: energy_msg-networkforecaststate-voltage.md
             - NetworkState.Current: energy_msg-networkstate-current.md
             - NetworkState.Loss: energy_msg-networkstate-loss.md
             - NetworkState.Voltage: energy_msg-networkstate-voltage.md
+            - Offer: energy_msg-offer.md
             - PriceForecastState: energy_msg-priceforecaststate.md
+            - Request: energy_msg-request.md
+            - ResourceForecastState.Dispatch: energy_msg-resourceforecaststate-dispatch.md
+            - ResourceForecastState.Power: energy_msg-resourceforecaststate-power.md
             - ResourceState: energy_msg-resourcestate.md
+            - SelectedOffer: energy_msg-selectedoffer.md
+            - Start message blocks: energy_msg-startmessageblocks.md
         - Message type names (energy): energy_msgtype.md
         - Software packages: energy_software-pkg.md
         - Topics (energy):
@@ -79,4 +101,6 @@ nav:
             - PriceForecastState.(MarketId).(ResourceId): energy_topic-priceforecaststate.md
             - ResourceForecastState.(ResourceCategory).(ResourceId): energy_topic-resourceforecaststate.md
             - ResourceState.(ResourceCategory).(ResourceId): energy_topic-resourcestate.md
-    - About...: about.md
+    - About...:
+      - About...: about.md
+      - Maintenance plan: maintenance-plan.md
