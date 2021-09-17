@@ -67,7 +67,7 @@ This page contains the domain-specific parameter blocks included in the start me
       "PredictiveGridOptimizationA": // Use a name because there can be multiple grids
       {
         "MonitoredGridName" : "GridA",
-        "RelativeSensitivity" : 70 ,
+        "FlexibilityNeedMargin" : 0.2 ,
         "MaxVoltage" : 1.05,
         "MinVoltage" : 0.95,
         "UpperAmberBandVoltage" : 0.01,
@@ -79,6 +79,7 @@ This page contains the domain-specific parameter blocks included in the start me
       {
         "MonitoredGridName" : "GridB",
         "RelativeSensitivity" : 45 ,
+        "FlexibilityNeedMargin" : 0.2 ,
         "MaxVoltage" : 1.05,
         "MinVoltage" : 0.95,
         "UpperAmberBandVoltage" : 0.01,
@@ -248,6 +249,7 @@ For example:
 | --- | --- | --- | --- |
 | MonitoredGridName | String | 1 (REQUIRED) | String referring to a Grid instance in the running simulation (e.g. "GridA") |
 | RelativeSensitivity |	Integer	| 1 (REQUIRED) | RelativeRessitivity (RS) defines the size of a congestion area. 100 means the largest possible. 0 means the smallest possible. 0<=RS=<100 |
+| FlexibilityNeedMargin | Float (  > -1, < 1 ) | 1 (REQUIRED) | FlexibilityNeedMargin (FNM) defines adjustment of the flexibility need's volume: if positive, over-purchase  if negative, under-purchase  if zero, neutral|
 | MaxVoltage | Float (  > 0, > MinVoltage ) | 1 (REQUIRED) | Maximum allowable voltage for customer connected nodes (p.u.). Violation of this voltage causes RED condition. (identical for both MV and LV lines) |
 | MinVoltage | Float (  > 0, < MaxVoltage) | 1 (REQUIRED) |	Minimum allowable voltage for customer connected nodes (p.u.). Violation of this voltage causes RED condition. (identical for both MV and LV lines) |
 | UpperAmberBandVoltage | Float (MaxVoltage - UpperAmberBand > MinVoltage + LowerAmberBand, >0) | 1 (REQUIRED) | Voltage margin for AMBER condition of overvoltage. (p.u.) |
