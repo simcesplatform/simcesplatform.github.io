@@ -71,6 +71,7 @@ nav:
             - Price Forecaster: energy_priceforecaster.md
             - Procem-LFM: energy_procem-lfm.md
             - Resource Forecaster: energy_resourceforecaster.md
+            - Static time series resource: energy_static-time-series-resource.md
             - Storage: energy_storage.md
         - Message structures (energy):
             - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
