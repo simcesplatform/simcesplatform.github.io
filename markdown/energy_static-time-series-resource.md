@@ -12,7 +12,6 @@
 
 ## Description
 
-**TODO: is still text still OK?**
 A component used to simulate simple loads and generators whose published states are determined by a file containing a simple time series of attribute values for each epoch.
 
  
@@ -48,11 +47,10 @@ This component uses the block "StaticTimeSeriesResource" in startup parameters.
 
 The following table gives a list of the input files.
 
-**TODO: is the description text below still OK?**
 
 | Startup parameter for file | Description |
 | --- | --- |
-| ResourceStateFile | The CSV file should contain columns named after the ResourceState message attributes: RealPower, ReactivePower, Bus and Node. The Node column is optional. Each row containing values will then represent data for one epoch. There should be at least as many data rows as there will be epochs. The file may contain other columns which the component ignores. The column separator is by default comma "," and it can be changed with the ResourceFileDelimiter startup parameter. |
+| ResourceStateFile | The CSV file should contain columns named after the ResourceState message attributes: RealPower, ReactivePower, CustomerId and Node. The Node column is optional. Each row containing values will then represent data for one epoch. There should be at least as many data rows as there will be epochs. The file may contain other columns which the component ignores. The column separator is by default comma "," and it can be changed with the ResourceFileDelimiter startup parameter. |
 
 
 ## Initialization workflow
@@ -86,6 +84,6 @@ The following packages are needed.
 
 | Package | Version | Why needed | URL |
 | --- | --- | --- | --- |
-| Simulation Tools |  | Component implementation based on AbstractSimulationComponent. | TODO |
+| Simulation Tools |  | Component implementation based on AbstractSimulationComponent. | <https://github.com/simcesplatform/simulation-tools> |
 | Domain tools |  | Uses the shared CSV file reading code. | TODO |
 | Domain messages |  | Uses the ResourceStateMessage class. | TODO |
