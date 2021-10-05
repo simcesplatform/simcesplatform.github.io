@@ -63,7 +63,7 @@ nav:
             - LogWriter: core_logwriter.md
             - PlatformManager: core_platformmanager.md
             - Simulation lifecycle: core_lifecycle.md
-            - SimulationManager: core_simulationmanager.md
+            - Simulation Manager: core_simulationmanager.md
     - Energy domain:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):

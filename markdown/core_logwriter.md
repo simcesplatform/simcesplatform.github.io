@@ -19,7 +19,7 @@ It is used to log all the messages in a simulation run and thus an instance of L
 ## Technical details
 
 - LogWriter is written in Python (3.7.9) and the code repository is found at: [https://github.com/simcesplatform/logwriter](https://github.com/simcesplatform/logwriter)
-- LogWriter connects RabbitMQ message bus. Both local and server-side message bus servers are supported.
+- LogWriter connects to RabbitMQ message bus. Both local and remote message bus servers are supported.
 - The used database is MongoDB with version 4.2.7 used during development.
 - LogWriter has support for HTTPS connections for the database.
 - LogWriter requires either admin or write access to the used database.
