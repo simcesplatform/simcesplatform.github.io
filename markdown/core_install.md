@@ -49,13 +49,10 @@ Some simulation components might have other requirements. For those, see the com
 - 1\. Create a folder for the simulation platform. In these instructions this main folder is named platform.
     - Note, that you must have full read and write permissions in the created folder, platform. Otherwise, the installation process will not work.
 
-- 2\. Copy the `fetch_platform_files.sh` script file to the `platform` folder for example by downloading it from the GitLab using the browser interface.
-    - In the development stage to download the file from the private GitLab repository using command line:
+- 2\. Copy the [`fetch_platform_files.sh`](https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh) script file to the `platform` folder for by downloading it from the GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:
 
-            :::bash
-            curl --insecure --header "Private-Token: <ACCESS_TOKEN>" "<GITLAB_HOST>/api/v4/projects/<PLATFORM_MANAGER_REPOSITORY>/repository/files/fetch_platform_files.sh/raw?ref=master" > fetch_platform_files.sh
-
-        where `<ACCESS_TOKEN>` is replaced with a proper access token, `<GITLAB_HOST>` with the GitLab server address, and `<PLATFORM_MANAGER_REPOSITORY>` with the full repository name for the Platform manager component. Note, that the repository name must be URL-encoded, i.e. `/` characters must be replaced with `%2F`.
+        :::bash
+        wget https://raw.githubusercontent.com/simcesplatform/Platform-Manager/master/fetch_platform_files.sh
 
 - 3\. Using Git Bash (in Windows) or other terminal that supports Bash navigate to the platform folder.
 
@@ -157,13 +154,13 @@ Some simulation components might have other requirements. For those, see the com
 
     - 8\.3\. Check that the Log Reader is running. This also works as a check for the Mongo database.
         - The Log Reader should be running on localhost at port 8080. To check that it is responding use a browser to check that you can see the user interface page at the address [http://localhost:8080](http://localhost:8080).
-        - For instructions on how to use the Log Reader see [Log API](../core_log-api/)
+        - For instructions on how to use the Log Reader see [Log API](core_log-api.md)
         - For advanced users
             - If you setup the Mongo Express, it can be accessed at the address [http://localhost:8081](http://localhost:8081).
                 - Through the Mongo Express, you get admin access to the database by default, so care should be taken when making any changes to the database contents.
             - If you are using the local RabbitMQ instance, you can access the RabbitMQ Management Plugin at the address [http://localhost:15672](http://localhost:15672).
 
-After these steps, the simulation platform should be ready for starting test simulation run. To see instructions on how to start a simulation run see the page [Running a simulation](../core_run).
+After these steps, the simulation platform should be ready for starting test simulation run. To see instructions on how to start a simulation run see the page [Running a simulation](core_run.md).
 
 ## Uninstalling the core components
 
