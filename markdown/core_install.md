@@ -4,11 +4,7 @@ Follow the given steps to install the platform.
 
 TODO list for this page:
 
-- remove the development stage references once the source code and the documentation is publicly available and usable without credentials
-- add a direct link to fetch_platform_files.sh once it is available in the GitHub repository and modified to work with it (step 2)
-- add a command line command for downloading the fetch_platform_files.sh file from GitHub repository (step 2)
 - add links to correct pages (step 5)
-- update the docker ps output with images from DockerHub once they are available (step 7)
 
 ## Prerequisites
 
@@ -27,24 +23,7 @@ The simulation platform and these instructions have been tested on Ubuntu 18.04 
 
 Some simulation components might have other requirements. For those, see the component specific documentation.
 
-### Additional development stage requirements
-
-- Access rights to the GitLab server that is used to host the source code
-    - Specifically, to install the platform an access token with read access is required.
-- Access rights to the private Docker registry containing the components
-
 ## Installing the platform and the core components
-
-- 0\. Login to the Docker registry (only required in development stage when private Docker registry is used).
-    - Use the command:
-
-            :::bash
-            docker login <DOCKER_REGISTRY_HOST>
-
-        where `<DOCKER_REGISTRY_HOST>` is replaced by the Docker registry host name
-
-    - You are then asked to give your user name and password.
-    - Note, if you are using Git Bash in Windows and get the message "Cannot perform an interactive login from a non TTY device", try the login command using the Command Prompt and it should work.
 
 - 1\. Create a folder for the simulation platform. In these instructions this main folder is named platform.
     - Note, that you must have full read and write permissions in the created folder, platform. Otherwise, the installation process will not work.
@@ -74,13 +53,6 @@ Some simulation components might have other requirements. For those, see the com
         :::text
         All files where found. Platform is ready for installation.
 
-    - In the development stage, use the following command instead
-
-            :::bash
-            source fetch_platform_files.sh gitlab <ACCESS_TOKEN>
-
-        where `<ACCESS_TOKEN>` is replaced with the access token to the private GitLab server.
-
 - 5\. (Optional) Setup the settings for the RabbitMQ message bus and the Mongo database. Note, that the default settings can be used for running simulations locally.
 
     - TODO: add links to correct page: Modify the RabbitMQ settings
@@ -105,13 +77,13 @@ Some simulation components might have other requirements. For those, see the com
 
         :::text
         REPOSITORY                                      TAG                IMAGE ID       CREATED        SIZE
-        mongo-express                                   0.54.0             c9529cc462f4   5 days ago     129MB
-        procem.ain.rd.tut.fi/despa/platform_manager     latest             e5a26881186b   7 days ago     908MB
-        procem.ain.rd.tut.fi/despa/manifest_fetch       latest             203f160f90ef   7 days ago     904MB
-        procem.ain.rd.tut.fi/despa/log_reader           latest             20f49c60ff7b   11 days ago    956MB
-        procem.ain.rd.tut.fi/despa/log_writer           latest             0a4092a70aff   11 days ago    899MB
-        procem.ain.rd.tut.fi/despa/simulation_manager   latest             98c0ce350318   11 days ago    895MB
-        procem.ain.rd.tut.fi/despa/dummy                latest             3af7c6a77825   4 weeks ago    1.19GB
+        ghcr.io/simcesplatform/platform-manager         latest             1330807ae5cc   9 days ago     909MB
+        ghcr.io/simcesplatform/simulation-manager       latest             d14c1a9bfbd0   9 days ago     896MB
+        ghcr.io/simcesplatform/manifest-fetcher         latest             3486b5fac52a   9 days ago     903MB
+        ghcr.io/simcesplatform/logwriter                latest             d9f1d537169b   9 days ago     900MB
+        ghcr.io/simcesplatform/dummy-component          latest             76811eb2d295   10 days ago    1.12GB
+        ghcr.io/simcesplatform/mongo-express            latest             f43423478d66   3 months ago   127MB
+        ghcr.io/simcesplatform/logreader                latest             42d8ca7ecd53   3 months ago   956MB
         rabbitmq                                        3.8.4-management   cc86ffa2f398   9 months ago   186MB
         mongo                                           4.2.7              66c68b650ad4   9 months ago   388MB
 
