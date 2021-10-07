@@ -4,10 +4,10 @@
 
 | Item | Value |
 | - | - |
-| Link to source code | TODO |
+| Link to source code | <https://github.com/simcesplatform/static-time-series-resource> |
 | Management type | Platform managed |
-| Docker image name | TODO |
-| Location of manifest file | TODO |
+| Docker image name | ghcr.io/simcesplatform/static-time-series-resource |
+| Location of manifest file | <https://raw.githubusercontent.com/simcesplatform/static-time-series-resource/master/component_manifest.yml> |
 
 
 ## Description
@@ -85,5 +85,5 @@ The following packages are needed.
 | Package | Version | Why needed | URL |
 | --- | --- | --- | --- |
 | Simulation Tools |  | Component implementation based on AbstractSimulationComponent. | <https://github.com/simcesplatform/simulation-tools> |
-| Domain tools |  | Uses the shared CSV file reading code. | TODO |
-| Domain messages |  | Uses the ResourceStateMessage class. | TODO |
+| Domain tools |  | Uses the shared CSV file reading code. | <https://github.com/simcesplatform/domain-tools> |
+| Domain messages |  | Uses the ResourceStateMessage class. | <https://github.com/simcesplatform/domain-messages> |
