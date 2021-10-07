@@ -1,6 +1,5 @@
 site_name: SimCES
-# TODO: Update website URL once public!
-site_url: http://foo
+site_url: https://simcesplatform.github.io/docs
 site_description: Documentation of Simulation Environment of Complex Energy System (SimCES)
 copyright: Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland
 docs_dir: markdown
@@ -71,12 +70,14 @@ nav:
             - Price Forecaster: energy_priceforecaster.md
             - Procem-LFM: energy_procem-lfm.md
             - Resource Forecaster: energy_resourceforecaster.md
+            - Static time series resource: energy_static-time-series-resource.md
+            - Storage: energy_storage.md
         - Message structures (energy):
             - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
             - DMSNetworkStatus.Current: energy_msg-dmsnetworkstatus-current.md
             - DMSNetworkStatus.Voltage: energy_msg-dmsnetworkstatus-voltage.md
             - FlexibilityNeed: energy_msg-flexibilityneed.md
-            - Init.NIS.CustomerInfo: energy_msg-init-cis-customerinfo.md
+            - Init.CIS.CustomerInfo: energy_msg-init-cis-customerinfo.md
             - Init.NIS.NetworkBusInfo: energy_msg-init-nis-networkbusinfo.md
             - Init.NIS.NetworkComponentInfo: energy_msg-init-nis-networkcomponentinfo.md
             - LFMMarketResult: energy_msg-lfmmarketresult.md

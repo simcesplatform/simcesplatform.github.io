@@ -23,9 +23,9 @@ This page contains the domain-specific parameter blocks included in the start me
         "Weights": {   // optional  -- See below for examples
           ...
         },
-        "Market_id": [ "MarketA" ],    // LFM Market Id if applicable
-        "Commitment_time": "12:00",
-        "Skip_open_offers": "True"
+        "ParticipatingMarketId": [ "MarketA" ],    // LFM Market Id if applicable
+        "CommitmentTime": "12:00",
+        "SkipOpenOffers": "True"
       },
       "EconomicDispatchB":
       {
@@ -37,7 +37,7 @@ This page contains the domain-specific parameter blocks included in the start me
           ["StorageResource", "storageB"],
           ["PriceForecaster", "marketB"]
         ],
-        "Market_id": [ "MarketA" ]  // optional
+        "ParticipatingMarketId": [ "MarketA" ]  // optional
       }
     },
 
@@ -67,7 +67,7 @@ This page contains the domain-specific parameter blocks included in the start me
       "PredictiveGridOptimizationA": // Use a name because there can be multiple grids
       {
         "MonitoredGridName" : "GridA",
-        "RelativeSensitivity" : 70 ,
+        "FlexibilityNeedMargin" : 0.2 ,
         "MaxVoltage" : 1.05,
         "MinVoltage" : 0.95,
         "UpperAmberBandVoltage" : 0.01,
@@ -79,6 +79,7 @@ This page contains the domain-specific parameter blocks included in the start me
       {
         "MonitoredGridName" : "GridB",
         "RelativeSensitivity" : 45 ,
+        "FlexibilityNeedMargin" : 0.2 ,
         "MaxVoltage" : 1.05,
         "MinVoltage" : 0.95,
         "UpperAmberBandVoltage" : 0.01,
@@ -194,9 +195,9 @@ Note: the Platform Manager passes these parameters directly to the Economic Disp
 | Timestep | ISO 8601 duration; e.g. 1 hour interval: "PT1H" (DEFAULT) or 15 min: "PT15M" | 0..1 (OPTIONAL) | The length of timestep. If omitted, the default (1 h) is applied. Note: This must be compatible with the received forecasts, i.e. regarding forecast resolution |
 | Resources | N by 2 array of string | 1 (REQUIRED) | Array of component keys and resources in the economic dispatch scenario. Component key identifies component type. Allowed keys (currently): "StaticTimeSeriesResource", "PriceForecaster", "StorageResource" |
 | Weights | Dictionary with identifier for (storage) resource (or "default" if to be applied to all). Fields (1) TerminalSOCBound: Percentage (0-100), Default: 40.0. (2) TerminalSOCTarget: Percentage (0-100), Default: None. (3) TerminalWeight: Unitless, in effect EUR/kwh, Default: None | 0..1 (OPTIONAL) | Optimisation weights, See (1) below table |
-| Market_id | String | 0..1 (OPTIONAL), REQUIRED if LFM is to be used | MarketId for LFM. Required for participation in LFM. (Name is not checked - will operate if none is given. ED epoch "Ready" status is dependent on LFM "Ready" status, so will never be ready if wrong name is given.) |
-| Commitment_time | String | 0..1 (OPTIONAL) | Time at which day-ahead market closes (for next day). Given as a string with hours and minutes (must coincide with start time of epoch). For example "12:00". Commits to next day electricity market values at 12:00. Next day: midnight to midnight. |
-| Skip_open_offers | String | 0..1 (OPTIONAL) | Ignores open offers when calculating LFM offers. String valued. Accepted values: "True"/"False". |
+| ParticipatingMarketId | String | 0..1 (OPTIONAL), REQUIRED if LFM is to be used | MarketId for LFM. Required for participation in LFM. (Name is not checked - will operate if none is given. ED epoch "Ready" status is dependent on LFM "Ready" status, so will never be ready if wrong name is given.) |
+| CommitmentTime | String | 0..1 (OPTIONAL) | Time at which day-ahead market closes (for next day). Given as a string with hours and minutes (must coincide with start time of epoch). For example "12:00". Commits to next day electricity market values at 12:00. Next day: midnight to midnight. |
+| SkipOpenOffers | String | 0..1 (OPTIONAL) | Ignores open offers when calculating LFM offers. String valued. Accepted values: "True"/"False". |
 
 (1) Optimisation weights:
 - Case 1: TerminalSOCBound given and TerminalSOCTarget + TerminalWeight not given.
@@ -248,6 +249,7 @@ For example:
 | --- | --- | --- | --- |
 | MonitoredGridName | String | 1 (REQUIRED) | String referring to a Grid instance in the running simulation (e.g. "GridA") |
 | RelativeSensitivity |	Integer	| 1 (REQUIRED) | RelativeRessitivity (RS) defines the size of a congestion area. 100 means the largest possible. 0 means the smallest possible. 0<=RS=<100 |
+| FlexibilityNeedMargin | Float (  > -1, < 1 ) | 1 (REQUIRED) | FlexibilityNeedMargin (FNM) defines adjustment of the flexibility need's volume: if positive, over-purchase  if negative, under-purchase  if zero, neutral|
 | MaxVoltage | Float (  > 0, > MinVoltage ) | 1 (REQUIRED) | Maximum allowable voltage for customer connected nodes (p.u.). Violation of this voltage causes RED condition. (identical for both MV and LV lines) |
 | MinVoltage | Float (  > 0, < MaxVoltage) | 1 (REQUIRED) |	Minimum allowable voltage for customer connected nodes (p.u.). Violation of this voltage causes RED condition. (identical for both MV and LV lines) |
 | UpperAmberBandVoltage | Float (MaxVoltage - UpperAmberBand > MinVoltage + LowerAmberBand, >0) | 1 (REQUIRED) | Voltage margin for AMBER condition of overvoltage. (p.u.) |
