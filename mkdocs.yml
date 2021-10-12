@@ -61,7 +61,7 @@ nav:
         - Platforms internals:
             - Logging system: core_logging-system.md
             - LogWriter: core_logwriter.md
-            - PlatformManager: core_platformmanager.md
+            - Platform Manager: core_platformmanager.md
             - Simulation lifecycle: core_lifecycle.md
             - Simulation Manager: core_simulationmanager.md
     - Energy domain:
