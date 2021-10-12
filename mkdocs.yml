@@ -21,7 +21,15 @@ nav:
         - Installation: core_install.md
         - Run simulation:
             - Run simulation: core_run.md
+            - Test platform:
+                - Run first test simulation: core_run-first.md
+                - Run Energy Community demo: energy_run-ec-demo.md
+            - Start simulation:
+                - Simulation run preparations: core_run-preparations.md
+                - Starting a simulation: core_start-simulation.md
             - Follow running simulation: core_follow-run.md
+            - Configuring settings: core_platform-settings.md
+            - Stop simulation: core_stop-simulation.md
         - Log API: core_log-api.md
     - Develop:
         - Basic concepts:
