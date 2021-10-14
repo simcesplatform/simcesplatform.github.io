@@ -1,8 +1,6 @@
 # Running the Energy Community demo scenario simulation
 
-- TODO: add a link to energy community demo scenario description page (does not exist yet)
-
-After successfully [running the first test simulation](core_run-first.md), the next step is to run a simulation with at least one domain component. The Energy Community (EC) demo scenario uses platform-managed [StaticTimeSeriesResource](energy_static-time-series-resource.md) components along with the core components. The scenario is defined at the documentation page Energy Community (EC).
+After successfully [running the first test simulation](core_run-first.md), the next step is to run a simulation with at least one domain component. The Energy Community (EC) demo scenario uses platform-managed [StaticTimeSeriesResource](energy_static-time-series-resource.md) components along with the core components. The scenario is defined at the documentation page [Energy community demo scenario](energy_scenario-ec-demo.md).
 
 ## Installing the domain component
 
