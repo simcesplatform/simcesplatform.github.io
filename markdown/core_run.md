@@ -11,6 +11,10 @@ Current version of simulation platform can only start one simulation run at a ti
 - To test the platform installation, see the page [Running first test simulation](core_run-first.md)
 - To test the platform with the Energy Community demo scenario, see the page [Running EC scenario demo simulation](energy_run-ec-demo.md)
 
+## Configuring platform settings
+
+- [Configuring platform settings](core_platform-settings.md)
+
 ## Starting a simulation
 
 - [Preparations for a general simulation](core_run-preparations.md)
@@ -19,10 +23,6 @@ Current version of simulation platform can only start one simulation run at a ti
 ## Accessing the results from a simulation run
 
 - [Following a running simulation](core_follow-run.md)
-
-## Configuring platform settings
-
-- [Configuring platform settings](core_platform-settings.md)
 
 ## Stopping a simulation
 
