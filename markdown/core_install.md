@@ -2,10 +2,6 @@
 
 Follow the given steps to install the platform.
 
-TODO list for this page:
-
-- add links to correct pages (step 5)
-
 ## Prerequisites
 
 The simulation platform and these instructions have been tested on Ubuntu 18.04 with Docker Engine version 20.10.2 and Docker Compose version 1.28.2.
@@ -55,9 +51,7 @@ Some simulation components might have other requirements. For those, see the com
 
 - 5\. (Optional) Setup the settings for the RabbitMQ message bus and the Mongo database. Note, that the default settings can be used for running simulations locally.
 
-    - TODO: add links to correct page: Modify the RabbitMQ settings
-    - TODO: add links to correct page: Modify the MongoDB settings
-    - TODO: add links to correct page: Optionally modify the port numbers
+    - See section [General platform level settings](core_platform-settings.md#general-platform-level-settings) on the available settings.
 
 - 6\. Start the simulation platform by running the following command in the platform folder using a terminal that supports Bash
 

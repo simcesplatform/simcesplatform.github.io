@@ -1,6 +1,6 @@
 # Platform Manager
 
-- TODO: add links to manifest file page and simulation configuration file page
+- TODO: add links to manifest file page
 - TODO: add other documentation page links where appropriate
 
 Component that is used to start new simulation runs in the SimCES simulation platform.
@@ -9,7 +9,7 @@ It generates and starts the Docker containers for the platform managed component
 ## Functionalities
 
 - Parses the component manifest files to determine the available component types for a new simulation.
-- Parses the simulation configuration file to determine the parameters for the new simulation.
+- Parses the [simulation configuration file](core_start-simulation.md#simulation-configuration-file-specification) to determine the parameters for the new simulation.
 - Creates the Docker containers for the required platform managed components for the new simulation.
 - Starts the created Docker containers.
 - Sends the [Start message](core_msg-start.md) via [Management exchange](core_exchange-mgmt.md) for the new simulation.

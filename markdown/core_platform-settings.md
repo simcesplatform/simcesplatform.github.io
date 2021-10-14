@@ -1,5 +1,10 @@
 # Configuring platform settings
 
+There are two collections of settings:
+
+- [General platform level settings](#general-platform-level-settings) that affect the background components like Log Reader and require running the installation script to take an effect
+- [Simulation run specific settings](#simulation-run-specific-settings) that affect the future simulation runs and can be changed without running the installation script
+
 ## General platform level settings
 
 The default settings for the platform are fine for local testing.
