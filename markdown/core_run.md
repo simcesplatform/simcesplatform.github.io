@@ -13,8 +13,8 @@ Current version of simulation platform can only start one simulation run at a ti
 
 ## Starting a simulation
 
-- [Preparations for a general simulation run](core_run-preparations.md)
-- [Running a general simulation](core_start-simulation.md)
+- [Preparations for a general simulation](core_run-preparations.md)
+- [Starting a general simulation](core_start-simulation.md)
 
 ## Accessing the results from a simulation run
 

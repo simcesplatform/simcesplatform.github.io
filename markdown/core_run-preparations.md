@@ -1,4 +1,4 @@
-# Preparations for a simulation run
+# Preparations for a simulation
 
 All file and folder names are given as relative to the platform installation folder, i.e. the folder where the file `fetch_platform_files.sh` is located at.
 
