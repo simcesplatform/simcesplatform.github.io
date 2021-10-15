@@ -20,7 +20,7 @@ nav:
         - Features: core_features.md
         - Installation: core_install.md
         - Run simulation:
-            - Run simulation: core_run.md
+            - Overview: core_run.md
             - Test platform:
                 - Run first test simulation: core_run-first.md
                 - Run Energy Community demo: energy_run-ec-demo.md
@@ -32,12 +32,16 @@ nav:
             - Stop simulation: core_stop-simulation.md
         - Log API: core_log-api.md
     - Develop:
+        - Overview: core_develop-overview.md
         - Basic concepts:
             - Time and synchronization with epochs: core_time.md
             - Platform-managed and externally managed components: core_cmp-mgmt.md
             - Service-oriented architecture: core_soa.md
         - How to develop:
-            - Creating new component: core_create-cmp.md
+            - Creating new component:
+                - Overview: core_create-cmp.md
+                - Building Docker image for a component: core_docker-image.md
+                - Creating a component manifest file: core_component-manifest.md
             - Conventions of messaging: core_conv-msg.md
             - Conventions of naming: core_conv-name.md
             - Pseudocode reference: core_pseudocode.md
