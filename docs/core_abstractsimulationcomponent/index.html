@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_abstractsimulationcomponent/">
+        <link rel="canonical" href="https://simcesplatform.github.io/core_abstractsimulationcomponent/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>AbstractSimulationComponent - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-first/" class="dropdown-item">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,7 +290,11 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
@@ -255,6 +313,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
+            
+<li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
             
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -382,6 +536,14 @@
             
             <li class="nav-item" data-level="1"><a href="#abstractsimulationcomponent" class="nav-link">AbstractSimulationComponent</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-workflow-during-the-initialization-process" class="nav-link">The workflow during the initialization process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-workflow-when-receiving-a-new-message" class="nav-link">The workflow when receiving a new message</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,7 +551,41 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="abstractsimulationcomponent">AbstractSimulationComponent</h1></div>
+<h1 id="abstractsimulationcomponent">AbstractSimulationComponent</h1>
+<p><code>AbstractSimulationComponent</code> is a base class that contains the common functionality of simulation components. It is written in Python (3.7.9).</p>
+<p>The source code for the class can be found at: <a href="https://github.com/simcesplatform/simulation-tools/blob/master/tools/components.py">https://github.com/simcesplatform/simulation-tools/blob/master/tools/components.py</a></p>
+<p>New components can be developed by creating a child class from the <code>AbstractSimulationComponent</code> and providing an implementation for certain methods.</p>
+<p>A template for creating a child class, <a href="https://github.com/simcesplatform/simulation-tools/blob/master/examples/component_template.py">https://github.com/simcesplatform/simulation-tools/blob/master/examples/component_template.py</a>, is available and other information regarding the creation of a new simulation component can be found at <a href="../core_create-cmp/">Creating new component</a>.</p>
+<h2 id="the-workflow-during-the-initialization-process">The workflow during the initialization process</h2>
+<p>TODO</p>
+<h2 id="the-workflow-when-receiving-a-new-message">The workflow when receiving a new message</h2>
+<p>A diagram describing the workflow inside the component after receiving a new message from the message bus is given below. Each box represents a method in the class.</p>
+<p><img alt="Full workflow diagram for AbstractSimulationComponent when receiving a new message from the message bus" src="../images/abstract_component_workflow.png" /></p>
+<p>Those methods that require an implementation in the child class are marked with red color in the diagram. These include:</p>
+<ul>
+<li><code>clear_epoch_variables</code><ul>
+<li>this method should reset all the variables that are used to store epoch specific information</li>
+</ul>
+</li>
+<li><code>general_message_handler</code><ul>
+<li>any received message other than Epoch or SimState message should be handled here</li>
+<li>a call to <code>start_epoch</code> is required when a new valid input message has been received</li>
+</ul>
+</li>
+<li><code>ready_for_new_epoch</code><ul>
+<li>should return <code>true</code> when enough input messages have been received to be able to do something in the current epoch</li>
+</ul>
+</li>
+<li><code>process_epoch</code><ul>
+<li>this should include calls to any methods that handle sending the resulting messages to the message bus</li>
+</ul>
+</li>
+<li><code>_send_result_message</code><ul>
+<li>This method is included in the template as an example on how to send a message to the message bus. It should be replaced with the component specific implementation.</li>
+</ul>
+</li>
+</ul>
+<p>More information about what these methods should do is included in the component template and in the general documentation about the simulation tools package: <a href="https://github.com/simcesplatform/simulation-tools/tree/master#general-instructions-for-creating-a-new-simulation-component">https://github.com/simcesplatform/simulation-tools/tree/master#general-instructions-for-creating-a-new-simulation-component</a>.</p></div>
             </div>
         </div>
 

@@ -4,7 +4,7 @@ This page specifies the message type names to appear in messages. I.e., these va
 
 | Message | Type name (case sensitive) |
 |-|-|
-| Epoch | Epoch |
-| SimState | SimState |
-| Start | Start |
-| Status | Status |
+| [Epoch](core_msg-epoch.md) | Epoch |
+| [SimState](core_msg-simstate.md) | SimState |
+| [Start](core_msg-start.md) | Start |
+| [Status](core_msg-status.md) | Status |

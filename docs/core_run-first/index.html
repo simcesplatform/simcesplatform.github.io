@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/energy_resources/">
+        <link rel="canonical" href="https://simcesplatform.github.io/core_run-first/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Resources - SimCES</title>
+        <title>Run first test simulation - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,7 +34,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Use <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,13 +290,17 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -253,6 +311,14 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Components (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
             
 <li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -353,12 +507,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../energy_resourceforecaster/" class="nav-link">
+                                <a rel="prev" href="../core_run/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../energy_msg-networkstate-current/" class="nav-link">
+                                <a rel="next" href="../energy_run-ec-demo/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -380,8 +534,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#resources" class="nav-link">Resources</a>
+            <li class="nav-item" data-level="1"><a href="#running-the-first-test-simulation" class="nav-link">Running the first test simulation</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#optional-configuring-the-platform-settings" class="nav-link">(Optional) Configuring the platform settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#optional-setting-up-the-simulation-configuration-file" class="nav-link">(Optional) Setting up the simulation configuration file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#starting-the-first-simulation-run" class="nav-link">Starting the first simulation run</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,8 +555,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="resources">Resources</h1>
-<p>TODO: add page content</p></div>
+<h1 id="running-the-first-test-simulation">Running the first test simulation</h1>
+<p>To test that the core platform has been installed properly, a simple test simulation configuration has been provided. This configuration involves 3 <a href="../core_dummycomponent/">Dummy components</a> in addition to the <a href="../core_simulationmanager/">Simulation Manager</a> and <a href="../core_logwriter/">Log Writer</a> instances that are always included in every simulation run.</p>
+<h2 id="optional-configuring-the-platform-settings">(Optional) Configuring the platform settings</h2>
+<p>The default parameters are fine for testing the platform installation. By default the local RabbitMQ message bus and the local MongoDB that were started during the installation process are used.</p>
+<p>The descriptions for the configurable settings can be found from <a href="../core_platform-settings/">Configuring platform settings</a>.</p>
+<h2 id="optional-setting-up-the-simulation-configuration-file">(Optional) Setting up the simulation configuration file</h2>
+<p>The simulation run specific parameters are given in a separate configuration file that uses <a href="https://yaml.org/">YAML</a> format. For the first test run, a ready-made configuration file, <a href="https://github.com/simcesplatform/platform-manager/blob/master/simulation_configuration_test.yml">simulation_configuration_test.yml</a> has been made. The configuration file defines</p>
+<ul>
+<li>the simulation metadata: the name and description for the simulation run as well as the start time for the first epoch, epoch length and the maximum number of epochs in the simulation run</li>
+<li>the components participating in the simulation run and their individual parameters</li>
+</ul>
+<p>For the first test simulation, the configuration file can be left as it is.</p>
+<h2 id="starting-the-first-simulation-run">Starting the first simulation run</h2>
+<p>To start the first test simulation, use Bash compatible terminal (Git Bash in Windows) to navigate to the platform folder and use the command</p>
+<pre class="codehilite"><code class="language-bash">source start_simulation.sh simulation_configuration_test.yml
+</code></pre>
+
+<p>If everything worked properly, you should see something like:</p>
+<pre class="codehilite"><code class="language-text">simces_platform_manager | 2021-10-12T12:50:00.515 ---     INFO --- Starting the Docker containers for simulation: 'Test simulation' with id: 2021-10-12T12:50:00.514Z
+simces_platform_manager | 2021-10-12T12:50:00.878 ---     INFO --- Starting container: Sim00_log_writer
+simces_platform_manager | 2021-10-12T12:50:01.376 ---     INFO --- Starting container: Sim00_slow_dummy
+simces_platform_manager | 2021-10-12T12:50:01.815 ---     INFO --- Starting container: Sim00_fast_dummy_1
+simces_platform_manager | 2021-10-12T12:50:02.240 ---     INFO --- Starting container: Sim00_fast_dummy_2
+simces_platform_manager | 2021-10-12T12:50:02.671 ---     INFO --- Starting container: Sim00_SimulationManager
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Start message for simulation 'Test simulation' sent to management exchange.
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Simulation 'Test simulation' started successfully using id: 2021-10-12T12:50:00.514Z
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Follow the simulation by using the command:
+simces_platform_manager |     source follow_simulation.sh 00
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Alternatively, the simulation manager logs can by viewed by:
+simces_platform_manager |     docker logs --follow Sim00_SimulationManager
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Platform manager has finished starting the simulation and will now stop.
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- The simulation will continue to run on the background.
+simces_platform_manager | 2021-10-12T12:50:03.095 ---     INFO --- Stopping the platform manager.
+simces_platform_manager exited with code 0
+</code></pre>
+
+<p>See the <a href="../core_follow-run/">Following a running simulation</a> page on more details about following the output from the running simulation.</p>
+<p>The <a href="../core_log-api/">Log Reader</a>, by default at <a href="http://localhost:8080">http://localhost:8080</a> can also be used to view the messages.</p>
+<ul>
+<li><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;</code></a> should show the metadata for the test simulation</li>
+<li><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;/messages"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;/messages</code></a> should show all the messages for the test simulation in the order of their arrival</li>
+<li><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=Start"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=Start</code></a> should show only the start message for the test simulation</li>
+</ul>
+<p>In the above, replace <code>&lt;simulation_id&gt;</code> with the id given by the Platform manager. In the earlier output, the simulation id would be <code>2021-10-12T12:50:00.514Z</code>. See the <a href="../core_log-api/">Log Reader API documentation</a> page for more details about the using the API.</p></div>
             </div>
         </div>
 

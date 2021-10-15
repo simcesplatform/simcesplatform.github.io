@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_log-api/">
+        <link rel="canonical" href="https://simcesplatform.github.io/core_log-api/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Log API - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-first/" class="dropdown-item">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,7 +290,11 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
@@ -255,6 +313,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
+            
+<li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
             
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -353,12 +507,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../core_follow-run/" class="nav-link">
+                                <a rel="prev" href="../core_stop-simulation/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../core_time/" class="nav-link">
+                                <a rel="next" href="../core_develop-overview/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -511,8 +665,9 @@ run.</p>
 <h3 id="example">Example</h3>
 <p>Get list of simulations executed on or after 3th of June 2020 at 10:00.</p>
 <h4 id="request">Request</h4>
-<pre><code>http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
+<pre class="codehilite"><code>http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
 </code></pre>
+
 <h4 id="response_1">Response</h4>
 <pre><code>[
   {
@@ -560,8 +715,9 @@ simulations response item.</p>
 <h3 id="example_1">Example</h3>
 <p>Get information about simulation with id 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_1">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
 </code></pre>
+
 <h4 id="response_3">Response</h4>
 <pre><code>{
   &quot;Description&quot;: &quot;This is a test simulation with some example messages.&quot;,
@@ -619,8 +775,9 @@ metadata. The messages will be sorted in ascending order by timestamp.</p>
 energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_2">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
 </code></pre>
+
 <h4 id="response_5">Response</h4>
 <pre><code>[
   {
@@ -690,8 +847,9 @@ timestamp. The following attributes can be  available for each message:</p>
 <h3 id="example_3">Example</h3>
 <p>Get all invalid messages for simulation with id 2020-06-03T04:01:52.345Z. </p>
 <h4 id="request_3">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
 </code></pre>
+
 <h4 id="response_7">Response</h4>
 <pre><code>[
   {
@@ -795,8 +953,9 @@ to topic energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z. The messages which are the source for this time series
 are shown in the response of example for Get messages for simulation. </p>
 <h4 id="request_4">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
 </code></pre>
+
 <h4 id="response_9">Response</h4>
 <pre><code>{
   &quot;TimeIndex&quot;: [
@@ -826,8 +985,9 @@ are shown in the response of example for Get messages for simulation. </p>
 <h3 id="example-2">Example 2</h3>
 <p>Same as example 1 except the time series should be in the csv format.</p>
 <h4 id="request_5">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
 </code></pre>
+
 <h4 id="response_10">Response</h4>
 <pre><code>epoch;timestamp;energy.production.solar:solarPlant1.RealPower;energy.production.solar:solarPlant1.ReactivePower
 1;2020-06-03T13:00:00Z;5.0;0.2
@@ -872,8 +1032,9 @@ following:</p>
 }
 </code></pre>
 <h4 id="request_6">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
 </code></pre>
+
 <h4 id="response_11">Response</h4>
 <pre><code>{
   &quot;TimeIndex&quot;: [
@@ -921,8 +1082,9 @@ following:</p>
 <h3 id="example-4">Example 4</h3>
 <p>Same as example 3 except timeseries is created in the csv format.</p>
 <h4 id="request_7">Request</h4>
-<pre><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
+<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
 </code></pre>
+
 <h4 id="response_12">Response</h4>
 <pre><code>epoch;timestamp;energy.storage.state:battery1.batteryState.chargePercentage;energy.storage.state:battery2.batteryState.chargePercentage
 1;2020-06-03T13:00:00Z;90;40

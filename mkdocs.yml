@@ -1,5 +1,5 @@
 site_name: SimCES
-site_url: https://simcesplatform.github.io/docs
+site_url: https://simcesplatform.github.io
 site_description: Documentation of Simulation Environment of Complex Energy System (SimCES)
 copyright: Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland
 docs_dir: markdown
@@ -9,23 +9,39 @@ extra_css:
 theme:
     name: mkdocs
     custom_dir: overrides/
-    
+
+markdown_extensions:
+    codehilite:
+        use_pygments: False
+
 # See README.txt for the naming convention of files!
 nav:
     - Use:
         - Features: core_features.md
         - Installation: core_install.md
         - Run simulation:
-            - Run simulation: core_run.md
+            - Overview: core_run.md
+            - Test platform:
+                - Run first test simulation: core_run-first.md
+                - Run Energy Community demo: energy_run-ec-demo.md
+            - Configuring settings: core_platform-settings.md
+            - Start simulation:
+                - Simulation run preparations: core_run-preparations.md
+                - Starting a simulation: core_start-simulation.md
             - Follow running simulation: core_follow-run.md
+            - Stop simulation: core_stop-simulation.md
         - Log API: core_log-api.md
     - Develop:
+        - Overview: core_develop-overview.md
         - Basic concepts:
             - Time and synchronization with epochs: core_time.md
             - Platform-managed and externally managed components: core_cmp-mgmt.md
             - Service-oriented architecture: core_soa.md
         - How to develop:
-            - Creating new component: core_create-cmp.md
+            - Creating new component:
+                - Overview: core_create-cmp.md
+                - Building Docker image for a component: core_docker-image.md
+                - Creating a component manifest file: core_component-manifest.md
             - Conventions of messaging: core_conv-msg.md
             - Conventions of naming: core_conv-name.md
             - Pseudocode reference: core_pseudocode.md
@@ -57,9 +73,10 @@ nav:
         - Platforms internals:
             - Logging system: core_logging-system.md
             - LogWriter: core_logwriter.md
-            - PlatformManager: core_platformmanager.md
+            - Platform Manager: core_platformmanager.md
             - Simulation lifecycle: core_lifecycle.md
-            - SimulationManager: core_simulationmanager.md
+            - Simulation Manager: core_simulationmanager.md
+            - Dummy Component: core_dummycomponent.md
     - Energy domain:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
@@ -102,6 +119,8 @@ nav:
             - PriceForecastState.(MarketId).(ResourceId): energy_topic-priceforecaststate.md
             - ResourceForecastState.(ResourceCategory).(ResourceId): energy_topic-resourceforecaststate.md
             - ResourceState.(ResourceCategory).(ResourceId): energy_topic-resourcestate.md
+        - Scenarios:
+            - Energy community demo: energy_scenario-ec-demo.md
     - About...:
       - About...: about.md
       - Maintenance plan: maintenance-plan.md

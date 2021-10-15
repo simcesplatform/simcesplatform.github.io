@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/energy_economicdispatch/">
+        <link rel="canonical" href="https://simcesplatform.github.io/energy_economicdispatch/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Economic Dispatch - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-first/" class="dropdown-item">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,7 +290,11 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
@@ -255,6 +313,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
+            
+<li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
             
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -380,8 +534,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#economic-dispatch" class="nav-link">Economic Dispatch</a>
+            <li class="nav-item" data-level="1"><a href="#economic-dispatch" class="nav-link">Economic Dispatch</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data" class="nav-link">Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#publish" class="nav-link">Publish</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#optimised-resources" class="nav-link">Optimised Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#workflow" class="nav-link">Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,10 +563,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="economic-dispatch"><strong>Economic Dispatch</strong></h2>
-<h6 id="description">Description</h6>
-<p>Optimises dispatch of energy production, consumption and storage units.</p>
-<h6 id="data">Data</h6>
+<h1 id="economic-dispatch">Economic Dispatch</h1>
+<h2 id="description">Description</h2>
+<p>Optimises dispatch of energy purchase and energy storage units given predictions on consumption and production.</p>
+<h2 id="data">Data</h2>
 <p>Input for optimisation</p>
 <table>
 <thead>
@@ -431,51 +605,51 @@
 </tbody>
 </table>
 <p>Scenario/configuration parameters:</p>
-<p>ED and resource parameters given at startup in Start message blocks</p>
+<p>ED and resource parameters given at startup as declared in <a href="../energy_msg-startmessageblocks/">Start message blocks</a>:</p>
 <ul>
 <li>ED component name from environment variable SIMULATION_COMPONENT_NAME</li>
-<li>Forecast horizon and optimisation time step length from Start message blocks (or defaults)</li>
-<li>List of resources to be included is read from Start message blocks</li>
-<li>
-<p>Resource parameters for optimisation are read from Start message blocs</p>
+</ul>
+<p>At least the following in the environment variables:</p>
 <ul>
-<li>At least storage resource kwh, max capacity</li>
+<li>Forecast horizon and optimisation time step length (or defaults)</li>
+<li>List of resources to be included</li>
+<li>LFM market id (if applicable)</li>
 </ul>
-</li>
-<li>
-<p>LFM market id (if applicable)</p>
-</li>
+<p>Some resource parameter values are read from <a href="../energy_msg-startmessageblocks/">Start message blocks</a></p>
+<ul>
+<li>At least storage resource initial kwh, max capacity</li>
+<li>( Defaults are implemented internally in the Economic Dispatch - note this if defaults change! )</li>
 </ul>
-<p>Outside start message, the following is needed for flexibility implementation:</p>
+<p>Outside initialisation, the following is needed for flexibility implementation:</p>
 <ul>
 <li>CustomerId relation to resource names (for connection to PGO flexibility Request) is read from Init.CIS.CustomerInfo message</li>
 </ul>
 <p>Example configuration file:</p>
-<pre><code class="language-nohighlight">EconomicDispatch: \
-      EconomicDispatchA:\
-            Horizon: PT23H\
-            Timestep: PT1H\
-            Resources:\
-                   - - StaticTimeSeriesResource\
-                     - Load1\
-                   - - StaticTimeSeriesResource\
-                     - Load2\
-                   - - StaticTimeSeriesResource\
-                     - Load3\
-                   - - StaticTimeSeriesResource\
-                     - Load4\
-                   - - PriceForecaster\
-                     - MarketA\
-                   - - StaticTimeSeriesResource\
-                     - EV\
-                   - - StaticTimeSeriesResource\
-                     - PV_large\
-                   - - StaticTimeSeriesResource\
-                     - PV_small\
-                   - - StorageResource\
+<pre><code class="language-nohighlight">EconomicDispatch: 
+      EconomicDispatchA:
+            Horizon: PT23H
+            Timestep: PT1H
+            Resources:
+                   - - StaticTimeSeriesResource
+                     - Load1
+                   - - StaticTimeSeriesResource
+                     - Load2
+                   - - StaticTimeSeriesResource
+                     - Load3
+                   - - StaticTimeSeriesResource
+                     - Load4
+                   - - PriceForecaster
+                     - MarketA
+                   - - StaticTimeSeriesResource
+                     - EV
+                   - - StaticTimeSeriesResource
+                     - PV_large
+                   - - StaticTimeSeriesResource
+                     - PV_small
+                   - - StorageResource
                      - StorageA
 </code></pre>
-<h6 id="publish">Publish</h6>
+<h2 id="publish">Publish</h2>
 <table>
 <thead>
 <tr>
@@ -494,7 +668,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="optimised-resources">Optimised Resources</h6>
+<h2 id="optimised-resources">Optimised Resources</h2>
 <p>The following units are included:</p>
 <ul>
 <li>
@@ -524,7 +698,7 @@
 <li>Amount to charge/discharge storage per time interval</li>
 <li>Amount of energy bought from markets per time interval</li>
 </ul>
-<h6 id="workflow">Workflow</h6>
+<h2 id="workflow">Workflow</h2>
 <p>ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:</p>
 <ol>
 <li>Simulation is started</li>
