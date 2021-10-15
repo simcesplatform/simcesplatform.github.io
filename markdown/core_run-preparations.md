@@ -138,6 +138,8 @@ A successful run of the script should show no error messages in the output.
 
 Note, that for externally managed components, the script above can only register the component manifests to the platform. The manual installation and starting procedure for the components is still required in addition to running the script.
 
+TODO: add a note about possible error with container name being in use when using the script
+
 ### Example output
 
 ```text
