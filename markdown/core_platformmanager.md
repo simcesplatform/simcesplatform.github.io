@@ -1,14 +1,11 @@
 # Platform Manager
 
-- TODO: add links to manifest file page
-- TODO: add other documentation page links where appropriate
-
 Component that is used to start new simulation runs in the SimCES simulation platform.
 It generates and starts the Docker containers for the platform managed components in the new simulation run and publishes the simulation parameters using [Start message](core_msg-start.md) via [Management exchange](core_exchange-mgmt.md).
 
 ## Functionalities
 
-- Parses the component manifest files to determine the available component types for a new simulation.
+- Parses the [component manifest files](core_component-manifest.md) to determine the available component types for a new simulation.
 - Parses the [simulation configuration file](core_start-simulation.md#simulation-configuration-file-specification) to determine the parameters for the new simulation.
 - Creates the Docker containers for the required platform managed components for the new simulation.
 - Starts the created Docker containers.
@@ -29,9 +26,9 @@ The workflow of a simulation is explained in page [Simulation Lifecycle](core_li
 Required before running Platform Manager to start a new simulation run:
 
 - Docker installed and available for the Platform Manager
-- A running Log Writer instance listening to the Management Exchange
-    - Only required for logging the Start messages
-- All required component manifest files available for the Platform Manager
+- A running [Log Writer](core_logwriter.md) instance listening to the Management Exchange
+    - Only required for logging the [Start messages](core_msg-start.md)
+- All required [component manifest files](core_component-manifest.md) available for the Platform Manager
 - All required static files available for simulations
 - All required Docker images available for the Platform Manager
 - Connection parameters for RabbitMQ and MongoDB given in the configuration files for the Platform Manager

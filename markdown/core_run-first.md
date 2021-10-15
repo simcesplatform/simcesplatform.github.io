@@ -1,8 +1,6 @@
 # Running the first test simulation
 
-To test that the core platform has been installed properly, a simple test simulation configuration has been provided. This configuration involves 3 dummy components in addition to the [Simulation Manager](core_simulationmanager.md) and [Log Writer](core_logwriter.md) instances that are always included in every simulation run.
-
-- TODO: add a link to documentation page for dummy component (the page does not exist yet).
+To test that the core platform has been installed properly, a simple test simulation configuration has been provided. This configuration involves 3 [Dummy components](core_dummycomponent.md) in addition to the [Simulation Manager](core_simulationmanager.md) and [Log Writer](core_logwriter.md) instances that are always included in every simulation run.
 
 ## (Optional) Configuring the platform settings
 
