@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_install/">
+        <link rel="canonical" href="https://simcesplatform.github.io/core_install/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Installation - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-first/" class="dropdown-item">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,7 +290,11 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
@@ -255,6 +313,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
+            
+<li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
             
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -403,14 +557,6 @@
 
 <h1 id="installation">Installation</h1>
 <p>Follow the given steps to install the platform.</p>
-<p>TODO list for this page:</p>
-<ul>
-<li>remove the development stage references once the source code and the documentation is publicly available and usable without credentials</li>
-<li>add a direct link to fetch_platform_files.sh once it is available in the GitHub repository and modified to work with it (step 2)</li>
-<li>add a command line command for downloading the fetch_platform_files.sh file from GitHub repository (step 2)</li>
-<li>add links to correct pages (step 5)</li>
-<li>update the docker ps output with images from DockerHub once they are available (step 7)</li>
-</ul>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>The simulation platform and these instructions have been tested on Ubuntu 18.04 with Docker Engine version 20.10.2 and Docker Compose version 1.28.2.</p>
 <ul>
@@ -430,32 +576,8 @@
 </li>
 </ul>
 <p>Some simulation components might have other requirements. For those, see the component specific documentation.</p>
-<h3 id="additional-development-stage-requirements">Additional development stage requirements</h3>
-<ul>
-<li>Access rights to the GitLab server that is used to host the source code<ul>
-<li>Specifically, to install the platform an access token with read access is required.</li>
-</ul>
-</li>
-<li>Access rights to the private Docker registry containing the components</li>
-</ul>
 <h2 id="installing-the-platform-and-the-core-components">Installing the platform and the core components</h2>
 <ul>
-<li>
-<p>0. Login to the Docker registry (only required in development stage when private Docker registry is used).</p>
-<ul>
-<li>
-<p>Use the command:</p>
-<pre class="codehilite"><code class="language-bash">docker login &lt;DOCKER_REGISTRY_HOST&gt;
-</code></pre>
-
-<p>where <code>&lt;DOCKER_REGISTRY_HOST&gt;</code> is replaced by the Docker registry host name</p>
-</li>
-<li>
-<p>You are then asked to give your user name and password.</p>
-</li>
-<li>Note, if you are using Git Bash in Windows and get the message "Cannot perform an interactive login from a non TTY device", try the login command using the Command Prompt and it should work.</li>
-</ul>
-</li>
 <li>
 <p>1. Create a folder for the simulation platform. In these instructions this main folder is named platform.</p>
 <ul>
@@ -463,16 +585,10 @@
 </ul>
 </li>
 <li>
-<p>2. Copy the <code>fetch_platform_files.sh</code> script file to the <code>platform</code> folder for example by downloading it from the GitLab using the browser interface.</p>
-<ul>
-<li>
-<p>In the development stage to download the file from the private GitLab repository using command line:</p>
-<pre class="codehilite"><code class="language-bash">curl --insecure --header &quot;Private-Token: &lt;ACCESS_TOKEN&gt;&quot; &quot;&lt;GITLAB_HOST&gt;/api/v4/projects/&lt;PLATFORM_MANAGER_REPOSITORY&gt;/repository/files/fetch_platform_files.sh/raw?ref=master&quot; &gt; fetch_platform_files.sh
+<p>2. Copy the <a href="https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh"><code>fetch_platform_files.sh</code></a> script file to the <code>platform</code> folder for by downloading it from the GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:</p>
+<pre class="codehilite"><code class="language-bash">wget https://raw.githubusercontent.com/simcesplatform/Platform-Manager/master/fetch_platform_files.sh
 </code></pre>
 
-<p>where <code>&lt;ACCESS_TOKEN&gt;</code> is replaced with a proper access token, <code>&lt;GITLAB_HOST&gt;</code> with the GitLab server address, and <code>&lt;PLATFORM_MANAGER_REPOSITORY&gt;</code> with the full repository name for the Platform manager component. Note, that the repository name must be URL-encoded, i.e. <code>/</code> characters must be replaced with <code>%2F</code>.</p>
-</li>
-</ul>
 </li>
 <li>
 <p>3. Using Git Bash (in Windows) or other terminal that supports Bash navigate to the platform folder.</p>
@@ -496,22 +612,11 @@
 <pre class="codehilite"><code class="language-text">All files where found. Platform is ready for installation.
 </code></pre>
 
-<ul>
-<li>
-<p>In the development stage, use the following command instead</p>
-<pre class="codehilite"><code class="language-bash">source fetch_platform_files.sh gitlab &lt;ACCESS_TOKEN&gt;
-</code></pre>
-
-<p>where <code>&lt;ACCESS_TOKEN&gt;</code> is replaced with the access token to the private GitLab server.</p>
-</li>
-</ul>
 </li>
 <li>
 <p>5. (Optional) Setup the settings for the RabbitMQ message bus and the Mongo database. Note, that the default settings can be used for running simulations locally.</p>
 <ul>
-<li>TODO: add links to correct page: Modify the RabbitMQ settings</li>
-<li>TODO: add links to correct page: Modify the MongoDB settings</li>
-<li>TODO: add links to correct page: Optionally modify the port numbers</li>
+<li>See section <a href="../core_platform-settings/#general-platform-level-settings">General platform level settings</a> on the available settings.</li>
 </ul>
 </li>
 <li>
@@ -529,13 +634,13 @@
 
 <p>You should have at least the images shown in the example listing below:</p>
 <pre class="codehilite"><code class="language-text">REPOSITORY                                      TAG                IMAGE ID       CREATED        SIZE
-mongo-express                                   0.54.0             c9529cc462f4   5 days ago     129MB
-procem.ain.rd.tut.fi/despa/platform_manager     latest             e5a26881186b   7 days ago     908MB
-procem.ain.rd.tut.fi/despa/manifest_fetch       latest             203f160f90ef   7 days ago     904MB
-procem.ain.rd.tut.fi/despa/log_reader           latest             20f49c60ff7b   11 days ago    956MB
-procem.ain.rd.tut.fi/despa/log_writer           latest             0a4092a70aff   11 days ago    899MB
-procem.ain.rd.tut.fi/despa/simulation_manager   latest             98c0ce350318   11 days ago    895MB
-procem.ain.rd.tut.fi/despa/dummy                latest             3af7c6a77825   4 weeks ago    1.19GB
+ghcr.io/simcesplatform/platform-manager         latest             1330807ae5cc   9 days ago     909MB
+ghcr.io/simcesplatform/simulation-manager       latest             d14c1a9bfbd0   9 days ago     896MB
+ghcr.io/simcesplatform/manifest-fetcher         latest             3486b5fac52a   9 days ago     903MB
+ghcr.io/simcesplatform/logwriter                latest             d9f1d537169b   9 days ago     900MB
+ghcr.io/simcesplatform/dummy-component          latest             76811eb2d295   10 days ago    1.12GB
+ghcr.io/simcesplatform/mongo-express            latest             f43423478d66   3 months ago   127MB
+ghcr.io/simcesplatform/logreader                latest             42d8ca7ecd53   3 months ago   956MB
 rabbitmq                                        3.8.4-management   cc86ffa2f398   9 months ago   186MB
 mongo                                           4.2.7              66c68b650ad4   9 months ago   388MB
 </code></pre>
@@ -611,7 +716,7 @@ docker rm simces_log_writer_management
 </ul>
 </li>
 </ul>
-<p>After these steps, the simulation platform should be ready for starting test simulation run. To see instructions on how to start a simulation run see the page <a href="../core_run">Running a simulation</a>.</p>
+<p>After these steps, the simulation platform should be ready for starting test simulation run. To see instructions on how to start a simulation run see the page <a href="../core_run/">Running a simulation</a>.</p>
 <h2 id="uninstalling-the-core-components">Uninstalling the core components</h2>
 <p>The following commands are to be used in the installation folder using a terminal that supports Bash.</p>
 <ul>

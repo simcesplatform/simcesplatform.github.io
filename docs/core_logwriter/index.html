@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://foo/core_logwriter/">
+        <link rel="canonical" href="https://simcesplatform.github.io/core_logwriter/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>LogWriter - SimCES</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -51,11 +51,47 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../core_run/" class="dropdown-item">Run simulation</a>
+    <a href="../core_run/" class="dropdown-item">Overview</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Test platform</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-first/" class="dropdown-item">Run first test simulation</a>
 </li>
             
 <li>
+    <a href="../energy_run-ec-demo/" class="dropdown-item">Run Energy Community demo</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../core_platform-settings/" class="dropdown-item">Configuring settings</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Start simulation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../core_run-preparations/" class="dropdown-item">Simulation run preparations</a>
+</li>
+            
+<li>
+    <a href="../core_start-simulation/" class="dropdown-item">Starting a simulation</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
     <a href="../core_follow-run/" class="dropdown-item">Follow running simulation</a>
+</li>
+            
+<li>
+    <a href="../core_stop-simulation/" class="dropdown-item">Stop simulation</a>
 </li>
     </ul>
   </li>
@@ -68,6 +104,10 @@
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core_develop-overview/" class="dropdown-item">Overview</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Basic concepts</a>
@@ -91,9 +131,23 @@
     <a href="#" class="dropdown-item">How to develop</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creating new component</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../core_create-cmp/" class="dropdown-item">Creating new component</a>
+    <a href="../core_create-cmp/" class="dropdown-item">Overview</a>
 </li>
+            
+<li>
+    <a href="../core_docker-image/" class="dropdown-item">Building Docker image for a component</a>
+</li>
+            
+<li>
+    <a href="../core_component-manifest/" class="dropdown-item">Creating a component manifest file</a>
+</li>
+    </ul>
+  </li>
             
 <li>
     <a href="../core_conv-msg/" class="dropdown-item">Conventions of messaging</a>
@@ -228,7 +282,7 @@
 </li>
             
 <li>
-    <a href="../core_platformmanager/" class="dropdown-item">PlatformManager</a>
+    <a href="../core_platformmanager/" class="dropdown-item">Platform Manager</a>
 </li>
             
 <li>
@@ -236,7 +290,11 @@
 </li>
             
 <li>
-    <a href="../core_simulationmanager/" class="dropdown-item">SimulationManager</a>
+    <a href="../core_simulationmanager/" class="dropdown-item">Simulation Manager</a>
+</li>
+            
+<li>
+    <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
     </ul>
   </li>
@@ -255,6 +313,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../energy_controller/" class="dropdown-item">Controller</a>
+</li>
+            
+<li>
+    <a href="../energy_distribution-management-system-dms/" class="dropdown-item">Distribution management system (DMS)</a>
+</li>
+            
+<li>
     <a href="../energy_grid-dss/" class="dropdown-item">Grid (DSS)</a>
 </li>
             
@@ -267,11 +333,19 @@
 </li>
             
 <li>
+    <a href="../energy_procem-lfm/" class="dropdown-item">Procem-LFM</a>
+</li>
+            
+<li>
     <a href="../energy_resourceforecaster/" class="dropdown-item">Resource Forecaster</a>
 </li>
             
 <li>
-    <a href="../energy_resources/" class="dropdown-item">Resources</a>
+    <a href="../energy_static-time-series-resource/" class="dropdown-item">Static time series resource</a>
+</li>
+            
+<li>
+    <a href="../energy_storage/" class="dropdown-item">Storage</a>
 </li>
     </ul>
   </li>
@@ -279,6 +353,50 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Message structures (energy)</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_msg-controlstate-powersetpoint/" class="dropdown-item">ControlState.PowerSetpoint</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-current/" class="dropdown-item">DMSNetworkStatus.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-dmsnetworkstatus-voltage/" class="dropdown-item">DMSNetworkStatus.Voltage</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-flexibilityneed/" class="dropdown-item">FlexibilityNeed</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-cis-customerinfo/" class="dropdown-item">Init.CIS.CustomerInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkbusinfo/" class="dropdown-item">Init.NIS.NetworkBusInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-init-nis-networkcomponentinfo/" class="dropdown-item">Init.NIS.NetworkComponentInfo</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmmarketresult/" class="dropdown-item">LFMMarketResult</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-lfmoffering/" class="dropdown-item">LFMOffering</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-current/" class="dropdown-item">NetworkForecastState.Current</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-networkforecaststate-voltage/" class="dropdown-item">NetworkForecastState.Voltage</a>
+</li>
             
 <li>
     <a href="../energy_msg-networkstate-current/" class="dropdown-item">NetworkState.Current</a>
@@ -301,11 +419,27 @@
 </li>
             
 <li>
-    <a href="../energy_msg-resourceforecaststatedispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+    <a href="../energy_msg-request/" class="dropdown-item">Request</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-dispatch/" class="dropdown-item">ResourceForecastState.Dispatch</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-resourceforecaststate-power/" class="dropdown-item">ResourceForecastState.Power</a>
 </li>
             
 <li>
     <a href="../energy_msg-resourcestate/" class="dropdown-item">ResourceState</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-selectedoffer/" class="dropdown-item">SelectedOffer</a>
+</li>
+            
+<li>
+    <a href="../energy_msg-startmessageblocks/" class="dropdown-item">Start message blocks</a>
 </li>
     </ul>
   </li>
@@ -339,10 +473,30 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Scenarios</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../energy_scenario-ec-demo/" class="dropdown-item">Energy community demo</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">About...</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">About...</a>
+</li>
+                                    
+<li>
+    <a href="../maintenance-plan/" class="dropdown-item">Maintenance plan</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -382,6 +536,30 @@
             
             <li class="nav-item" data-level="1"><a href="#logwriter" class="nav-link">LogWriter</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#functionalities" class="nav-link">Functionalities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#technical-details" class="nav-link">Technical details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#workflow" class="nav-link">Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#input-parameters" class="nav-link">Input parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#accessing-the-messages" class="nav-link">Accessing the messages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -389,8 +567,91 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="logwriter">LogWriter</h1>
-<p>TODO! Ville</p></div>
+<h1 id="logwriter"><strong>LogWriter</strong></h1>
+<h2 id="description">Description</h2>
+<p>LogWriter is a simulation component and it is part of the <a href="../core_logging-system/">Logging System</a>.
+It is used to log all the messages in a simulation run and thus an instance of LogWriter is part of every simulation run.</p>
+<h2 id="functionalities">Functionalities</h2>
+<ul>
+<li>Listen to the message bus and catch all messages in the given exchange.</li>
+<li>Keep track of the running simulations using the given exchange and collect some metadata for each simulation.<ul>
+<li>Collected metadata include at least the names of the participating processes and the timestamps for the first and the last message send during the simulation.</li>
+</ul>
+</li>
+<li>Separate valid simulation platform messages from invalid messages that are not in JSON format or are missing one of the base attributes.</li>
+<li>Write all the simulation messages to a database.<ul>
+<li>Received valid messages are stored in simulation-specific collections.</li>
+<li>Received invalid messages are stored in separate simulation-specific collections for debugging purposes.</li>
+</ul>
+</li>
+<li>Writes the gathered simulation metadata to a database.</li>
+</ul>
+<h2 id="technical-details">Technical details</h2>
+<ul>
+<li>LogWriter is written in Python (3.7.9) and the code repository is found at: <a href="https://github.com/simcesplatform/logwriter">https://github.com/simcesplatform/logwriter</a></li>
+<li>LogWriter connects to RabbitMQ message bus. Both local and remote message bus servers are supported.</li>
+<li>The used database is MongoDB with version 4.2.7 used during development.</li>
+<li>LogWriter has support for HTTPS connections for the database.</li>
+<li>LogWriter requires either admin or write access to the used database.</li>
+<li>One LogWriter instance will only listen to messages from one RabbitMQ exchange.</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li>Receive the message bus and database connection parameters upon startup.</li>
+<li>Open the connection to the message bus and start a message listener for all topics in the given exchange.</li>
+<li>Open the database connection.</li>
+<li>For each message received from the message bus:<ul>
+<li>Write the message to the database.<ul>
+<li>Each simulation will have their own collection of messages in the database. The collection is created when the first message for the simulation is received.</li>
+<li>The collection name for the simulation messages is "simulation_<simulation_id>".</li>
+</ul>
+</li>
+<li>Possibly update the simulation metadata.<ul>
+<li>The metadata documents are only updated after SimState or Epoch messages.</li>
+<li>Each simulation will have one metadata document in the database.</li>
+<li>The metadata documents are all collected under the same collection (called "simulations") in the database.</li>
+</ul>
+</li>
+<li>If the message was SimState message indicating that the simulation is stopped, stop the LogWriter instance.</li>
+</ul>
+</li>
+</ol>
+<p>Note, that originally LogWriter was made to support multiple simulations but due to specification changes, each simulation run in the SimCES platform will use a separate exchange. Thus, a separate instance of LogWriter is needed for each simulation run. Due to this LogWriter will stop once it has received the message indicating that the simulation has stopped, i.e. SimState message with the value "stopped", and all the received messages have been written to the database.</p>
+<p>When writing the messages to the database LogWriter uses a buffer to reduce the number of times the database is accessed. All received messages are first added to the buffer and they are only written to the database once the buffer is cleared.</p>
+<p>The message buffer will be cleared:</p>
+<ul>
+<li>when the latest received message was either a SimState or an Epoch message.</li>
+<li>when the maximum number of messages, by default 20, in the buffer is reached. The maximum number of messages in the buffer is configurable by the input parameter <code>MessageBufferMaxDocumentCount</code>.</li>
+<li>when at least 10 seconds have gone after a message was added to the buffer without the buffer having been cleared. The number of seconds is configurable by the input parameter <code>MessageBufferMaxInterval</code>.</li>
+</ul>
+<h2 id="input-parameters">Input parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Datatype</th>
+<th>Example</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageBufferMaxDocumentCount</td>
+<td>Integer (&gt; 0)</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>MessageBufferMaxInterval</td>
+<td>Float (&gt; 0)</td>
+<td>5.0</td>
+<td>10.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accessing-the-messages">Accessing the messages</h2>
+<p>The simulation messages and data contained within them can be accessed using the LogReader part of the <a href="../core_logging-system/">Logging System</a> with the <a href="../core_log-api/">Read/Export API</a>.</p>
+<p>To speed up the queries fetching data from the simulation messages stored in the database, LogWriter adds some indexes to both the metadata document collection as well as to the simulation specific message collections.</p></div>
             </div>
         </div>
 
