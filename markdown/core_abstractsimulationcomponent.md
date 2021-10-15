@@ -28,7 +28,7 @@ Those methods that require an implementation in the child class are marked with 
 - `ready_for_new_epoch`
     - should return `true` when enough input messages have been received to be able to do something in the current epoch
 - `process_epoch`
-    - thould include calls to any methods that handle sending the resulting messages to the message bus
+    - this should include calls to any methods that handle sending the resulting messages to the message bus
 - `_send_result_message`
     - This method is included in the template as an example on how to send a message to the message bus. It should be replaced with the component specific implementation.
 
