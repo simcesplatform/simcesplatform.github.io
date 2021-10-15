@@ -4,10 +4,10 @@
 
 | Item | Value |
 | - | - |
-| Link to source code | [https://github.com/simcesplatform/static-time-series-resource](https://github.com/simcesplatform/static-time-series-resource) |
+| Link to source code | <https://github.com/simcesplatform/static-time-series-resource> |
 | Management type | Platform managed |
-| Docker image name | ghcr.io/simcesplatform/static-time-series-resource:latest |
-| Location of manifest file | [https://github.com/simcesplatform/static-time-series-resource/blob/master/component_manifest.yml](https://github.com/simcesplatform/static-time-series-resource/blob/master/component_manifest.yml) |
+| Docker image name | ghcr.io/simcesplatform/static-time-series-resource |
+| Location of manifest file | <https://raw.githubusercontent.com/simcesplatform/static-time-series-resource/master/component_manifest.yml> |
 
 
 ## Description
@@ -85,5 +85,5 @@ The following packages are needed.
 | Package | Version | Why needed | URL |
 | --- | --- | --- | --- |
 | Simulation Tools |  | Component implementation based on AbstractSimulationComponent. | <https://github.com/simcesplatform/simulation-tools> |
-| Domain tools |  | Uses the shared CSV file reading code. | [https://github.com/simcesplatform/domain-tools](https://github.com/simcesplatform/domain-tools) |
-| Domain messages |  | Uses the ResourceStateMessage class. | [https://github.com/simcesplatform/domain-messages](https://github.com/simcesplatform/domain-messages) |
+| Domain tools |  | Uses the shared CSV file reading code. | <https://github.com/simcesplatform/domain-tools> |
+| Domain messages |  | Uses the ResourceStateMessage class. | <https://github.com/simcesplatform/domain-messages> |

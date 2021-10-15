@@ -45,7 +45,7 @@ The following table gives a list of the input files.
 
 | Startup parameter for file | Description |
 | --- | --- |
-| ResourceStateCsvFile | When using a CSV file as control state source the file should contain the following columns: RealPower, ReactivePower and Bus. A optional Node column can be used. The file may include other columns which will be ignored by the component. ReactivePower is currently not used so it can be for example always zero. Each row containing values will then represent data for one epoch. There should be at least as many data rows as there will be epochs. Decimal separator is "." and column separator is by default "," which can be changed with the ResourceStateDelimiter startup parameter. |
+| ResourceStateCsvFile | When using a CSV file as control state source the file should contain the following columns: RealPower, ReactivePower and CustomerId. A optional Node column can be used. The file may include other columns which will be ignored by the component. ReactivePower is currently not used so it can be for example always zero. Each row containing values will then represent data for one epoch. There should be at least as many data rows as there will be epochs. Decimal separator is "." and column separator is by default "," which can be changed with the ResourceStateDelimiter startup parameter. |
 
 ## Initialization workflow
 
