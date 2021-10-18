@@ -69,12 +69,12 @@ The default file can be found at: [background/env/rabbitmq.env](https://github.c
 
 ### background/env/mongodb.env
 
-The default file can be found at: [background/env/mongodb.env](https://github.com/simcesplatform/Platform-Manager/blob/master/background/env/mongodb.env)
-
 | Variable name              | Default | Description |
 | -------------------------- | ------- | ----------- |
 | MONGO_INITDB_ROOT_USERNAME |         | The username for root access to the local MongoDB instance. If this is empty, no access control is used. |
 | MONGO_INITDB_ROOT_PASSWORD |         | The password for root access to the local MongoDB instance |
+
+The default file can be found at: [background/env/mongodb.env](https://github.com/simcesplatform/Platform-Manager/blob/master/background/env/mongodb.env)
 
 ### background/env/mongo_express.env
 
@@ -131,7 +131,9 @@ The default file can be found at: [background/docker-compose-background.yml](htt
 
 The simulation configuration YAML file is the main configuration for each simulation run. However, for the communication to work some environment settings must be configured properly.
 
-The environment variables are passed to [Platform Manager](core_platformmanager.md) when a new simulation run is started. They are given in 3 environment variable files: [`common.env`](#commonenv) (for some common settings), [`rabbitmq.env`](#rabbitmqenv) (for the connection details for RabbitMQ) and [`mongodb.env`](#mongodbenv) (for connection details for MongoDB). Some of the parameters are described here. All of the common and RabbitMQ are then also passed to the platform managed components in the new simulation run. In addition, the simulation run specific Log Writer instance also received the MongoDB settings. For the parameters not described here there are description comments in the files themselves.
+The environment variables are passed to [Platform Manager](core_platformmanager.md) when a new simulation run is started. They are given in 3 environment variable files: [`common.env`](#commonenv) (for some common settings), [`rabbitmq.env`](#rabbitmqenv) (for the connection details for RabbitMQ) and [`mongodb.env`](#mongodbenv) (for connection details for MongoDB). All of the common and RabbitMQ parameters are passed to the platform managed components when a new simulation run is started. In addition, the simulation run specific Log Writer instance also receives the MongoDB settings.
+
+Some of the parameters are described here. For the parameters not described here there are descriptive comments in the files themselves.
 
 ### common.env
 

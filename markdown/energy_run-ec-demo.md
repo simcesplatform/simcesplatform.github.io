@@ -1,10 +1,10 @@
 # Running the Energy Community demo scenario simulation
 
-After successfully [running the first test simulation](core_run-first.md), the next step is to run a simulation with at least one domain component. The Energy Community (EC) demo scenario uses platform-managed [StaticTimeSeriesResource](energy_static-time-series-resource.md) components along with the core components. The scenario is defined at the documentation page [Energy community demo scenario](energy_scenario-ec-demo.md).
+After successfully [running the first test simulation](core_run-first.md), the next step is to run a simulation with at least one domain component. The Energy Community (EC) demo scenario uses platform-managed [Static time series resource](energy_static-time-series-resource.md) components along with the core components. The scenario is defined at the documentation page [Energy community demo scenario](energy_scenario-ec-demo.md).
 
 ## Installing the domain component
 
-To be able to use the [StaticTimeSeriesResource](energy_static-time-series-resource.md) component in a simulation run, it must first be installed. Use the following steps to make it available for the platform to use.
+To be able to use the [Static time series resource](energy_static-time-series-resource.md) component in a simulation run, it must first be installed. Use the following steps to make it available for the platform to use.
 
 1. Ensure that the file `docker_images_domain.txt` contains the Docker image name for the StaticTimeSeriesResource: `ghcr.io/simcesplatform/static-time-series-resource:latest`
 
@@ -19,7 +19,7 @@ To be able to use the [StaticTimeSeriesResource](energy_static-time-series-resou
 
     This script will fetch the Docker images and component manifest files for the domain components as well as make all the input files in the `resources` folder available for the simulation platform.
 
-5. (Optional) Look through the simulation configuration file and see how it corresponds to the scenario description at Energy Community (EC). The ready-made configuration file can be found at [simulation_configuration_ec.yml](https://github.com/simcesplatform/Platform-Manager/blob/master/simulation_configuration_ec.yml). Note, that the filenames for the CSV files that resource component uses are given as `/resources/<filename>` where the `<filename>` is the corresponding filename at the local folder `platform/resources/`
+5. (Optional) Look through the simulation configuration file and see how it corresponds to the scenario description at [Energy community demo scenario](energy_scenario-ec-demo.md). The ready-made configuration file can be found at [simulation_configuration_ec.yml](https://github.com/simcesplatform/Platform-Manager/blob/master/simulation_configuration_ec.yml). Note, that the filenames for the CSV files that resource component uses are given as `/resources/<filename>` where the `<filename>` is the corresponding filename at the local folder `platform/resources/`
 
 ## Starting the simulation run
 
@@ -38,7 +38,7 @@ After the simulation run has been completed you should be able to use the [Log R
 
     - Request:
 
-        [http://localhost:8080/simulations/<simulation_id>/messages?process=electric_vehicle&epoch=12](http://localhost:8080/simulations/<simulation_id>/messages?process=electric_vehicle&epoch=12)
+        [`http://localhost:8080/simulations/<simulation_id>/messages?process=electric_vehicle&epoch=12`](http://localhost:8080/simulations/<simulation_id>/messages?process=electric_vehicle&epoch=12)
 
     - Response:
 
