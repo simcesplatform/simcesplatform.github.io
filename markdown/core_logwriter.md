@@ -1,4 +1,4 @@
-# **LogWriter**
+# LogWriter
 
 ## Description
 
