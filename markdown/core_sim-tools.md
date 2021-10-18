@@ -8,7 +8,7 @@ For example, Simulation Tools includes following features:
 - Classes for creating domain-specific messages from AbstractMessage and AbstractResult
 - Classes for processing re-usable message blocks, such as QuantityBlock and TimeSeriesBlock
 - Network client class for communication with RabbitMQ message bus
-- An abstract base class with the common functionality of simulation components
+- An abstract base class with the common functionality of simulation components: [AbstractSimulationComponent](core_abstractsimulationcomponent.md)
 - Class for processing datetime values in ISO 8601
 - Class for logging (locally within the component)
 - Timer class

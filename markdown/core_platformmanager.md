@@ -33,7 +33,7 @@ Required before running Platform Manager to start a new simulation run:
 - All required Docker images available for the Platform Manager
 - Connection parameters for RabbitMQ and MongoDB given in the configuration files for the Platform Manager
 
-It is advices to start the Platform Manager using the provided start simulation script which can be used to easily provide the Platform Manager with the wanted simulation configuration.
+It is advisable to start the Platform Manager using the provided start simulation script which can be used to easily provide the Platform Manager with the wanted simulation configuration.
 
 Workflow of the Platform Manager instance once it has been started:
 

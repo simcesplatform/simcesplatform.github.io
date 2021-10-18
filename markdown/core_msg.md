@@ -10,13 +10,13 @@ To save the re-use of specifications and software, the message structures apply 
 - [AbstractMessage](core_msg-abstractmessage.md) is the base class of all messages
     - All messages MUST inherit fields from this
     - The direct descendants are:
-        - SimState
-        - AbstractResult
+        - [SimState](core_msg-simstate.md)
+        - [AbstractResult](core_msg-abstractresult.md)
 - [AbstractResult](core_msg-abstractresult.md) represents the result (i.e., output) of a process
     - All messages that carry a result MUST inherit the fields of AbstractResult
     - The direct descendants are at least:
-        - Epoch
-        - Status
+        - [Epoch](core_msg-epoch.md)
+        - [Status](core_msg-status.md)
         - All actual result messages
 
 ![Message hierarchy](images/msg_hierarchy.png)

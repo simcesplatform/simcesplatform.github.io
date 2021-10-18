@@ -2,7 +2,7 @@
 
 Follow these step to create a new component that participates in simulation in the platform.
 
-1. Make sure you understand the basic concepts of the platform (see [Manual for developer](core_develop-overview.md))
+1. Make sure you understand the basic concepts of the platform (see [Basic concepts at Manual for developer](core_develop-overview.md#basic-concepts))
 2. <strong>Outputs</strong>: Decide what information the component should generate as result messages
 3. <strong>Inputs</strong>: Resolve what information the component needs as the input to generate the result messages
     - This information comes from other components

@@ -21,8 +21,8 @@ In this approach, the following workflow repeats in a loop. Each round is starte
 
 1. A user starts up components manually as Docker containers
     - In the startup, the user somehow specifies simulation parameters
-2. Among the Docker containers, there is PlatformManager that communicates the simulation parameters
-    - The parameters are sent to Management Exchange using Start (message)
+2. Among the Docker containers, there is [Platform Manager](core_platformmanager.md) that communicates the simulation parameters
+    - The parameters are sent to [Management Exchange](core_exchange-mgmt.md) using [Start message](core_msg-start.md)
     - This enables any externally managed components to receive the parameters
 3. The components execute until finished
 
@@ -41,9 +41,9 @@ In this approach, the component is managed manually. Human users must make sure 
 
 Each externally managed component is first started manually. Then, it runs the following workflow in a loop:
 
-1. Receive "start" message (see Start (message)) from Management Exchange; this contains simulation-run-specific parameters
+1. Receive "start" message (see [Start message](core_msg-start.md)) from [Management Exchange](core_exchange-mgmt.md); this contains simulation-run-specific parameters
 2. Set up the received parameters to the component
-    - After this, the component is ready to communicate with other components via the Simulation-specific Exchange
+    - After this, the component is ready to communicate with other components via the [Simulation-specific Exchange](core_exchange-sim.md)
 3. Run the component; it will communicate with other components via the Simulation-specific Exchange
 
 The workflow is illustrated in the figure below.

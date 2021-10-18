@@ -16,6 +16,7 @@ UCUM is not the first specification to encode units of measure. However, UCUM is
 - coverage (in principle, you can express any unit of measure in the world)
 - human-readability and intuitiveness (in contrast to some specifications that use numeric identifiers, such as UNECE: http://tfig.unece.org/contents/recommendation-20.htm)
 
+A web service that can be used to check whether an expression is a valid UCUM unit: [https://ucum.nlm.nih.gov/ucum-lhc/demo.html](https://ucum.nlm.nih.gov/ucum-lhc/demo.html)
 
 ## UCUM in SimCES
 

@@ -19,5 +19,5 @@ The following table lists the topic names used by the core platform and which me
 
 (2) Exchanges:
 
-- M: Management Exchange
-- S: Simulation-specific Exchange
+- M: [Management Exchange](core_exchange-mgmt.md)
+- S: [Simulation-specific Exchange](core_exchange-sim.md)

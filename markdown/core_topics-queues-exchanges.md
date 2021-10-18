@@ -26,7 +26,7 @@ The platform specifies two types of exchange:
 
 - **Simulation-specific exchange.** The platform creates one for each simulation run, as this prevents any interference between simulation runs and enables even concurrent simulations.
 - **Management exchange.** There is only one of these. The management exchange is there to enable communication with components even when no simulation is running.
-The details of these exchanges are explained in the page Exchanges.
+The details of these exchanges are explained in the pages [Simulation-specific exchange](core_exchange-sim.md) and [Management exchange](core_exchange-mgmt.md).
 
 ## Hierarchical topic names and wildcards
 
