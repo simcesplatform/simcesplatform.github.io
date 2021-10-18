@@ -49,7 +49,7 @@ git -c http.sslVerify=false clone --recursive <full_address_to_the_repository>.g
 
 ## Registering component type to the platform
 
-Before platform can be used to start a new simulation that includes a new domain component, the new component type has to be registered to the platform. The registering is done to allow the platform to know whether the new component is an externally managed or platform managed component and in the latter case to also know which Docker image to use when deploying the platform-managed component. The registration process also allows the user to mark some input parameters as required so that the platform does not start a new simulation run in vain if essential information is missing from the simulation configuration.
+Before platform can be used to start a new simulation that includes a new domain component, the new component type has to be registered to the platform. The registering is done to allow the platform to know whether the new component is an externally managed or platform managed component and in the latter case to also know which Docker image to use when deploying the platform managed component. The registration process also allows the user to mark some input parameters as required so that the platform does not start a new simulation run in vain if essential information is missing from the simulation configuration.
 
 The components are registered for the platform by providing it with component manifest files for all the required component types.
 

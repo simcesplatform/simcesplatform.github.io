@@ -12,7 +12,7 @@ The simulation platform and these instructions have been tested on Ubuntu 18.04 
     - For Windows, Bash is included with the [Git for Windows](https://git-scm.com/downloads), for other operating systems it is likely available by default.
     - On Windows the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) can also be used, though setting it up requires more technical knowledge than installing Git for Windows.
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
-    - For running platform-managed components for the simulations.
+    - For running platform managed components for the simulations.
     - For running the local RabbitMQ message bus as well as the local MongoDB database. These are installed by the installation scripts.
     - Installing the most up-to-date versions of Docker and Docker Compose is the recommended option.
     - On Linux, to be compatible with the platform scripts it is advisable to set Docker to be manageable as a non-root user: [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)

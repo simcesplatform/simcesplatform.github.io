@@ -39,7 +39,7 @@ Workflow of the Platform Manager instance once it has been started:
 
 1. Parse the available component manifest files.
 2. Parse the simulation configuration file.
-3. Create new Docker containers for the platform-managed simulation components:
+3. Create new Docker containers for the platform managed simulation components:
     - [Log writer](core_logwriter.md) instance for the simulation specific exchange
     - Platform managed components specified in the simulation configuration file
     - [Simulation Manager](core_simulationmanager.md) for the simulation run

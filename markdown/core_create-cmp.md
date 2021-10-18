@@ -20,7 +20,7 @@ Follow these step to create a new component that participates in simulation in t
     - Specify new message structures as needed
         - See [Conventions of messaging](core_conv-msg.md)
 6. Choose whether to manage the execution by the platform or externally
-    - See [Platform-managed and externally managed components](core_cmp-mgmt.md)
+    - See [Platform managed and externally managed components](core_cmp-mgmt.md)
 7. Develop the component
     - Follow the workflow in pages [Workflow of start and end](core_workflow-start-end.md) and [Workflow of component in simulation](core_workflow-sim.md)
     - When developing a component using Python, it is advisable to to use the [Simulation Tools package](core_sim-tools.md). For details about developing a new component using the package, see the [instructions](https://github.com/simcesplatform/simulation-tools#general-instructions-for-creating-a-new-simulation-component) and the [template file](https://github.com/simcesplatform/simulation-tools/blob/master/examples/component_template.py) for a new component.

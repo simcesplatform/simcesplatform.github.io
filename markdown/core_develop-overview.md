@@ -2,7 +2,7 @@
 
 - Basic concepts
     - [Time and synchronization with epochs](core_time.md)
-    - [Platform-managed and externally managed components](core_cmp-mgmt.md)
+    - [Platform managed and externally managed components](core_cmp-mgmt.md)
     - [Service-oriented architecture](core_soa.md)
 - How to develop:
     - [Creating new component](core_create-cmp.md)
