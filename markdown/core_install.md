@@ -21,10 +21,10 @@ Some simulation components might have other requirements. For those, see the com
 
 ## Installing the platform and the core components
 
-- 1\. Create a folder for the simulation platform. In these instructions this main folder is named platform.
-    - Note, that you must have full read and write permissions in the created folder, platform. Otherwise, the installation process will not work.
+- 1\. Create a folder for the simulation platform. In these instructions this main folder is named `platform`.
+    - Note, that you must have full read and write permissions in the created folder, `platform`. Otherwise, the installation process will not work.
 
-- 2\. Copy the [`fetch_platform_files.sh`](https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh) script file to the `platform` folder for by downloading it from the GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:
+- 2\. Copy the [`fetch_platform_files.sh`](https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh) script file to the `platform` folder by downloading it from GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:
 
         :::bash
         wget https://raw.githubusercontent.com/simcesplatform/Platform-Manager/master/fetch_platform_files.sh
@@ -91,12 +91,12 @@ Some simulation components might have other requirements. For those, see the com
         You should have at least those containers running that are shown in the example listing below:
 
             :::text
-            CONTAINER ID   IMAGE                                   STATUS         NAMES
-            c754c5009a28   mongo-express:0.54.0                    Up 2 minutes   simces_mongo_express
-            fd6e87195259   procem.ain.rd.tut.fi/despa/log_reader   Up 2 minutes   simces_log_reader
-            f33e24b1d060   procem.ain.rd.tut.fi/despa/log_writer   Up 2 minutes   simces_log_writer_management
-            9782e68eabbc   rabbitmq:3.8.4-management               Up 2 minutes   simces_rabbitmq
-            fa0a61528313   mongo:4.2.7                             Up 2 minutes   simces_mongodb
+            CONTAINER ID   IMAGE                                        STATUS         NAMES
+            ef59c0f21457   ghcr.io/simcesplatform/mongo-express:latest  Up 2 minutes   simces_mongo_express
+            ff24ba9e33de   ghcr.io/simcesplatform/logreader             Up 2 minutes   simces_log_reader
+            f7d3e82ccc4b   ghcr.io/simcesplatform/logwriter             Up 2 minutes   simces_log_writer_management
+            1995624af84a   rabbitmq:3.8.4-management                    Up 2 minutes   simces_rabbitmq
+            b49675bd1581   mongo:4.2.7                                  Up 2 minutes   simces_mongodb
 
     - 8\.2\. Check that the Log Writer instance listening to the management exchange is running properly. This also works as a check for the RabbitMQ message bus.
 
@@ -159,7 +159,7 @@ The following commands are to be used in the installation folder using a termina
     - To remove the Docker images related to the platform:
 
             :::bash
-            docker images -a | grep "procem.ain.rd.tut.fi\|mongo\|rabbitmq\|ubuntu" | awk '{print $3}' | xargs docker rmi
+            docker images -a | grep "simcesplatform\|mongo\|rabbitmq\|ubuntu" | awk '{print $3}' | xargs docker rmi
 
     - To remove the Docker networks related to the platform:
 

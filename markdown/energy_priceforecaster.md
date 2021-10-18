@@ -2,7 +2,7 @@
 
 ## Description
 
-PriceForecaster component predicts / takes a value from historian / etc. for the future status of the price. It subscribes to SimState and Epoch topics and publishes to PriceForecastState topic. 
+PriceForecaster component predicts / takes a value from historian / etc. for the future status of the price. It subscribes to SimState and Epoch topics and publishes to PriceForecastState topic.
 
 ## Functionalities
 
@@ -13,7 +13,7 @@ PriceForecaster component predicts / takes a value from historian / etc. for the
 The component has pricedata.csv as an input file. The CSV file should contain MarketId, ResourceId, PricingType, UnitOfMeasure, time slots, and prices associated with time slots. Each time slot needs a column and time slots are named as Time1, Time2, Time3, so on. Price associated with each time slot needs a column and time slot prices are named as Price1, Price2, Price3, so on. Needless to mention, the value in PriceX column belongs to the time in TimeX column. Each row contains values which represent data for one epoch. There should be at least as many data rows as the number of simulation epochs. In the CSV file, "." is the decimal separator.
 
 Example content for an input file with 2 epoches and 3 time slots (the first two rows are used for the two epoches):
-							Time4	
+							Time4
 
 | MarketId | ResourceId | PricingType | UnitOfMeasure | Time1 | Time2 | Time3 | Price1 | Price2 | Price3 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -54,5 +54,5 @@ The following packages are needed.
 
 | Package | Version | Why needed | URL |
 | --- | --- | --- | --- |
-| Simulation Tools | | Component implementation based on AbstractSimulationComponent | https://git.ain.rd.tut.fi/procemplus/simulation-tools |
-| Domain messages | | Uses the PriceForecastStateMessage class | https://git.ain.rd.tut.fi/procemplus/domain-messages |
+| Simulation Tools | | Component implementation based on AbstractSimulationComponent | <https://github.com/simcesplatform/simulation-tools> |
+| Domain messages | | Uses the PriceForecastStateMessage class | <https://github.com/simcesplatform/domain-messages> |
