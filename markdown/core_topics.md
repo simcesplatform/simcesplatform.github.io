@@ -6,11 +6,11 @@ The following table lists the topic names used by the core platform and which me
 
 | Topic name | Message type | Purpose (see 1) | Exchange (see 2) | Publisher(s) | Subscriber(s) | Motivation |
 |-|-|-|-|-|-|-|
-| Epoch | Epoch | Reporting | S | SimulationManager | (All non-core components) | Coordinating execution of epochs |
-| SimState | SimState | Reporting | S | SimulationManager | (All non-core components) | Controlling execution of simulation |
-| Start | Start | Starting | M | PlatformManager | (All externally managed non-core components) | Signalling start of simulation; deliver parameters |
-| Status.Error | Status | Reporting | S | (Any non-core component) | SimulationManager | Error reporting |
-| Status.Ready | Status | Reporting | S | (Any non-core component) | SimulationManager | Reporting readiness to start next epoch |
+| Epoch | Epoch | Reporting | S | Simulation Manager | (All non-core components) | Coordinating execution of epochs |
+| SimState | SimState | Reporting | S | Simulation Manager | (All non-core components) | Controlling execution of simulation |
+| Start | Start | Starting | M | Platform Manager | (All externally managed non-core components) | Signalling start of simulation; deliver parameters |
+| Status.Error | Status | Reporting | S | (Any non-core component) | Simulation Manager | Error reporting |
+| Status.Ready | Status | Reporting | S | (Any non-core component) | Simulation Manager (+ any non-core component that requires the information about other components readiness) | Reporting readiness to start next epoch |
 
 (1) Purposes:
 
