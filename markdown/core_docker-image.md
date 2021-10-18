@@ -62,7 +62,7 @@ Note, that the Docker image name must match to the image name that was used in t
 
 The following uses a Docker image `ghcr.io/simcesplatform/my_component:latest` as an example and assumes that the image in question has been already built and that the login to the container registry has been done.
 
-To push the image to Github Container registry:
+To push the image to GitHub Container registry:
 
     :::bash
     docker push ghcr.io/simcesplatform/my_component:latest
