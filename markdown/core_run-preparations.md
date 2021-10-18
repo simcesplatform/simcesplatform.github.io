@@ -57,9 +57,10 @@ Each component should provide a component manifest file with the component sourc
 
 To register all the required component types to the platform follow the procedure:
 
-1. Modify the Git server file so that it contains the code repository name for the component in question in the Repositories listing. See the section Git server file format about the details of the used attributes and the syntax for the file.
+1. Modify the Git server file so that it contains the code repository name for the component in question in the Repositories listing. See the section [Git server file format](#git-server-file-format) about the details of the used attributes and the syntax for the file.
     - Use the file `components/github_server_domain.yml` if the repositories are available at GitHub
     - Use the file `components/gitlab_server_domain.yml` if the repositories are in the GitLab server used in the development of the platform.
+        - Note, when using private repositories which require access tokens, remember to add the required tokens to file `access_tokens.env`.
     - It is also possible to create completely new Git server file under the folder `components`. All files under the folder are gone through when fetching the manifest files.
     - Alternatively, it is also possible to manually copy the component manifest file to the folder `manifests`. All YAML files under that folder are taken to account when the platform is started.
     - There also exists a script that can be used to copy locally existing manifest files to the manifests folder. To use it, first edit the file `local_manifest_files.txt` to include the paths to the local manifest files and then run: `source fetch_local_manifests.sh local_manifest_files.txt`
@@ -95,7 +96,7 @@ The server file is in YAML format and supports the following attributes:
 
 ### Example Git server file
 
-The following server file would be used to fetch manifest files from 4 GitLab repositories hosted at `https://gitlab.address.com`. Using the default branch, file "`component_manifest.yml`" from "`procemplus/my_component1`" and "`procemplus/my_component2`" and file "`my_manifest.yml`" from "`procemplus/my_component3`". Using the branch "`my_branch`", file "`my_folder/my_manifest.yml`" from "`username/my_component4`". The access to the repositories is provided by environment variable `GITLAB_ACCESS_TOKEN`.
+The following server file would be used to fetch manifest files from 4 GitLab repositories hosted at `https://gitlab.address.com`. Using the default branch, file "`component_manifest.yml`" from "`procemplus/my_component1`" and "`procemplus/my_component2`" and file "`my_manifest.yml`" from "`procemplus/my_component3`". Using the branch "`my_branch`", file "`my_folder/my_manifest.yml`" from "`username/my_component4`". The access to the repositories is provided by environment variable `GITLAB_ACCESS_TOKEN` which is read from file `access_tokens.env`.
 
 ```yaml
 Repositories:
@@ -114,7 +115,7 @@ AccessToken: ${GITLAB_ACCESS_TOKEN}
 
 ## Making input files available for the platform
 
-Any input file that is used by a platform managed deployed component during a simulation run, needs to be made available for the platform. Example for an input file is the CSV file that is used as input with the [Static Time Series Resource](energy_static-time-series-resource.md) components in the [EC demo simulation](energy_run-ec-demo.md).
+Any input file that is used by a platform managed component during a simulation run, needs to be made available for the platform. Example for an input file is the CSV file that is used as input for the [Static Time Series Resource](energy_static-time-series-resource.md) components in the [Energy Community demo simulation](energy_run-ec-demo.md).
 
 Any input files that are used by externally managed components are not required to be accessible by the platform.
 
@@ -134,11 +135,9 @@ The component can be installed and registered to the platform by running the fol
 source platform_domain_setup.sh
 ```
 
-A successful run of the script should show no error messages in the output.
+A successful run of the script should show no error messages in the output. See the [Example output](#example-output) section for possible script output when no errors are present.
 
 Note, that for externally managed components, the script above can only register the component manifests to the platform. The manual installation and starting procedure for the components is still required in addition to running the script.
-
-TODO: add a note about possible error with container name being in use when using the script
 
 ### Example output
 
