@@ -36,10 +36,25 @@ The platform managed Docker containers are automatically deleted after the simul
 
 After the simulation, the output from the components can be found stored in log files in a Docker volume called `simces_simulation_logs` in the folder `/logs`. The log files can be fetched to a local folder using a Bash script `logs/copy_logs.sh`:
 
-1. Navigate to the folder logs inside the installation folder using a Bash compatible terminal.
+1. Navigate to the folder `logs` inside the installation folder using a Bash compatible terminal.
 2. Use the following command to copy all the log files to the logs folder:
 
         :::bash
         source copy_logs.sh
 
 The filenames for the log files use the format `logfile_<component_name>.log`. Note that the files can contain outputs from multiple simulations. The latest outputs are at the end of the log files.
+
+The print out the entire log file using command line:
+
+    :::bash
+    cat logfile_<component_name>.log
+
+To print out the contents of the log file one page at a time:
+
+    :::bash
+    more logfile_<component_name>.log
+
+To print out only the last 15 lines from the log file:
+
+    :::bash
+    tail --lines 15 logfile_<component_name>.log
