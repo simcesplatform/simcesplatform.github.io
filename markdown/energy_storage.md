@@ -10,7 +10,7 @@ If the storage cannot fulfil the desired power for example there is not enough e
 
 ## Messaging
 
-Subscribe
+### Subscribe
 
 This component does not receive any result messages if a CSV file is used to control it.
 
@@ -21,13 +21,13 @@ If a CSV file is not used this component receives the following result messages:
 | ControlState\.(process_id) | Power output or input required from the storage for the current epoch |
 
 
-Publish
+### Publish
 
 | Topic | Payload |
 | --- | --- |
 | ResourceState\.Storage\.\(process_id\) | Real power and state of charge for the epoch |
 
-Warnings
+### Warnings
 
 This component may publish warnings in result messages as explained in the following table.
 

@@ -1,4 +1,4 @@
-Start message blocks
+# Start message blocks
 
 This page contains the domain-specific parameter blocks included in the start message (see [Start (message)](core_msg-start.md)).
 
