@@ -2,15 +2,10 @@
 
 This page documents the setup of components for a simulation run.
 
-
-## Parametrisation
-
 To execute, the components need certain parameters depending on the functionality. How these parameters are delivered depends on the way the components are managed (externally or in the platform).
 
 
-## Types of Lifecycle
-
-### Platform managed
+## Platform managed
 
 In this approach, the components is managed by the platform with Docker. This suits for components that:
 
@@ -29,7 +24,7 @@ In this approach, the following workflow repeats in a loop. Each round is starte
 ![Workflow](images/lifecycle-platf.svg)
 
 
-### Externally managed
+## Externally managed
 
 In this approach, the component is managed manually. Human users must make sure that the component is running before a simulation can be executed. This approach has at least the following uses:
 
