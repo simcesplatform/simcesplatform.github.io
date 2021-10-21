@@ -26,3 +26,27 @@ SimCES and its parts have been developed in the following projects.
 - [ProCemPlus](https://www.senecc.fi/projects/procemplus), "Prosumer Centric Energy Communities – towards Energy Ecosystem", 2019-2021, funded by Business Finland
 
 - [INTERRFACE](http://www.interrface.eu/), "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, funded by H2020 European Commission
+
+
+## Contributors
+
+TAU = Tampere University, VTT = VTT Technical Research Centre of Finland
+
+| Person | Affiliation | Contributed to |
+| - | - | - |
+| Amir Safdarian | VTT | Price Forecaster |
+| Anna Kulmala | VTT | Supervision |
+| Antti Keski-Koukkari | VTT | Resoure Forecaster, Storage |
+| Antti Supponen | TAU | Grid, Procem-LFM |
+| Kalle Ruuth | TAU | Static time series resource |
+| Kari Systä | TAU | Supervision |
+| Matti Vilkko | TAU | Supervision |
+| Md Tanjimuddim | TAU | Controller |
+| Mehdi Attar | TAU | Distribution management system (DMS) |
+| Olli Suominen | TAU | Economic Dispatch |
+| Otto Hylli | TAU | Domain Messages, Log Reader, Static time series resource, Storage |
+| Petri Kannisto | TAU | System architecture, coordination |
+| Sami Repo | TAU | Supervision |
+| Timo Aaltonen | TAU | System architecture |
+| Ville Heikkilä | TAU | Domain Tools, Log Writer, Platform Manager, Simple Component, Simulation Manager, Simulation Tools |
+| Ville Mörsky | TAU | Economic Dispatch |
