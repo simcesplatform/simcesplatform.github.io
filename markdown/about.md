@@ -14,9 +14,7 @@ Get source code from GitHub: [https://github.com/simcesplatform](https://github.
 
 ## Contact
 
-If you have any questions or comments regarding SimCES or this website, you can contact:
-
-TODO
+If you have any questions or comments regarding SimCES or this website, please find a contact in the [maintenance plan](maintenance-plan.md).
 
 
 ## Research projects
