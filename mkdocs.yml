@@ -77,6 +77,7 @@ nav:
             - Simulation lifecycle: core_lifecycle.md
             - Simulation Manager: core_simulationmanager.md
             - Dummy Component: core_dummycomponent.md
+            - AmqpMathToolConnector: core_amqpmathtool.md
     - Energy domain:
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
