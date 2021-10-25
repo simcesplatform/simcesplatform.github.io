@@ -7,20 +7,17 @@ This component is used to regulate the power setpoint of the resources based on 
 ## Subscribe
 | Exact Topic Name | Link to topic page(s) | Payload of interest|
 | --- | --- | --- |
-|ResourceForecastState.Dispatch| [ResourceForecastState.Dispatch](energy_msg-resourceforecaststate-dispatch.md)| Real Power and Reactive Power |
+|ResourceForecastState.Dispatch| [energy_msg-resourceforecaststate-dispatch](energy_msg-resourceforecaststate-dispatch)| Real Power and Reactive Power |
 
 ## Publish
 | Exact Topic Name | Link to topic page(s) | Payload of interest|
 | --- | --- | --- |
-|ControlState.PowerSetpoint| [ControlState.PowerSetpoint](energy_msg-controlstate-powersetpoint.md)| Real Power and Reactive Power |
+|ControlState.PowerSetpoint| [energy_msg-ControlState.PowerSetpoint](energy_msg-ControlState.PowerSetpoint)| Real Power and Reactive Power |
 
 ## Input Files
 This component does not have any input files.
 
 ## Workflow
-
-ED component functionality is message triggered. The optimisation relies on input data and therefore we have a barrier for execution; all input data needs to be received before executing/solving the ED problem:
-
 1. Simulation is started
 2. Controller t receives SimState "running" 
 3. Controller responds by sending Status "ready" message.
