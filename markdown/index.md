@@ -25,6 +25,12 @@ Finally, the analysis of simulation results is the ultimate aim of the system. T
 SimCES fulfills these requirements. It does not develop any complex algorithms for you but provides a straightforward yet powerful concept for the management of simulation systems and the communication of simulation components, including the logging of simulation results.
 
 
+## Source code
+
+SimCES is open source.
+Therefore, you can find the source code in Github: [https://github.com/simcesplatform](https://github.com/simcesplatform)
+
+
 ## This website
 
 This website has the following main sections:

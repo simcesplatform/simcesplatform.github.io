@@ -17,6 +17,7 @@ markdown_extensions:
 # See README.txt for the naming convention of files!
 nav:
     - Use:
+        - Introduction: index.md
         - Features: core_features.md
         - Installation: core_install.md
         - Run simulation:
@@ -79,6 +80,7 @@ nav:
             - Dummy Component: core_dummycomponent.md
             - AmqpMathToolConnector: core_amqpmathtool.md
     - Energy domain:
+        - Overview: energy_overview.md
         - Energy-domain-specific conventions: energy_conventions.md
         - Components (energy):
             - Controller: energy_controller.md
