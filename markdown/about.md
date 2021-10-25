@@ -30,6 +30,8 @@ SimCES and its parts have been developed in the following projects.
 
 TAU = Tampere University, VTT = VTT Technical Research Centre of Finland
 
+Please note that most items have been contributed to by multiple persons.
+
 | Person | Components | Packages | Other |
 | - | - | - | - |
 | Amir Safdarian (VTT) | Price Forecaster | Domain Messages, Domain Tools | |
@@ -37,8 +39,8 @@ TAU = Tampere University, VTT = VTT Technical Research Centre of Finland
 | Antti Keski-Koukkari (VTT) | Resource Forecaster, Storage | Domain Messages | |
 | Antti Supponen (TAU) | Grid, Procem-LFM | | |
 | Kalle Ruuth (TAU) | Static Time Series Resource | Domain Messages, Domain Tools | |
-| Kari Systä (TAU) | | | Supervision |
-| Matti Vilkko (TAU) | | | Supervision |
+| Kari Systä (TAU) | | | Architecture, supervision |
+| Matti Vilkko (TAU) | Economic Dispatch | | Supervision |
 | Md Tanjimuddim (TAU) | Controller, Procem-LFM | Domain Messages | |
 | Mehdi Attar (TAU) | Distribution management system (DMS), Procem-LFM | | |
 | Olli Suominen (TAU) | Economic Dispatch | Domain Messages | |
