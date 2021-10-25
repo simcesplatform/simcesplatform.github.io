@@ -28,25 +28,25 @@ SimCES and its parts have been developed in the following projects.
 - [INTERRFACE](http://www.interrface.eu/), "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, funded by H2020 European Commission
 
 
-## Contributors
+## Author contributions
 
 TAU = Tampere University, VTT = VTT Technical Research Centre of Finland
 
-| Person | Affiliation | Contributed to |
-| - | - | - |
-| Amir Safdarian | VTT | Price Forecaster |
-| Anna Kulmala | VTT | Supervision |
-| Antti Keski-Koukkari | VTT | Resoure Forecaster, Storage |
-| Antti Supponen | TAU | Grid, Procem-LFM |
-| Kalle Ruuth | TAU | Static time series resource |
-| Kari Systä | TAU | Supervision |
-| Matti Vilkko | TAU | Supervision |
-| Md Tanjimuddim | TAU | Controller |
-| Mehdi Attar | TAU | Distribution management system (DMS) |
-| Olli Suominen | TAU | Economic Dispatch |
-| Otto Hylli | TAU | Domain Messages, Log Reader, Static time series resource, Storage |
-| Petri Kannisto | TAU | System architecture, coordination |
-| Sami Repo | TAU | Supervision |
-| Timo Aaltonen | TAU | System architecture |
-| Ville Heikkilä | TAU | Domain Tools, Log Writer, Platform Manager, Simple Component, Simulation Manager, Simulation Tools |
-| Ville Mörsky | TAU | Economic Dispatch |
+| Person | Components | Packages | Other |
+| - | - | - | - |
+| Amir Safdarian (VTT) | Price Forecaster | Domain Messages, Domain Tools | |
+| Anna Kulmala (VTT) | | | Supervision |
+| Antti Keski-Koukkari (VTT) | Resource Forecaster, Storage | Domain Messages | |
+| Antti Supponen (TAU) | Grid, Procem-LFM | | |
+| Kalle Ruuth (TAU) | Static Time Series Resource | Domain Messages, Domain Tools | |
+| Kari Systä (TAU) | | | Supervision |
+| Matti Vilkko (TAU) | | | Supervision |
+| Md Tanjimuddim (TAU) | Controller, Procem-LFM | Domain Messages | |
+| Mehdi Attar (TAU) | Distribution management system (DMS), Procem-LFM | | |
+| Olli Suominen (TAU) | Economic Dispatch | Domain Messages | |
+| Otto Hylli (TAU) | Log Reader, Log Writer, Platform Manager, Static time series resource, Storage | Domain Messages, Domain Tools, Simulation Tools | |
+| Petri Kannisto (TAU) | | Amqp Math Tool Integration | Coordination, general documentation, system architecture |
+| Sami Repo (TAU) | | | Supervision |
+| Timo Aaltonen (TAU) | | | System architecture |
+| Ville Heikkilä (TAU) | Controller, Log Reader, Log Writer, Platform Manager, Procem-LFM, Simple Component, Simulation Manager, Static time series resource | Domain Messages, Domain Tools, Simulation Tools | Usage and installation instructions |
+| Ville Mörsky (TAU) | Economic Dispatch | Domain Messages | |
