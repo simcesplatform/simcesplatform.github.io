@@ -15,6 +15,8 @@ Still, PLEASE NOTE that each component of SimCES ships with a license that defin
 
 ## Responsible persons
 
+TODO: emails!
+
 The responsible persons (RP) and the areas of responsibility are as follows:
 
 - Sami Repo, Tampere University
