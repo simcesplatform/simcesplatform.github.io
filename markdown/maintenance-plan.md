@@ -15,21 +15,15 @@ Still, PLEASE NOTE that each component of SimCES ships with a license that defin
 
 ## Responsible persons
 
-TODO: emails!
+The responsible persons (RP) are as follows (in alphabetical order):
 
-The responsible persons (RP) and the areas of responsibility are as follows:
-
-- Sami Repo, Tampere University
-    - coordination of research projects that exploit SimCES
-- **???** TODO, Tampere University
-    - ???
-- Petri Kannisto, Tampere University
-    - coordination of software-related tasks and issues
-    - coordination of documentation
-- Amir Safdarian, VTT
-    - contact person at VTT
-- Antti Keski-Koukkari, VTT
-    - contact person at VTT
+| Person | Email |
+|-|-|
+| Amir Safdarian, VTT | [amir.safdarian@vtt.fi](mailto:amir.safdarian@vtt.fi) |
+| Antti Keski-Koukkari, VTT | [antti.keski-koukkari@vtt.fi](mailto:antti.keski-koukkari@vtt.fi) |
+| Kari Systä, Tampere University | [kari.systa@tuni.fi](mailto:kari.systa@tuni.fi) |
+| Petri Kannisto, Tampere University | [petri.kannisto@tuni.fi](mailto:petri.kannisto@tuni.fi) |
+| Sami Repo, Tampere University | [sami.repo@tuni.fi](mailto:sami.repo@tuni.fi) |
 
 The group of RPs may change if the existing RPs find this appropriate. 
 For instance, this should occur if a person moves to another employer or if SimCES is to be developed further in a new research project.
