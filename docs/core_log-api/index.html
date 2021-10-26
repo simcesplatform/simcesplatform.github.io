@@ -589,7 +589,7 @@ components from LogReader with the log API.</p>
 <h2 id="quick-start">Quick start</h2>
 <p>To verify that a simulation has been executed, you can retrieve simulation
 information. Type this address into your web browser:</p>
-<pre><code class="language-nohighlight">http://localhost:8080/simulations
+<pre><code class="language-text">http://localhost:8080/simulations
 </code></pre>
 <ul>
 <li>This assumes that you run the simulation platform locally</li>
@@ -602,7 +602,7 @@ the time you executed the simulation.</p>
 use the built-in user interface which can create the API calls for you. So to
 perform the above operation with the user interface with your browser go to
 address:</p>
-<pre><code class="language-nohighlight">http://localhost:8080/
+<pre><code class="language-text">http://localhost:8080/
 </code></pre>
 <p>Then under the "Get metadata for all simulations" heading press the "send query" button.
 This opens a new browser tab that uses the address from the first example and thus
@@ -610,78 +610,94 @@ shows the same information.</p>
 <h2 id="api-overview">API overview</h2>
 <p>LogReader implements the HTTP based API described below. LogReader also offers a
 simple web browser based interface for the API available from the application
-root path for example http://localhost:8080/. The API offers the following
+root path for example <a href="http://localhost:8080/">http://localhost:8080/</a>. The API offers the following
 features:</p>
 <ul>
-<li>Get list of simulations there are messages for.</li>
-<li>Get information about a single simulation by its id.</li>
-<li>Get messages for a simulation. Messages can be filtered in various ways such
+<li><a href="#get-simulations">Get list of simulations</a> there are messages for.</li>
+<li><a href="#get-simulation">Get information about a single simulation</a> by its id.</li>
+<li><a href="#get-messages-for-simulation-run">Get messages</a> for a simulation. Messages can be filtered in various ways such
   as topic and source process.</li>
-<li>Get invalid messages published during a simulation run.</li>
-<li>Create a json or csv time series from attribute values  in messages.     </li>
+<li><a href="#get-invalid-messages-for-simulation-run">Get invalid messages</a> published during a simulation run.</li>
+<li><a href="#get-simple-timeseries-for-simulation">Create a json or csv time series</a> from attribute values in messages.</li>
 </ul>
 <p>This documentation assumes that the reader is familiar with the general
 messaging concepts of the simulation platform such as epochs and the various
 message attribute value blocks like TimeseriesBlock and QuantityBlock. The
 following notation is used to document request parameters and members of JSON
 objects in response and request bodies:</p>
-<ul>
-<li>
-<p>name (data type, parameter type, required): description</p>
-</li>
-<li>
-<p>name: parameter or json member name</p>
-</li>
-<li>data type: value data type such as string, integer or ISO datetime</li>
-<li>parameter type: Only for request parameters either in the URL path or in the
-  URL query parameters</li>
-<li>required: Indicates that the parameter or JSON member is required. If this
-  keyword is not present the parameter or member is optional. This is not used
-  with response JSON where all members can be assumed to be present.</li>
-<li>description: Explain the purpose of the parameter or JSON member.</li>
-</ul>
+<pre><code class="language-text">name (data type, parameter type, required): description
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Description for the term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>parameter or JSON member name</td>
+</tr>
+<tr>
+<td>data type</td>
+<td>Data type for the value such as string, integer or ISO datetime</td>
+</tr>
+<tr>
+<td>parameter type</td>
+<td>Only for request parameters: either <code>path</code> (if the parameter is in the URL path) or <code>query</code> (if the parameter is part of the URL query parameters)</td>
+</tr>
+<tr>
+<td>required</td>
+<td>Indicates that the parameter or JSON member is required. If this keyword is not present, the parameter or member is optional. This is not used with response JSON where all members can be assumed to be present.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Explanation for the purpose of the parameter or JSON member.</td>
+</tr>
+</tbody>
+</table>
 <p>The API is available from the application root path. So for example if LogReader
-is running on localhost port 8080 the URL to get all simulations would be
-http://localhost:8080/simulations. The examples for each API endpoint use
+is running on localhost port 8080 (as is the default) the URL to get all simulations would be
+<a href="http://localhost:8080/simulations">http://localhost:8080/simulations</a>. The examples for each API endpoint use
 localhost port 8080 in example request URLs. Note that the message structures
 and topics used in the examples may not always match the actual topics and
-structures defined for the platfor. The examples are based on test data included
+structures defined for the platform. The examples are based on test data included
 with LogReader which can be imported to the LogReader database. This allows
-trying out the API. See the LogReader readme for instructions how to use the
+trying out the API. See the <a href="https://github.com/simcesplatform/LogReader/blob/master/readme.md">LogReader readme</a> for instructions how to use the
 test data.</p>
 <h2 id="get-simulations">Get simulations</h2>
-<p>method: GET<br />
-path: /simulations</p>
+<ul>
+<li>method: <code>GET</code></li>
+<li>path: <code>/simulations</code></li>
+</ul>
 <p>Returns a list of simulation runs the message database has messages for.</p>
 <h3 id="request-parameters">Request parameters</h3>
 <ul>
-<li>fromDate (ISO datetime, query): Return simulation runs which have started on
+<li><code>fromDate</code> (ISO datetime, query): Return simulation runs which have started on
   or after the given date.</li>
-<li>toDate (ISO datetime, query) Return simulation runs that have been started
+<li><code>toDate</code> (ISO datetime, query): Return simulation runs that have been started
   before the given date.</li>
 </ul>
 <h3 id="response">Response</h3>
 <p>List of simulation runs with the following information available about every
 run.</p>
 <ul>
-<li>SimulationId (string): The id of the simulation.</li>
-<li>Name (string): A human friendly name for the simulation.</li>
-<li>Description (string): A longer description of the simulation run meant for
-  humans.</li>
-<li>StartTime (ISO datetime): The real world start time of the simulation run.</li>
-<li>EndTime (ISO datetime): The real world end time of the simulation run.</li>
-<li>Epochs (integer): Number of epochs in the simulation run.</li>
-<li>Processes (string[]): List of names of processes participating in the
-  simulation run.</li>
+<li><code>SimulationId</code> (string): The id of the simulation.</li>
+<li><code>Name</code> (string): A human friendly name for the simulation.</li>
+<li><code>Description</code> (string): A longer description of the simulation run meant for humans.</li>
+<li><code>StartTime</code> (ISO datetime): The real world start time of the simulation run.</li>
+<li><code>EndTime</code> (ISO datetime): The real world end time of the simulation run.</li>
+<li><code>Epochs</code> (integer): Number of epochs in the simulation run.</li>
+<li><code>Processes</code> (array of strings): List of names of processes participating in the simulation run.</li>
 </ul>
 <h3 id="example">Example</h3>
 <p>Get list of simulations executed on or after 3th of June 2020 at 10:00.</p>
 <h4 id="request">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
+<pre><code class="language-text">http://localhost:8080/simulations?fromDate=2020-06-03T10:00:00Z
 </code></pre>
-
 <h4 id="response_1">Response</h4>
-<pre><code>[
+<pre><code class="language-json">[
   {
     &quot;Description&quot;: &quot;This is a test simulation without example messages.&quot;,
     &quot;EndTime&quot;: &quot;2020-06-03T10:05:52.345000Z&quot;,
@@ -714,12 +730,14 @@ run.</p>
 ]
 </code></pre>
 <h2 id="get-simulation">Get simulation</h2>
-<p>method: GET<br />
-path: /simulations/{simulationId}</p>
+<ul>
+<li>method: <code>GET</code></li>
+<li>path: <code>/simulations/{simulationId}</code></li>
+</ul>
 <p>Returns general information about the given simulation run.</p>
 <h3 id="request-parameters_1">Request parameters</h3>
 <ul>
-<li>simulationId (string, path, required): The id of a simulation run.</li>
+<li><code>simulationId</code> (string, path, required): The id of a simulation run.</li>
 </ul>
 <h3 id="response_2">Response</h3>
 <p>Information about the given simulation run with the same contents as in each get
@@ -727,11 +745,10 @@ simulations response item.</p>
 <h3 id="example_1">Example</h3>
 <p>Get information about simulation with id 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_1">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z
 </code></pre>
-
 <h4 id="response_3">Response</h4>
-<pre><code>{
+<pre><code class="language-json">{
   &quot;Description&quot;: &quot;This is a test simulation with some example messages.&quot;,
   &quot;EndTime&quot;: &quot;2020-06-03T04:11:52.345000Z&quot;,
   &quot;Epochs&quot;: 50,
@@ -749,34 +766,36 @@ simulations response item.</p>
 }
 </code></pre>
 <h2 id="get-messages-for-simulation-run">Get messages for simulation run</h2>
-<p>method: GET<br />
-path: /simulations/{simulationId}/messages</p>
+<ul>
+<li>method: <code>GET</code></li>
+<li>path: <code>/simulations/{simulationId}/messages</code></li>
+</ul>
 <p>Returns messages from the given simulation run. Without parameters returns all
 messages. Parameters allow filtering in various ways.</p>
 <h3 id="request-parameters_2">Request parameters</h3>
 <ul>
-<li>simulationId (string, path, required): Id of the simulation run messages are
+<li><code>simulationId</code> (string, path, required): Id of the simulation run messages are
   fetched from.</li>
-<li>startEpoch (integer, query): Return messages published on or after the given
+<li><code>startEpoch</code> (integer, query): Return messages published on or after the given
   epoch. Not applicable if epoch, fromSimDate or toSimDate are used.</li>
-<li>endEpoch (integer, query): Return messages published on or before the given
+<li><code>endEpoch</code> (integer, query): Return messages published on or before the given
   epoch. Not applicable if the epoch, fromSimDate or toSimDate are used.</li>
-<li>epoch (integer, query): return messages published during the given epoch. Not
+<li><code>epoch</code> (integer, query): return messages published during the given epoch. Not
   applicable if fromSimDate, toSimDate endEpoch or startEpoch are used.</li>
-<li>fromSimDate (ISO datetime, query): Return messages starting from the epoch
+<li><code>fromSimDate</code> (ISO datetime, query): Return messages starting from the epoch
   that includes the given date. Not applicable if startEpoch, epoch or endEpoch
   are used.</li>
-<li>toSimDate (ISO datetime, query): Return messages published before or on  the
+<li><code>toSimDate</code> (ISO datetime, query): Return messages published before or on  the
   epoch that includes the given date. Not applicable if startEpoch, epoch or
   endEpoch are used.</li>
-<li>process (string, query): Return messages that have been published by the given
+<li><code>process</code> (string, query): Return messages that have been published by the given
   processes i.e. messages whose source is the given process. Value is a comma
   separated list of process ids.</li>
-<li>topic (string, query): Return messages published to the given topic. Supports
+<li><code>topic</code> (string, query): Return messages published to the given topic. Supports
   the same notation that is used when subscribing to the topics i.e. the same
   wildcard mechanism including the * and # characters.</li>
-<li>onlyWarnings: (boolean, query): If true only messages that include warnings
-  are returned. If false messages with and without warnings are both returned.
+<li><code>onlyWarnings</code>: (boolean, query): If true, only messages that include warnings
+  are returned. If false, messages with and without warnings are both returned.
   False is the default behaviour if this parameter is not used.</li>
 </ul>
 <h3 id="response_4">Response</h3>
@@ -787,11 +806,10 @@ metadata. The messages will be sorted in ascending order by timestamp.</p>
 energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_2">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2
 </code></pre>
-
 <h4 id="response_5">Response</h4>
-<pre><code>[
+<pre><code class="language-json">[
   {
     &quot;EpochNumber&quot;: 1,
     &quot;MessageId&quot;: &quot;solarPlant1-1&quot;,
@@ -831,39 +849,40 @@ energy.production.solar on or before epoch 2 for simulation with id
 ]
 </code></pre>
 <h2 id="get-invalid-messages-for-simulation-run">Get invalid messages for simulation run</h2>
-<p>method: GET<br />
-path: /simulations/{simulationId}/messages/invalid</p>
+<ul>
+<li>method: <code>GET</code></li>
+<li>path: <code>/simulations/{simulationId}/messages/invalid</code></li>
+</ul>
 <p>Returns invalid messages from the given simulation run. This is intended for
 debugging simulation issues. A normal simulation run should not contain invalid
-messages. </p>
+messages.</p>
 <h3 id="request-parameters_3">Request parameters</h3>
 <ul>
-<li>simulationId (string, path, required): Id of the simulation run messages are
+<li><code>simulationId</code> (string, path, required): Id of the simulation run messages are
   fetched from.</li>
-<li>topic (string, query): Return invalid messages published to the given topic.
+<li><code>topic</code> (string, query): Return invalid messages published to the given topic.
   Supports the same notation that is used when subscribing to the topics i.e.
   the same wildcard mechanism including the * and # characters.</li>
 </ul>
 <h3 id="response_6">Response</h3>
 <p>List of invalid messages. The messages will be sorted in ascending order by
-timestamp. The following attributes can be  available for each message:</p>
+timestamp. The following attributes can be available for each message:</p>
 <ul>
-<li>Timestamp: Timestamp from the message if the message had a valid timestamp.
-  Otherwise this is a timestamp added when the message was stored to the
+<li><code>Timestamp</code>: Timestamp from the message if the message had a valid timestamp.
+  Otherwise, this is a timestamp added when the message was stored to the
   database.</li>
-<li>Topic: The topic the message was published to.</li>
-<li>InvalidMessage: The message itself if it was valid json.</li>
-<li>InvalidJsonMessage: Message as a string if the message could not be parsed as
-  json.   </li>
+<li><code>Topic</code>: The topic the message was published to.</li>
+<li><code>InvalidMessage</code>: The message itself if it was valid JSON.</li>
+<li><code>InvalidJsonMessage</code>: Message as a string if the message could not be parsed as
+  JSON.</li>
 </ul>
 <h3 id="example_3">Example</h3>
-<p>Get all invalid messages for simulation with id 2020-06-03T04:01:52.345Z. </p>
+<p>Get all invalid messages for simulation with id 2020-06-03T04:01:52.345Z.</p>
 <h4 id="request_3">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/messages/invalid
 </code></pre>
-
 <h4 id="response_7">Response</h4>
-<pre><code>[
+<pre><code class="language-json">[
   {
     &quot;Timestamp&quot;: &quot;2020-06-03T04:01:53Z&quot;,
     &quot;Topic&quot;: &quot;Epoch&quot;,
@@ -888,88 +907,88 @@ timestamp. The following attributes can be  available for each message:</p>
 SimulationId attribute. The second message is invalid since it is just a text
 string containing the word Ready.</p>
 <h2 id="get-simple-timeseries-for-simulation">Get simple timeseries for simulation</h2>
-<p>method: GET<br />
-path: /simulations/{simulationId}/timeseries</p>
+<ul>
+<li>method: <code>GET</code></li>
+<li>path: <code>/simulations/{simulationId}/timeseries</code></li>
+</ul>
 <p>Returns timeseries data constructed from values of given attributes of messages
 that meet the given time, topic and process based filtering conditions.</p>
 <h3 id="request-parameters_4">Request parameters</h3>
-<p>Same parameters as in get simulation messages are used except onlyWarnings. In
-addition the following parameters are used:</p>
+<p>Same parameters as in <a href="#get-messages-for-simulation-run">get simulation messages</a> are used except <code>onlyWarnings</code>.</p>
+<p>In addition, the following parameters are used:</p>
 <ul>
-<li>attrs (string, query, required) Comma separated list of names of message
+<li><code>attrs</code> (string, query, required) Comma separated list of names of message
   attributes whose values are suitable for time series and which are then
   included to the timeseries response. It is possible to refer deeper into the
-  message structure using the dot notation for example foo.bar.</li>
-<li>format (string, query): Determines the response format. Possible values are
-  csv and json. If this parameter is not used json is used as the default value.</li>
+  message structure using the dot notation, for example foo.bar.</li>
+<li><code>format</code> (string, query): Determines the response format. Possible values are
+  <code>csv</code> and <code>json</code>. If this parameter is not used, <code>json</code> is used as the default value.</li>
 </ul>
 <p>The following kinds of message attribute values are suitable for time series and
-can be refered to in the attrs query parameter:</p>
+can be referred to in the <code>attrs</code> query parameter:</p>
 <ul>
 <li>Plain number, string or boolean values.</li>
-<li>QuantityBlocks in which case the Value part of the QuantityBlock is added to
+<li><a href="../core_block-quantity/">QuantityBlocks</a> in which case the Value part of the QuantityBlock is added to
   the created time series.</li>
-<li>TimeseriesBlock if only the attribute containing a time series block is
-  referred to all attributes in the time series are included. It is also
+<li><a href="../core_block-time-series/">TimeseriesBlock</a>. If only the attribute containing a time series block is
+  referred to, all attributes in the time series are included. It is also
   possible to refer to a particular attribute inside the time series block to
   only include it to the time series to be created.</li>
 </ul>
-<h3 id="response_8">Response</h3>
-<p>json</p>
+<h3 id="json-response">JSON Response</h3>
 <p>A JSON object with the following members:</p>
 <ul>
-<li>TimeIndex (timeIndex[]): List of time index objects that indicate the
-  timestamp for the data. For example if a timeindex object is the fifth item in
+<li><code>TimeIndex</code> (array of timeIndex objects): List of timeIndex objects that indicate the
+  timestamp for the data. For example, if a timeIndex object is the fifth item in
   the timeindex list then it has the time for the fifth value in each attribute
   values list. If there is no value for an attribute for a corresponding
-  timeIndex value, the value will be nul.</li>
-<li>{topic} (topicData): For each topic there is timeseries data a member named
-  after the topic. The value is a topicDATa object.</li>
+  timeIndex value, the value will be null.</li>
+<li><code>{topic}</code> (topicData object): For each topic there is timeseries data a member named
+  after the topic. The value is a topicData object.</li>
 </ul>
 <p>timeIndex object</p>
 <ul>
-<li>timestamp (ISO datetime): Indicates the simulation time for the corresponding
-  data. </li>
-<li>epoch (integer): Indicates the epoch for the message the corresponding data is
-  from. </li>
+<li><code>timestamp</code> (ISO datetime): Indicates the simulation time for the corresponding
+  data.</li>
+<li><code>epoch</code> (integer): Indicates the epoch for the message the corresponding data is
+  from.</li>
 </ul>
-<p>TopicData object</p>
+<p>topicData object</p>
 <ul>
-<li>{processName} (attributeValues): For each process the timeseries has values
+<li><code>{processName}</code> (attributeValues object): For each process the timeseries has values
   for in the given topic a member where processName is replaced with the id of
   the process. The value is then attributeValues object.</li>
 </ul>
 <p>attributeValues object</p>
 <ul>
-<li>{attr}: For each message attribute a member where attr is replaced with the
+<li><code>{attr}</code>: For each message attribute a member where attr is replaced with the
   attribute name. The value is then list of attribute values from the messages
   or another attributeValues object if the actual values are deeper in the
   message structure.</li>
 </ul>
-<p>csv</p>
-<p>csv data with the following column titles and colun value data types</p>
+<h3 id="csv-response">CSV response</h3>
+<p>CSV data with the following column titles and column value data types</p>
 <ul>
-<li>epoch (integer): Number of the epoch for the message the data in the row is
+<li><code>epoch</code> (integer): The epoch number for the message the data in the row is
   from.</li>
-<li>timestamp (iso datetime): Simulation timestamp for the data in the row.</li>
-<li>{topic}:{processname}.{attr}: For each topic, process and message attribute
-  the timeseries contains data for there is a column for it with a title
+<li><code>timestamp</code> (iso datetime): Simulation timestamp for the data in the row.</li>
+<li><code>{topic}:{processName}.{attr}</code>: For each topic, process and message attribute
+  the timeseries contains data for, there is a column for it with a title
   consisting of the topic, process and attribute names. Attribute can consist of
   multiple parts separated by a period. If there is no data for the row at a
   certain time then the column has an empty cell.</li>
 </ul>
 <h3 id="example-1">Example 1</h3>
-<p>Create a timeseries in the json format containing the real power and reactive
-power QuantityBlock values from  messages that process solarPlant1 has published
+<p>Create a timeseries in the JSON format containing the real power and reactive
+power QuantityBlock values from messages that process solarPlant1 has published
 to topic energy.production.solar on or before epoch 2 for simulation with id
 2020-06-03T04:01:52.345Z. The messages which are the source for this time series
-are shown in the response of example for Get messages for simulation. </p>
+are shown in the example response at section <a href="#get-messages-for-simulation-run">Get messages for simulation</a>.</p>
 <h4 id="request_4">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower
 </code></pre>
-
-<h4 id="response_9">Response</h4>
-<pre><code>{
+<h4 id="response_8">Response</h4>
+<pre><code class="language-json">{
   &quot;TimeIndex&quot;: [
     {
       &quot;epoch&quot;: 1,
@@ -995,23 +1014,22 @@ are shown in the response of example for Get messages for simulation. </p>
 }
 </code></pre>
 <h3 id="example-2">Example 2</h3>
-<p>Same as example 1 except the time series should be in the csv format.</p>
+<p>Same as example 1 except the time series should be in the CSV format.</p>
 <h4 id="request_5">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=solarPlant1&amp;topic=energy.production.solar&amp;endEpoch=2&amp;attrs=RealPower,ReactivePower&amp;format=csv
 </code></pre>
-
-<h4 id="response_10">Response</h4>
-<pre><code>epoch;timestamp;energy.production.solar:solarPlant1.RealPower;energy.production.solar:solarPlant1.ReactivePower
+<h4 id="response_9">Response</h4>
+<pre><code class="language-csv">epoch;timestamp;energy.production.solar:solarPlant1.RealPower;energy.production.solar:solarPlant1.ReactivePower
 1;2020-06-03T13:00:00Z;5.0;0.2
 2;2020-06-03T14:00:00Z;8.0;0.5
 </code></pre>
 <h3 id="example-3">Example 3</h3>
-<p>Create a time series in the json format containing the chargePercentage values
+<p>Create a time series in JSON format containing the chargePercentage values
 from the batteryState timeseries block from messages published to the
 energy.storage.state topic by processes battery1 and battery2 for simulation
 with id 2020-06-03T04:01:52.345Z. The published messages look like the
 following:</p>
-<pre><code>{
+<pre><code class="language-json">{
   &quot;EpochNumber&quot;: 1,
   &quot;MessageId&quot;: &quot;battery1-1&quot;,
   &quot;SimulationId&quot;: &quot;2020-06-03T04:01:52.345Z&quot;,
@@ -1044,11 +1062,10 @@ following:</p>
 }
 </code></pre>
 <h4 id="request_6">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage
 </code></pre>
-
-<h4 id="response_11">Response</h4>
-<pre><code>{
+<h4 id="response_10">Response</h4>
+<pre><code class="language-json">{
   &quot;TimeIndex&quot;: [
     {
       &quot;epoch&quot;: 1,
@@ -1092,13 +1109,12 @@ following:</p>
 }
 </code></pre>
 <h3 id="example-4">Example 4</h3>
-<p>Same as example 3 except timeseries is created in the csv format.</p>
+<p>Same as example 3 except timeseries is created in CSV format.</p>
 <h4 id="request_7">Request</h4>
-<pre class="codehilite"><code>http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
+<pre><code class="language-text">http://localhost:8080/simulations/2020-06-03T04:01:52.345Z/timeseries?process=battery1,battery2&amp;topic=energy.storage.state&amp;attrs=batteryState.chargePercentage&amp;format=csv
 </code></pre>
-
-<h4 id="response_12">Response</h4>
-<pre><code>epoch;timestamp;energy.storage.state:battery1.batteryState.chargePercentage;energy.storage.state:battery2.batteryState.chargePercentage
+<h4 id="response_11">Response</h4>
+<pre><code class="language-csv">epoch;timestamp;energy.storage.state:battery1.batteryState.chargePercentage;energy.storage.state:battery2.batteryState.chargePercentage
 1;2020-06-03T13:00:00Z;90;40
 1;2020-06-03T13:30:00Z;88;42
 2;2020-06-03T14:00:00Z;87;45
