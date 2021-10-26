@@ -37,16 +37,16 @@ Please note that most items have been contributed to by multiple persons.
 | Amir Safdarian (VTT) | Price Forecaster | Domain Messages, Domain Tools | |
 | Anna Kulmala (VTT) | | | Supervision |
 | Antti Keski-Koukkari (VTT) | Resource Forecaster, Storage | Domain Messages | |
-| Antti Supponen (TAU) | Grid, Procem-LFM | | |
+| Antti Supponen (TAU) | Grid, Procem-LFM | Domain Messages | |
 | Kalle Ruuth (TAU) | Static Time Series Resource | Domain Messages, Domain Tools | |
 | Kari Systä (TAU) | | | Architecture, supervision |
 | Matti Vilkko (TAU) | Economic Dispatch | | Supervision |
-| Md Tanjimuddim (TAU) | Controller, Procem-LFM | Domain Messages | |
-| Mehdi Attar (TAU) | Distribution management system (DMS), Procem-LFM | | |
+| Md Tanjimuddim (TAU) | Controller | Domain Messages | |
+| Mehdi Attar (TAU) | Distribution management system (DMS), Procem-LFM | Domain Messages | |
 | Olli Suominen (TAU) | Economic Dispatch | Domain Messages | |
 | Otto Hylli (TAU) | Log Reader, Log Writer, Platform Manager, Static time series resource, Storage | Domain Messages, Domain Tools, Simulation Tools | |
-| Petri Kannisto (TAU) | | Amqp Math Tool Integration | Coordination, general documentation, system architecture |
+| Petri Kannisto (TAU) | | Amqp Math Tool Integration | Architecture, coordination, general documentation |
 | Sami Repo (TAU) | | | Supervision |
-| Timo Aaltonen (TAU) | | | System architecture |
+| Timo Aaltonen (TAU) | | | Architecture |
 | Ville Heikkilä (TAU) | Controller, Log Reader, Log Writer, Platform Manager, Procem-LFM, Simple Component, Simulation Manager, Static time series resource | Domain Messages, Domain Tools, Simulation Tools | Usage and installation instructions |
 | Ville Mörsky (TAU) | Economic Dispatch | Domain Messages | |
