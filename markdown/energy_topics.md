@@ -8,6 +8,7 @@ In many cases, each message structure only occurs in one topic, but a message st
 
 | Topic (1) | Message type | Publisher(s); see (2) | Subscriber(s); see (2) |
 |-|-|-|-|
+| ControlState.PowerSetpoint | [ControlState.PowerSetpoint](energy_msg-controlstate-powersetpoint.md)| [Controller](energy_controller.md) | [Storage](energy_storage.md) |
 | DMSNetworkState.Voltage | [DMSNetworkState.Voltage](energy_msg-dmsnetworkstatus-voltage.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - SM | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - RTCM |
 | DMSNetworkState.Current | [DMSNetworkState.Current](energy_msg-dmsnetworkstatus-current.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - SM | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - RTCM |
 | FlexibilityNeed.(MarketID) | [FlexibilityNeed](energy_msg-flexibilityneed.md) | [Distribution management system (DMS)](energy_distribution-management-system-dms.md) - PGO | [Procem-LFM](energy_procem-lfm.md) |
