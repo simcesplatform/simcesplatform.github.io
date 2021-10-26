@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href=".." class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
     <a href="../core_features/" class="dropdown-item">Features</a>
 </li>
                                     
@@ -118,7 +122,7 @@
 </li>
             
 <li>
-    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform managed and externally managed components</a>
 </li>
             
 <li>
@@ -296,6 +300,10 @@
 <li>
     <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
+            
+<li>
+    <a href="../core_amqpmathtool/" class="dropdown-item">AmqpMathToolConnector</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,6 +311,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_overview/" class="dropdown-item">Overview</a>
+</li>
                                     
 <li>
     <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
@@ -602,14 +614,17 @@
 <pre><code class="language-bash">git -c http.sslVerify=false clone --recursive &lt;full_address_to_the_repository&gt;.git
 </code></pre>
 <h2 id="registering-component-type-to-the-platform">Registering component type to the platform</h2>
-<p>Before platform can be used to start a new simulation that includes a new domain component, the new component type has to be registered to the platform. The registering is done to allow the platform to know whether the new component is an externally managed or platform managed component and in the latter case to also know which Docker image to use when deploying the platform-managed component. The registration process also allows the user to mark some input parameters as required so that the platform does not start a new simulation run in vain if essential information is missing from the simulation configuration.</p>
+<p>Before platform can be used to start a new simulation that includes a new domain component, the new component type has to be registered to the platform. The registering is done to allow the platform to know whether the new component is an externally managed or platform managed component and in the latter case to also know which Docker image to use when deploying the platform managed component. The registration process also allows the user to mark some input parameters as required so that the platform does not start a new simulation run in vain if essential information is missing from the simulation configuration.</p>
 <p>The components are registered for the platform by providing it with component manifest files for all the required component types.</p>
 <p>Each component should provide a component manifest file with the component source code.</p>
 <p>To register all the required component types to the platform follow the procedure:</p>
 <ol>
-<li>Modify the Git server file so that it contains the code repository name for the component in question in the Repositories listing. See the section Git server file format about the details of the used attributes and the syntax for the file.<ul>
+<li>Modify the Git server file so that it contains the code repository name for the component in question in the Repositories listing. See the section <a href="#git-server-file-format">Git server file format</a> about the details of the used attributes and the syntax for the file.<ul>
 <li>Use the file <code>components/github_server_domain.yml</code> if the repositories are available at GitHub</li>
-<li>Use the file <code>components/gitlab_server_domain.yml</code> if the repositories are in the GitLab server used in the development of the platform.</li>
+<li>Use the file <code>components/gitlab_server_domain.yml</code> if the repositories are in the GitLab server used in the development of the platform.<ul>
+<li>Note, when using private repositories which require access tokens, remember to add the required tokens to file <code>access_tokens.env</code>.</li>
+</ul>
+</li>
 <li>It is also possible to create completely new Git server file under the folder <code>components</code>. All files under the folder are gone through when fetching the manifest files.</li>
 <li>Alternatively, it is also possible to manually copy the component manifest file to the folder <code>manifests</code>. All YAML files under that folder are taken to account when the platform is started.</li>
 <li>There also exists a script that can be used to copy locally existing manifest files to the manifests folder. To use it, first edit the file <code>local_manifest_files.txt</code> to include the paths to the local manifest files and then run: <code>source fetch_local_manifests.sh local_manifest_files.txt</code></li>
@@ -661,7 +676,7 @@
 </li>
 </ul>
 <h3 id="example-git-server-file">Example Git server file</h3>
-<p>The following server file would be used to fetch manifest files from 4 GitLab repositories hosted at <code>https://gitlab.address.com</code>. Using the default branch, file "<code>component_manifest.yml</code>" from "<code>procemplus/my_component1</code>" and "<code>procemplus/my_component2</code>" and file "<code>my_manifest.yml</code>" from "<code>procemplus/my_component3</code>". Using the branch "<code>my_branch</code>", file "<code>my_folder/my_manifest.yml</code>" from "<code>username/my_component4</code>". The access to the repositories is provided by environment variable <code>GITLAB_ACCESS_TOKEN</code>.</p>
+<p>The following server file would be used to fetch manifest files from 4 GitLab repositories hosted at <code>https://gitlab.address.com</code>. Using the default branch, file "<code>component_manifest.yml</code>" from "<code>procemplus/my_component1</code>" and "<code>procemplus/my_component2</code>" and file "<code>my_manifest.yml</code>" from "<code>procemplus/my_component3</code>". Using the branch "<code>my_branch</code>", file "<code>my_folder/my_manifest.yml</code>" from "<code>username/my_component4</code>". The access to the repositories is provided by environment variable <code>GITLAB_ACCESS_TOKEN</code> which is read from file <code>access_tokens.env</code>.</p>
 <pre><code class="language-yaml">Repositories:
     - procemplus/my_component1
     - procemplus/my_component2
@@ -676,7 +691,7 @@ Certificate: false
 AccessToken: ${GITLAB_ACCESS_TOKEN}
 </code></pre>
 <h2 id="making-input-files-available-for-the-platform">Making input files available for the platform</h2>
-<p>Any input file that is used by a platform managed deployed component during a simulation run, needs to be made available for the platform. Example for an input file is the CSV file that is used as input with the <a href="../energy_static-time-series-resource/">Static Time Series Resource</a> components in the <a href="../energy_run-ec-demo/">EC demo simulation</a>.</p>
+<p>Any input file that is used by a platform managed component during a simulation run, needs to be made available for the platform. Example for an input file is the CSV file that is used as input for the <a href="../energy_static-time-series-resource/">Static Time Series Resource</a> components in the <a href="../energy_run-ec-demo/">Energy Community demo simulation</a>.</p>
 <p>Any input files that are used by externally managed components are not required to be accessible by the platform.</p>
 <p>To make a input file available for the platform:</p>
 <ol>
@@ -692,9 +707,8 @@ AccessToken: ${GITLAB_ACCESS_TOKEN}
 <p>The component can be installed and registered to the platform by running the following installation script. This script will also make any prepared input files available to the platform.</p>
 <pre><code class="language-bash">source platform_domain_setup.sh
 </code></pre>
-<p>A successful run of the script should show no error messages in the output.</p>
+<p>A successful run of the script should show no error messages in the output. See the <a href="#example-output">Example output</a> section for possible script output when no errors are present.</p>
 <p>Note, that for externally managed components, the script above can only register the component manifests to the platform. The manual installation and starting procedure for the components is still required in addition to running the script.</p>
-<p>TODO: add a note about possible error with container name being in use when using the script</p>
 <h3 id="example-output">Example output</h3>
 <pre><code class="language-text">Fetching the domain Docker images from Docker registry
 Reading 'docker_images_domain.txt' for Docker image names
@@ -735,7 +749,7 @@ Copying file resources/EV.csv
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
-            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

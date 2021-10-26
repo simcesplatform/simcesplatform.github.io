@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href=".." class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
     <a href="../core_features/" class="dropdown-item">Features</a>
 </li>
                                     
@@ -118,7 +122,7 @@
 </li>
             
 <li>
-    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform managed and externally managed components</a>
 </li>
             
 <li>
@@ -296,6 +300,10 @@
 <li>
     <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
+            
+<li>
+    <a href="../core_amqpmathtool/" class="dropdown-item">AmqpMathToolConnector</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,6 +311,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_overview/" class="dropdown-item">Overview</a>
+</li>
                                     
 <li>
     <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
@@ -568,7 +580,7 @@
 </ul>
 </li>
 <li><a href="https://docs.docker.com/get-docker/">Docker</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a><ul>
-<li>For running platform-managed components for the simulations.</li>
+<li>For running platform managed components for the simulations.</li>
 <li>For running the local RabbitMQ message bus as well as the local MongoDB database. These are installed by the installation scripts.</li>
 <li>Installing the most up-to-date versions of Docker and Docker Compose is the recommended option.</li>
 <li>On Linux, to be compatible with the platform scripts it is advisable to set Docker to be manageable as a non-root user: <a href="https://docs.docker.com/engine/install/linux-postinstall/">https://docs.docker.com/engine/install/linux-postinstall/</a></li>
@@ -579,13 +591,13 @@
 <h2 id="installing-the-platform-and-the-core-components">Installing the platform and the core components</h2>
 <ul>
 <li>
-<p>1. Create a folder for the simulation platform. In these instructions this main folder is named platform.</p>
+<p>1. Create a folder for the simulation platform. In these instructions this main folder is named <code>platform</code>.</p>
 <ul>
-<li>Note, that you must have full read and write permissions in the created folder, platform. Otherwise, the installation process will not work.</li>
+<li>Note, that you must have full read and write permissions in the created folder, <code>platform</code>. Otherwise, the installation process will not work.</li>
 </ul>
 </li>
 <li>
-<p>2. Copy the <a href="https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh"><code>fetch_platform_files.sh</code></a> script file to the <code>platform</code> folder for by downloading it from the GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:</p>
+<p>2. Copy the <a href="https://github.com/simcesplatform/Platform-Manager/blob/master/fetch_platform_files.sh"><code>fetch_platform_files.sh</code></a> script file to the <code>platform</code> folder by downloading it from GitHub using the browser interface (right click on the "Raw" button and "Save Link As...") or by using the command line:</p>
 <pre class="codehilite"><code class="language-bash">wget https://raw.githubusercontent.com/simcesplatform/Platform-Manager/master/fetch_platform_files.sh
 </code></pre>
 
@@ -655,12 +667,12 @@ mongo                                           4.2.7              66c68b650ad4 
 </code></pre>
 
 <p>You should have at least those containers running that are shown in the example listing below:</p>
-<pre class="codehilite"><code class="language-text">CONTAINER ID   IMAGE                                   STATUS         NAMES
-c754c5009a28   mongo-express:0.54.0                    Up 2 minutes   simces_mongo_express
-fd6e87195259   procem.ain.rd.tut.fi/despa/log_reader   Up 2 minutes   simces_log_reader
-f33e24b1d060   procem.ain.rd.tut.fi/despa/log_writer   Up 2 minutes   simces_log_writer_management
-9782e68eabbc   rabbitmq:3.8.4-management               Up 2 minutes   simces_rabbitmq
-fa0a61528313   mongo:4.2.7                             Up 2 minutes   simces_mongodb
+<pre class="codehilite"><code class="language-text">CONTAINER ID   IMAGE                                        STATUS         NAMES
+ef59c0f21457   ghcr.io/simcesplatform/mongo-express:latest  Up 2 minutes   simces_mongo_express
+ff24ba9e33de   ghcr.io/simcesplatform/logreader             Up 2 minutes   simces_log_reader
+f7d3e82ccc4b   ghcr.io/simcesplatform/logwriter             Up 2 minutes   simces_log_writer_management
+1995624af84a   rabbitmq:3.8.4-management                    Up 2 minutes   simces_rabbitmq
+b49675bd1581   mongo:4.2.7                                  Up 2 minutes   simces_mongodb
 </code></pre>
 
 </li>
@@ -754,7 +766,7 @@ docker ps --all --filter name=&quot;simces&quot; --filter name=&quot;Sim&quot; -
 </li>
 <li>
 <p>To remove the Docker images related to the platform:</p>
-<pre class="codehilite"><code class="language-bash">docker images -a | grep &quot;procem.ain.rd.tut.fi\|mongo\|rabbitmq\|ubuntu&quot; | awk '{print $3}' | xargs docker rmi
+<pre class="codehilite"><code class="language-bash">docker images -a | grep &quot;simcesplatform\|mongo\|rabbitmq\|ubuntu&quot; | awk '{print $3}' | xargs docker rmi
 </code></pre>
 
 </li>
@@ -781,7 +793,7 @@ docker ps --all --filter name=&quot;simces&quot; --filter name=&quot;Sim&quot; -
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
-            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

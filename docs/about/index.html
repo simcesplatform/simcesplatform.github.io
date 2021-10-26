@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href=".." class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
     <a href="../core_features/" class="dropdown-item">Features</a>
 </li>
                                     
@@ -118,7 +122,7 @@
 </li>
             
 <li>
-    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform managed and externally managed components</a>
 </li>
             
 <li>
@@ -296,6 +300,10 @@
 <li>
     <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
+            
+<li>
+    <a href="../core_amqpmathtool/" class="dropdown-item">AmqpMathToolConnector</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,6 +311,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_overview/" class="dropdown-item">Overview</a>
+</li>
                                     
 <li>
     <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
@@ -548,6 +560,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#author-contributions" class="nav-link">Author contributions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -560,10 +576,9 @@
 <p>Copyright &copy; 2021 <a href="https://tuni.fi">Tampere University</a> and <a href="https://vtt.fi">VTT Technical Research Centre of Finland</a></p>
 <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
 <h2 id="source-code">Source code</h2>
-<p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+<p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
 <h2 id="contact">Contact</h2>
-<p>If you have any questions or comments regarding SimCES or this website, you can contact:</p>
-<p>TODO</p>
+<p>If you have any questions or comments regarding SimCES or this website, please find a contact in the <a href="../maintenance-plan/">maintenance plan</a>.</p>
 <h2 id="research-projects">Research projects</h2>
 <p>SimCES and its parts have been developed in the following projects.</p>
 <ul>
@@ -573,7 +588,118 @@
 <li>
 <p><a href="http://www.interrface.eu/">INTERRFACE</a>, "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, funded by H2020 European Commission</p>
 </li>
-</ul></div>
+</ul>
+<h2 id="author-contributions">Author contributions</h2>
+<p>TAU = Tampere University, VTT = VTT Technical Research Centre of Finland</p>
+<p>Please note that most items have been contributed to by multiple persons.</p>
+<table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Components</th>
+<th>Packages</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amir Safdarian (VTT)</td>
+<td>Price Forecaster</td>
+<td>Domain Messages, Domain Tools</td>
+<td></td>
+</tr>
+<tr>
+<td>Anna Kulmala (VTT)</td>
+<td></td>
+<td></td>
+<td>Supervision</td>
+</tr>
+<tr>
+<td>Antti Keski-Koukkari (VTT)</td>
+<td>Resource Forecaster, Storage</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+<tr>
+<td>Antti Supponen (TAU)</td>
+<td>Grid, Procem-LFM</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+<tr>
+<td>Kalle Ruuth (TAU)</td>
+<td>Static Time Series Resource</td>
+<td>Domain Messages, Domain Tools</td>
+<td></td>
+</tr>
+<tr>
+<td>Kari Systä (TAU)</td>
+<td></td>
+<td></td>
+<td>Architecture, supervision</td>
+</tr>
+<tr>
+<td>Matti Vilkko (TAU)</td>
+<td>Economic Dispatch</td>
+<td></td>
+<td>Supervision</td>
+</tr>
+<tr>
+<td>Md Tanjimuddim (TAU)</td>
+<td>Controller</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+<tr>
+<td>Mehdi Attar (TAU)</td>
+<td>Distribution management system (DMS), Procem-LFM</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+<tr>
+<td>Olli Suominen (TAU)</td>
+<td>Economic Dispatch</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+<tr>
+<td>Otto Hylli (TAU)</td>
+<td>Log Reader, Log Writer, Platform Manager, Static time series resource, Storage</td>
+<td>Domain Messages, Domain Tools, Simulation Tools</td>
+<td></td>
+</tr>
+<tr>
+<td>Petri Kannisto (TAU)</td>
+<td></td>
+<td>Amqp Math Tool Integration</td>
+<td>Architecture, coordination, general documentation</td>
+</tr>
+<tr>
+<td>Sami Repo (TAU)</td>
+<td></td>
+<td></td>
+<td>Supervision</td>
+</tr>
+<tr>
+<td>Timo Aaltonen (TAU)</td>
+<td></td>
+<td></td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>Ville Heikkilä (TAU)</td>
+<td>Controller, Log Reader, Log Writer, Platform Manager, Procem-LFM, Simple Component, Simulation Manager, Static time series resource</td>
+<td>Domain Messages, Domain Tools, Simulation Tools</td>
+<td>Usage and installation instructions</td>
+</tr>
+<tr>
+<td>Ville Mörsky (TAU)</td>
+<td>Economic Dispatch</td>
+<td>Domain Messages</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 
@@ -582,7 +708,7 @@
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
-            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

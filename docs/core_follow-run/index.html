@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href=".." class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
     <a href="../core_features/" class="dropdown-item">Features</a>
 </li>
                                     
@@ -118,7 +122,7 @@
 </li>
             
 <li>
-    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform managed and externally managed components</a>
 </li>
             
 <li>
@@ -296,6 +300,10 @@
 <li>
     <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
+            
+<li>
+    <a href="../core_amqpmathtool/" class="dropdown-item">AmqpMathToolConnector</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,6 +311,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_overview/" class="dropdown-item">Overview</a>
+</li>
                                     
 <li>
     <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
@@ -581,13 +593,24 @@
 <p>The platform managed Docker containers are automatically deleted after the simulation is finished, and thus the component outputs cannot be looked at using the follow simulation script or docker logs command after the simulation is finished.</p>
 <p>After the simulation, the output from the components can be found stored in log files in a Docker volume called <code>simces_simulation_logs</code> in the folder <code>/logs</code>. The log files can be fetched to a local folder using a Bash script <code>logs/copy_logs.sh</code>:</p>
 <ol>
-<li>Navigate to the folder logs inside the installation folder using a Bash compatible terminal.</li>
+<li>Navigate to the folder <code>logs</code> inside the installation folder using a Bash compatible terminal.</li>
 <li>Use the following command to copy all the log files to the logs folder:<pre class="codehilite"><code class="language-bash">source copy_logs.sh
 </code></pre>
 
 </li>
 </ol>
-<p>The filenames for the log files use the format <code>logfile_&lt;component_name&gt;.log</code>. Note that the files can contain outputs from multiple simulations. The latest outputs are at the end of the log files.</p></div>
+<p>The filenames for the log files use the format <code>logfile_&lt;component_name&gt;.log</code>. Note that the files can contain outputs from multiple simulations. The latest outputs are at the end of the log files.</p>
+<p>The print out the entire log file using command line:</p>
+<pre class="codehilite"><code class="language-bash">cat logfile_&lt;component_name&gt;.log
+</code></pre>
+
+<p>To print out the contents of the log file one page at a time:</p>
+<pre class="codehilite"><code class="language-bash">more logfile_&lt;component_name&gt;.log
+</code></pre>
+
+<p>To print out only the last 15 lines from the log file:</p>
+<pre class="codehilite"><code class="language-bash">tail --lines 15 logfile_&lt;component_name&gt;.log
+</code></pre></div>
             </div>
         </div>
 
@@ -596,7 +619,7 @@
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
-            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

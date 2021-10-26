@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href=".." class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
     <a href="../core_features/" class="dropdown-item">Features</a>
 </li>
                                     
@@ -118,7 +122,7 @@
 </li>
             
 <li>
-    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform-managed and externally managed components</a>
+    <a href="../core_cmp-mgmt/" class="dropdown-item">Platform managed and externally managed components</a>
 </li>
             
 <li>
@@ -296,6 +300,10 @@
 <li>
     <a href="../core_dummycomponent/" class="dropdown-item">Dummy Component</a>
 </li>
+            
+<li>
+    <a href="../core_amqpmathtool/" class="dropdown-item">AmqpMathToolConnector</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,6 +311,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Energy domain <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../energy_overview/" class="dropdown-item">Overview</a>
+</li>
                                     
 <li>
     <a href="../energy_conventions/" class="dropdown-item">Energy-domain-specific conventions</a>
@@ -564,7 +576,7 @@
 <td>Epoch</td>
 <td>Reporting</td>
 <td>S</td>
-<td>SimulationManager</td>
+<td>Simulation Manager</td>
 <td>(All non-core components)</td>
 <td>Coordinating execution of epochs</td>
 </tr>
@@ -573,7 +585,7 @@
 <td>SimState</td>
 <td>Reporting</td>
 <td>S</td>
-<td>SimulationManager</td>
+<td>Simulation Manager</td>
 <td>(All non-core components)</td>
 <td>Controlling execution of simulation</td>
 </tr>
@@ -582,7 +594,7 @@
 <td>Start</td>
 <td>Starting</td>
 <td>M</td>
-<td>PlatformManager</td>
+<td>Platform Manager</td>
 <td>(All externally managed non-core components)</td>
 <td>Signalling start of simulation; deliver parameters</td>
 </tr>
@@ -592,7 +604,7 @@
 <td>Reporting</td>
 <td>S</td>
 <td>(Any non-core component)</td>
-<td>SimulationManager</td>
+<td>Simulation Manager</td>
 <td>Error reporting</td>
 </tr>
 <tr>
@@ -601,7 +613,7 @@
 <td>Reporting</td>
 <td>S</td>
 <td>(Any non-core component)</td>
-<td>SimulationManager</td>
+<td>Simulation Manager (+ any non-core component that requires the information about other components readiness)</td>
 <td>Reporting readiness to start next epoch</td>
 </tr>
 </tbody>
@@ -613,8 +625,8 @@
 </ul>
 <p>(2) Exchanges:</p>
 <ul>
-<li>M: Management Exchange</li>
-<li>S: Simulation-specific Exchange</li>
+<li>M: <a href="../core_exchange-mgmt/">Management Exchange</a></li>
+<li>S: <a href="../core_exchange-sim/">Simulation-specific Exchange</a></li>
 </ul></div>
             </div>
         </div>
@@ -624,7 +636,7 @@
             <p>SimCES | Simulation Environment of Complex Energy System</p>
                 <p>Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland</p>
             <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC2119</a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.</p>
-            <p>Get source code from Github: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
+            <p>Get source code from GitHub: <a href="https://github.com/simcesplatform">https://github.com/simcesplatform</a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
