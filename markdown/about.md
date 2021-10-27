@@ -26,6 +26,11 @@ SimCES and its parts have been developed in the following projects.
 - [INTERRFACE](http://www.interrface.eu/), "TSO-DSO-Consumer INTERFACE aRchitecture to provide innovative grid services for an efficient power system", 2019-2022, funded by H2020 European Commission
 
 
+## Publications
+
+Kannisto, P., Hylli, O., Heikkilä, V., Supponen, A., Aaltonen, T., Repo, S., Systä, K., Keski-Koukkari, A., Safdarian, A. & Kulmala, A., "Software and Communications Platform for Simulation Environment of Complex Energy System (SimCES)", in _2021 IEEE Madrid PowerTech_, 2021. DOI: [10.1109/PowerTech46648.2021.9495020](https://doi.org/10.1109/PowerTech46648.2021.9495020), available at [http://kannisto.org/?page=pubs&item=kannisto_et_al2021simces](http://kannisto.org/?page=pubs&item=kannisto_et_al2021simces)
+
+
 ## Author contributions
 
 TAU = Tampere University, VTT = VTT Technical Research Centre of Finland
