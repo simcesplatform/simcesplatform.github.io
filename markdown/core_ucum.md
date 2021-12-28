@@ -31,14 +31,14 @@ UCUM is not limited to these units, but these can be beneficial.
 
 | Category | Name | UCUM presentation | Comment |
 |-|-|-|-|
-| General | per unit | {pu} | The unit is effectively "1", which is the default unit. However, curly braces enclose an annotation that elaborates what the value means. "EUR" is a currency code standardized in ISO 4217. |
+| General | per unit | {pu} | The unit is effectively "1", which is the default unit. However, curly braces enclose an annotation that elaborates what the value means. |
 | Current | ampere | A | |
 | Energy | megawatt hour | MW.h | |
 | Percentage | Percentage | % | |
 | Power (apparent) | kilovolt ampere | kV.A | |
 | Power (reactive) | kilovolt ampere (reactive) | kV.A{r} | |
 | Power (real) | megawatt | MW | |
-| Price | per megawatt hour | {EUR}/(MW.h) | Currencies are not supported in UCUM. Therefore, "EUR" is merely an annotation here (i.e., in curly brackets) and means "1". |
+| Price | per megawatt hour | {EUR}/(MW.h) | Currencies are not supported in UCUM. Therefore, "EUR" is merely an annotation here (i.e., in curly brackets) and means "1". "EUR" is a currency code standardized in ISO 4217. |
 | Temperature | celsius | Cel | |
 | Voltage | kilovolt | kV | |
 
