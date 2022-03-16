@@ -10,7 +10,25 @@ A template for creating a child class, [https://github.com/simcesplatform/simula
 
 ## The workflow during the initialization process
 
-TODO
+A diagram describing the the workflow at the initialization process for a new component based on AbstractSimulationComponent using the template for creating a child class. In the the diagram the class name for the new component is `NewComponent`.
+
+![Workflow diagram at the initialization process for a new component based on AbstractSimulationComponent using the template for creating a child class.](images/abstract_component_class_initialization.png)
+
+The parts that the developer are required to either implement or modify are marked with red color in the diagram. These include:
+
+- `create_component`
+    - this method should return a new instance of the new component
+    - The recommended workflow:
+        - read in the environmental variables required for the new component ("Read NewComponent specific environment variables" in the diagram)
+        - create an instance of the new component by calling its constructor with the parameters
+        - return the created instance.
+- constructor of the new component
+    - Initialize `NewComponent` specific variables
+        - This part of the constructor should initialize any variables inside the new component that are required to keep track of all the required information that the component needs to know when the simulation is running.
+    - Set up other topics variable
+        - This part of the constructor should initialize the `self._other_topics` variable with a list of the topics that the component needs to listen to while the simulation is running.
+    - Set up initialization error if all variables could not be properly initialized
+        - If there was some error when initializing one or more of the component variables, `self.initialization_error` should be set up with an appropriate error message.
 
 ## The workflow when receiving a new message
 
