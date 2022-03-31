@@ -51,4 +51,4 @@
 - [Simulation lifecycle](core_lifecycle.md)
 - [Simulation Manager](core_simulationmanager.md)
 - [Dummy Component](core_dummycomponent.md)
-- [AmqpMathToolConnector](core_amqpmathtool.md)
+- [AmqpMathToolIntegration](core_amqpmathtool.md)
