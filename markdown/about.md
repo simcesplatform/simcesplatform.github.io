@@ -9,7 +9,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Source code
 
-Get source code from GitHub: [https://github.com/simcesplatform](https://github.com/simcesplatform)
+Get source code from GitHub: [https://github.com/simcesplatform](https://github.com/simcesplatform).
+For license information, see [license](license.md) or the source code.
 
 
 ## Contact

@@ -28,7 +28,8 @@ SimCES fulfills these requirements. It does not develop any complex algorithms f
 ## Source code
 
 SimCES is open source.
-Therefore, you can find the source code in Github: [https://github.com/simcesplatform](https://github.com/simcesplatform)
+Therefore, you can find the source code in Github: [https://github.com/simcesplatform](https://github.com/simcesplatform).
+For license information, see [license](license.md) or the source code.
 
 
 ## This website

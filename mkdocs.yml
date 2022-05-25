@@ -126,4 +126,5 @@ nav:
             - Energy community demo: energy_scenario-ec-demo.md
     - About...:
       - About...: about.md
+      - License: license.md
       - Maintenance plan: maintenance-plan.md
