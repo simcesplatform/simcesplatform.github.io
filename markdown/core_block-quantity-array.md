@@ -10,10 +10,10 @@ Quantity array block is neither a topic nor message but a JSON block that can be
   "UnitOfMeasure": "kW",
   "Values":
   [
-    "0.1",
-    "0.2",
-    "0.3",
-    "0.4"
+    0.1,
+    0.2,
+    0.3,
+    0.4
   ]
 }
 ```
