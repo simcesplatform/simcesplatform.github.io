@@ -63,7 +63,7 @@
       }
      "AngleSendingEnd" :
      {
-      "UnitOfMeasure" : "degree",
+      "UnitOfMeasure" : "deg",
       "Values" :
       [
         0.2,
@@ -74,7 +74,7 @@
      }
     "AngleReceivingEnd" :
     {
-     "UnitOfMeasure" : "degree",
+     "UnitOfMeasure" : "deg",
      "Values" :
      [
        2,
