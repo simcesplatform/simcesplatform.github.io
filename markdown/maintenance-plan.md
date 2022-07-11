@@ -19,7 +19,6 @@ The responsible persons (RP) are as follows (in alphabetical order):
 
 | Person | Email |
 |-|-|
-| Amir Safdarian, VTT | [amir.safdarian@vtt.fi](mailto:amir.safdarian@vtt.fi) |
 | Antti Keski-Koukkari, VTT | [antti.keski-koukkari@vtt.fi](mailto:antti.keski-koukkari@vtt.fi) |
 | Kari Systä, Tampere University | [kari.systa@tuni.fi](mailto:kari.systa@tuni.fi) |
 | Petri Kannisto, Tampere University | [petri.kannisto@tuni.fi](mailto:petri.kannisto@tuni.fi) |

@@ -1,7 +1,7 @@
 site_name: SimCES
 site_url: https://simcesplatform.github.io
 site_description: Documentation of Simulation Environment of Complex Energy System (SimCES)
-copyright: Copyright &copy; 2021 Tampere University and VTT Technical Research Centre of Finland
+copyright: Copyright &copy; 2021-2022 Tampere University and VTT Technical Research Centre of Finland
 docs_dir: markdown
 site_dir: docs # Must be "docs" as Github pages requires this
 extra_css:
