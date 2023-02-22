@@ -92,6 +92,9 @@ nav:
             - Resource Forecaster: energy_resourceforecaster.md
             - Static time series resource: energy_static-time-series-resource.md
             - Storage: energy_storage.md
+            - User: energy_user-component.md
+            - Station: energy_station-component.md
+            - Intelligent Controller: energy_ic-component.md
         - Message structures (energy):
             - ControlState.PowerSetpoint: energy_msg-controlstate-powersetpoint.md
             - DMSNetworkStatus.Current: energy_msg-dmsnetworkstatus-current.md
@@ -124,6 +127,7 @@ nav:
             - ResourceState.(ResourceCategory).(ResourceId): energy_topic-resourcestate.md
         - Scenarios:
             - Energy community demo: energy_scenario-ec-demo.md
+            - Electric vehicle charging demo: energy_scenario-ev-charging-demo.md
     - About...:
       - About...: about.md
       - License: license.md
