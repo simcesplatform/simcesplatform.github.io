@@ -25,6 +25,7 @@ nav:
             - Test platform:
                 - Run first test simulation: core_run-first.md
                 - Run Energy Community demo: energy_run-ec-demo.md
+                - Run EV Charging demo: energy_run-ev-charging-demo.md
             - Configuring settings: core_platform-settings.md
             - Start simulation:
                 - Simulation run preparations: core_run-preparations.md
