@@ -12,7 +12,7 @@ Scenario setup is depicted on image below. For the simplicity of the first versi
 
 The scenario has 3 stations, 4 users and 1 intelligent controller. The intelligent controller contains the total max power of the charging stations which is 30.0 KW. There are four users; user 1, user 2, user 3 and user 4. There are 3 stations; station 1, station 2, station 3. 
 
-The simulation starts at 2023-01-11T14:00:00. User 1 arrives at station 1 and requests for a target state of charge of 80% from 20%. The target time for user 1 is 2023-01-11T16:00:00. User 2 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 2 and requests for a state of charge of 70% from 5%. The target time for user 2 is 2023-01-12T02:00:00. User 3 arrives at 2023-01-11T19:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 3 is 2023-01-12T00:00:00. User 4 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 4 is 2023-01-11T18:00:00. User 4 leaves station 3 at 2023-01-11T18:00:00. Station 1, 2 and 3 have maximum power of 20 KW, 15 KW and 10 KW respectively
+The simulation starts at 2023-01-11T14:00:00. User 1 arrives at station 1 and requests for a target state of charge of 80% from 20%. The target time for user 1 is 2023-01-11T16:00:00. User 2 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 2 and requests for a state of charge of 70% from 5%. The target time for user 2 is 2023-01-12T02:00:00. User 3 arrives at 2023-01-11T19:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 3 is 2023-01-12T00:00:00. User 4 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 4 is 2023-01-11T18:00:00. User 4 leaves station 3 at 2023-01-11T18:00:00. Station 1, 2 and 3 have maximum power of 20 KW, 15 KW and 10 KW respectively. The total maximum power output for all stations is 30.0 KW.
 
 The intelligent controller implements a greedy algorithm and based on the algorithm prioritizes power output for the stations (earliest leaving time first, higher energy requirement second and the order the users reported in for the current epoch third). 
 
@@ -43,3 +43,22 @@ At the end of the simulation, the results collected are displayed in the graphs 
 
 
 All times are given in Finnish local time (EEST).
+
+## Power Output from Stations
+
+
+
+| Epoch # | Station 1 | Station 2 | Station 3 |
+| ------- | ---------------- | ---------------- | ---------------- |
+| 1       | 20 | 0 | 10 | 
+| 2       | 20 | 0 | 10 |
+| 3       | 0 | 12 | 10 |
+| 4       | 0 | 12 | 10 |
+| 5       | 0 | 12 | 0 |
+| 6       | 0 | 12 | 10 |
+| 7       | 0 | 10.49 | 10 |
+| 8       | 0 | 0 | 10 |
+| 9       | 0 | 0 | 10 |
+| 10       | 0 | 0 | 10 |
+| 11       | 0 | 0 | 0 |
+| 12       | 0 | 0 | 0 |
