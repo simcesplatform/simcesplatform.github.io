@@ -1,4 +1,4 @@
-# User Component
+# Intelligent Controller Component
 
 ## Names and locations
 
