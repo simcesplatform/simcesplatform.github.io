@@ -5,7 +5,7 @@ Built with MkDocs.
 
 Copyright (c) the authors. See the file LICENSE.
 
-Please use MkDocs version 1.2.1, which is the newest as of 24 Jun 2021.
+Please use MkDocs version 1.4.2, which is the newest as of 24 Feb 2023.
 
 Naming convention of Markdown files:
 
