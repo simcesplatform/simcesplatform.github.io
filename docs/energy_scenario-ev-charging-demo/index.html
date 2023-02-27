@@ -601,7 +601,7 @@
 
 <h1 id="ev-charging-demo-scenario">EV charging demo scenario</h1>
 <h2 id="description">Description</h2>
-<p>EV charging demo scenario was created as a part of the EVCommunities project.<br />
+<p>EV charging demo scenario was created as a part of the EVCommunities project.
 Contributors of the simulation:</p>
 <ol>
 <li>Kari Systä, kari.systa@tuni.fi</li>
@@ -610,15 +610,32 @@ Contributors of the simulation:</p>
 <li>Chalith Haputhantrige, chalith.haputhantrige@tuni.fi</li>
 </ol>
 <p>Instructions for running the demo scenario: <a href="../energy_run-ev-charging-demo/">Running the EV charging demo scenario</a></p>
-<p>The scenario describes a complete electric vehicle charging system with 3 main components of <a href="../energy_user-component/">User</a>, <a href="../energy_station-component/">Station</a>, <a href="../energy_ic-component/">Intelligent Controller</a>. There are set number of users and stations at the start of the simulation where the users arrive and leave the stations after charging their electic vehicle. The users send the charging request to the IC and the IC contains the logic and algorithm to determine the power requirement for the stations. Scenario spans over 12 hours with hourly resolution (epochs).</p>
+<p>The scenario describes a complete electric vehicle charging system with 3 main components of <a href="../energy_user-component/">User</a>, <a href="../energy_station-component/">Station</a>, <a href="../energy_ic-component/">Intelligent Controller</a>. There are set number of users and stations at the start of the simulation where the users arrive and leave the stations after charging their electric vehicle. The users send the charging request to the IC and the IC contains the logic and algorithm to determine the power requirements for the stations. The scenario spans over 12 hours with hourly resolution (epochs).</p>
 <p>Scenario setup is depicted on image below. For the simplicity of the first version, the spot pricing component is absent in the simulation.</p>
 <p><img alt="A diagram for the structure for the EV charging demo scenario" src="../images/ev_charging_demo.png" /></p>
 <h2 id="scenario-details">Scenario details</h2>
-<p>The scenario has 3 stations, 4 users and 1 intelligent controller. The intelligent controller contains the total max power of the charging stations which is 30.0 KW. There are four users; user 1, user 2, user 3 and user 4. There are 3 stations; station 1, station 2, station 3. </p>
-<p>The simulation starts at 2023-01-11T14:00:00. User 1 arrives at station 1 and requests for a target state of charge of 80% from 20%. The target time for user 1 is 2023-01-11T16:00:00. User 2 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 2 and requests for a state of charge of 70% from 5%. The target time for user 2 is 2023-01-12T02:00:00. User 3 arrives at 2023-01-11T19:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 3 is 2023-01-12T00:00:00. User 4 arrives at the start of the simulation at 2023-01-11T14:00:00 at station 3 and requests for a state of charge of 95% from 15%. The target time for user 4 is 2023-01-11T18:00:00. User 4 leaves station 3 at 2023-01-11T18:00:00.</p>
-<p>Station 1, 2 and 3 have maximum power of 20 KW, 15 KW and 10 KW respectively. The total maximum power output for all stations is 30.0 KW.</p>
-<p>The intelligent controller implements a greedy algorithm and based on the algorithm prioritizes power output for the stations (earliest leaving time first, higher energy requirement second and the order the users reported in for the current epoch third). </p>
-<p>At the end of the simulation, the results collected are displayed in the graphs below:</p>
+<p>The scenario has 3 stations, 4 users and 1 intelligent controller.</p>
+<ul>
+<li>The intelligent controller contains the total max power of the charging stations which is 30.0 kW.</li>
+<li>There are four users: user 1, user 2, user 3 and user 4.</li>
+<li>There are 3 stations: station 1, station 2, station 3.</li>
+</ul>
+<p>Users and their requirements in the scenario:</p>
+<ul>
+<li>The simulation starts at 2pm.</li>
+<li>User 1 arrives at the start of the simulation to station 1 and requests for a target state of charge of 80% from the initial charge of 20%. The target time for user 1 is 2 hours later at 4pm.</li>
+<li>User 2 arrives at the start of the simulation to station 2 and requests for a state of charge of 70% from the initial charge of 5%. The target time for user 2 is 12 hours later at 2am the next day.</li>
+<li>User 3 arrives to station 3 at 7pm and requests for a state of charge of 95% from the initial charge of 15%. The target time for user 3 is at 5 hours later at midnight.</li>
+<li>User 4 arrives at the start of the simulation to station 3 and requests for a state of charge of 95% from the initial charge of 15%. The target (and leaving) time for user 4 is 6 hours later at 6pm.</li>
+</ul>
+<p>Station 1, 2 and 3 have maximum power of 20 kW, 15 kW and 10 kW respectively. The total maximum power output for all stations is 30.0 kW.</p>
+<p>The intelligent controller uses a greedy algorithm and prioritizes power output for the stations based on the following aspects:</p>
+<ol>
+<li>the earliest leaving time of the user</li>
+<li>the highest total energy requirement by the user</li>
+<li>the order the users reported in for the current epoch (with the earlier reporter prioritized over later ones)</li>
+</ol>
+<p>At the end of the simulation, the collected results are displayed in the graphs below:</p>
 <p><img alt="A figure showing charging graph for user1 and user2" src="../images/ev_charging_user1_user2.png" /></p>
 <p><img alt="A figure showing charging graph for user3 and user4" src="../images/ev_charging_user3_user4.png" /></p>
 <h2 id="epochs">Epochs</h2>

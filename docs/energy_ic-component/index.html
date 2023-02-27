@@ -648,7 +648,7 @@
 </tbody>
 </table>
 <h2 id="description">Description</h2>
-<p>A controller component that holds all the logic and algorithm for processing user charging requirements and calculating power outputs for stations. </p>
+<p>A controller component that holds all the logic and algorithm for processing user charging requirements and calculating power outputs for stations.</p>
 <h2 id="messaging">Messaging</h2>
 <h3 id="subscribe">Subscribe</h3>
 <table>
@@ -702,13 +702,15 @@
 <tr>
 <th>Property</th>
 <th>Datatype</th>
+<th>Unit</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>total_max_power</td>
+<td>TotalMaxPower</td>
 <td>Float</td>
+<td>kW</td>
 <td>30.0</td>
 </tr>
 </tbody>
@@ -720,16 +722,16 @@
 <h2 id="epoch-workflow">Epoch workflow</h2>
 <p>In each epoch, the component does the following:</p>
 <ol>
-<li>IC receives an Epoch message for a new epoch. The epoch number for the first epoch is 1. </li>
-<li>IC listens to User.CarMetaData message if it is the epoch 1, stores all the user information when the message is received.</li>
-<li>IC listens to StationStateTopic message, stores all the station information when the message is received.</li>
-<li>IC listens to User.UserState message which contains epoch no, user id, target SoC, target time, stores the information to later determine the power requirement for the stations. </li>
-<li>After receiving all the messages (User.CarMetaData, StationStateTopic, User.UserState) from the users and stations from the epoch, IC publishes PowerRequirementTopic message which containers the power requirement for each station.</li>
-<li>IC listens to User.CarState message from the User components which contains the updated state of charge of the car after receiving power from the station. </li>
-<li>IC sends a Status message with value "ready". </li>
+<li>IC receives an <code>Epoch</code> message for a new epoch. The epoch number for the first epoch is 1.</li>
+<li>IC listens to <code>User.CarMetaData</code> messages if it is the epoch 1, stores all the user information when a message is received.</li>
+<li>IC listens to <code>StationStateTopic</code> messages, stores all the station information when a message is received.</li>
+<li>IC listens to <code>User.UserState</code> messages which contains epoch number, user id, target SoC, and target time. IC stores the information in order to later determine the power requirement for the stations.</li>
+<li>After receiving all the messages (<code>User.CarMetaData</code>, <code>StationStateTopic</code>, <code>User.UserState</code>) from all the users and stations, IC makes a plan for distributing the available charging power and publishes <code>PowerRequirementTopic</code> messages which containers the power requirements for each station.</li>
+<li>IC listens to <code>User.CarState</code> messages from the User components which contains the updated state of charges for the cars after receiving power from the station.</li>
+<li>After having received all <code>User.CarState</code> messages, IC sends a <code>Status</code> message with value "ready".</li>
 </ol>
 <h2 id="implementation-details">Implementation details</h2>
-<h3 id="language-and-platform">Language and platform</h3>
+<h3 id="language">Language</h3>
 <table>
 <thead>
 <tr>
@@ -740,15 +742,7 @@
 <tbody>
 <tr>
 <td>Programming language</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>Platform</td>
-<td>Python 3.7.6</td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>Docker Debian 10 (python:3.7.9)</td>
+<td>Python 3.7.9</td>
 </tr>
 </tbody>
 </table>

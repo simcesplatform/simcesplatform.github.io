@@ -698,58 +698,69 @@
 <tr>
 <th>Property</th>
 <th>Datatype</th>
+<th>Unit</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>user_id</td>
-<td>Number</td>
+<td>UserId</td>
+<td>Integer</td>
+<td></td>
 <td>1</td>
 </tr>
 <tr>
-<td>user_name</td>
+<td>UserName</td>
 <td>String</td>
+<td></td>
 <td>testUser1</td>
 </tr>
 <tr>
-<td>car_model</td>
+<td>CarModel</td>
 <td>String</td>
+<td></td>
 <td>testModel1</td>
 </tr>
 <tr>
-<td>car_battery_capacity</td>
+<td>CarBatteryCapacity</td>
 <td>Float</td>
-<td>120.0 (KWh)</td>
+<td>kWh</td>
+<td>120.0</td>
 </tr>
 <tr>
-<td>car_max_power</td>
-<td>Float</td>
-<td>22.0 (KW)</td>
+<td>CarMaxPower</td>
+<td>Float (&gt; 0)</td>
+<td>kW</td>
+<td>22.0</td>
 </tr>
 <tr>
-<td>station_id</td>
+<td>StationId</td>
 <td>String</td>
+<td></td>
 <td>1</td>
 </tr>
 <tr>
-<td>state_of_charge</td>
-<td>Float</td>
-<td>20.0 (%)</td>
+<td>StateOfCharge</td>
+<td>Float (0-100)</td>
+<td>%</td>
+<td>20.0</td>
 </tr>
 <tr>
-<td>target_state_of_charge</td>
-<td>Float</td>
-<td>80.0 (%)</td>
+<td>TargetStateOfCharge</td>
+<td>Float (0-100)</td>
+<td>%</td>
+<td>80.0</td>
 </tr>
 <tr>
-<td>arrival_time</td>
+<td>ArrivalTime</td>
 <td>ISO 8601 datetime</td>
+<td></td>
 <td>2023-01-11T12:00:00.000Z</td>
 </tr>
 <tr>
-<td>target_time</td>
+<td>TargetTime</td>
 <td>ISO 8601 datetime</td>
+<td></td>
 <td>2023-01-11T14:00:00.000Z</td>
 </tr>
 </tbody>
@@ -761,15 +772,15 @@
 <h2 id="epoch-workflow">Epoch workflow</h2>
 <p>In each epoch, the component does the following:</p>
 <ol>
-<li>User receives an Epoch message for a new epoch. The epoch number for the first epoch is 1. </li>
-<li>User publishes User.CarMetaData message if it is the epoch 1, the Intelligence Control component is the recipient of the message. </li>
-<li>User publishes User.UserState message which contains epoch no, user id, target SoC, target time. </li>
-<li>User listens to Station.PowerOutput message from the Station component which contains the actual power provided by the station. </li>
-<li>At the end of the epoch, User publishes User.CarState message which contains the epoch number, station id, user id, state of charge. </li>
-<li>User sends a Status message with value "ready". </li>
+<li>User receives an <code>Epoch</code> message for a new epoch. The epoch number for the first epoch is 1.</li>
+<li>User publishes <code>User.CarMetaData</code> message if it is the epoch 1, the Intelligence Control component is the recipient of the message.</li>
+<li>User publishes <code>User.UserState</code> message which contains epoch no, user id, target SoC, target time.</li>
+<li>User listens for <code>Station.PowerOutput</code> message from the Station component which contains the actual power provided by the station.</li>
+<li>After receiving <code>Station.PowerOutput</code> message, user publishes <code>User.CarState</code> message which contains the epoch number, station id, user id, and the state of charge at the end of the epoch.</li>
+<li>User sends a <code>Status</code> message with value "ready".</li>
 </ol>
 <h2 id="implementation-details">Implementation details</h2>
-<h3 id="language-and-platform">Language and platform</h3>
+<h3 id="language">Language</h3>
 <table>
 <thead>
 <tr>
@@ -780,15 +791,7 @@
 <tbody>
 <tr>
 <td>Programming language</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>Platform</td>
-<td>Python 3.7.6</td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>Docker Debian 10 (python:3.7.9)</td>
+<td>Python 3.7.9</td>
 </tr>
 </tbody>
 </table>

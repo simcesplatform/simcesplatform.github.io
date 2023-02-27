@@ -648,7 +648,7 @@
 </tbody>
 </table>
 <h2 id="description">Description</h2>
-<p>A component used to simulate a station that recieves requests from user components for charging for electric vehicles. Holds information of a station. Provides information of actual power provided by stations. </p>
+<p>A component used to simulate a station that receives requests from user components for charging for electric vehicles. Holds information of a station. Provides information of actual power provided by stations.</p>
 <h2 id="messaging">Messaging</h2>
 <h3 id="subscribe">Subscribe</h3>
 <table>
@@ -694,18 +694,21 @@
 <tr>
 <th>Property</th>
 <th>Datatype</th>
+<th>Unit</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>station_id</td>
+<td>StationId</td>
 <td>String</td>
+<td></td>
 <td>1</td>
 </tr>
 <tr>
-<td>max_power</td>
-<td>Float</td>
+<td>MaxPower</td>
+<td>Float (&gt; 0)</td>
+<td>kW</td>
 <td>22.0</td>
 </tr>
 </tbody>
@@ -717,14 +720,14 @@
 <h2 id="epoch-workflow">Epoch workflow</h2>
 <p>In each epoch, the component does the following:</p>
 <ol>
-<li>Station receives an Epoch message for a new epoch. The epoch number for the first epoch is 1. </li>
-<li>Station publishes Station.StationState message which contains epoch no, station id, max power. </li>
-<li>Station listens to IntelligenceControl.PowerRequirement message from the IntelligenceControl component which contains the charging requirements (power) that needs to be provided by the station. </li>
-<li>Station publishes Station.PowerOutput message which contains the actual power provided by the station.</li>
-<li>Station sends a Status message with value "ready". </li>
+<li>Station receives an <code>Epoch</code> message for a new epoch. The epoch number for the first epoch is 1.</li>
+<li>Station publishes <code>Station.StationState</code> message which contains epoch number, station id, and max power.</li>
+<li>Station listens to <code>IntelligenceControl.PowerRequirement</code> message from the IntelligenceControl component which contains the charging requirements (power) that needs to be provided by the station.</li>
+<li>Station publishes <code>Station.PowerOutput</code> message which contains the actual power provided by the station.</li>
+<li>Station sends a <code>Status</code> message with value "ready".</li>
 </ol>
 <h2 id="implementation-details">Implementation details</h2>
-<h3 id="language-and-platform">Language and platform</h3>
+<h3 id="language">Language</h3>
 <table>
 <thead>
 <tr>
@@ -735,15 +738,7 @@
 <tbody>
 <tr>
 <td>Programming language</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>Platform</td>
-<td>Python 3.7.6</td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>Docker Debian 10 (python:3.7.9)</td>
+<td>Python 3.7.9</td>
 </tr>
 </tbody>
 </table>
