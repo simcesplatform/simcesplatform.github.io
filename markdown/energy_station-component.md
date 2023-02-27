@@ -12,7 +12,7 @@
 
 ## Description
 
-A component used to simulate a station that recieves requests from user components for charging for electric vehicles. Holds information of a station. Provides information of actual power provided by stations. 
+A component used to simulate a station that receives requests from user components for charging for electric vehicles. Holds information of a station. Provides information of actual power provided by stations.
 
 
 
@@ -45,10 +45,10 @@ This component uses the block "StationComponent" in startup parameters.
 
 ## Input parameters
 
-| Property | Datatype | Example |
-| --- | --- | --- |
-| station_id | String | 1 |
-| max_power | Float | 22.0 |
+| Property | Datatype | Unit | Example |
+| --- | --- | --- | --- |
+| StationId | String | | 1 |
+| MaxPower | Float (> 0) | kW | 22.0 |
 
 
 ## Input files
@@ -65,23 +65,21 @@ This component does not have any initialization workflow.
 
 In each epoch, the component does the following:
 
-1. Station receives an Epoch message for a new epoch. The epoch number for the first epoch is 1. 
-2. Station publishes Station.StationState message which contains epoch no, station id, max power. 
-3. Station listens to IntelligenceControl.PowerRequirement message from the IntelligenceControl component which contains the charging requirements (power) that needs to be provided by the station. 
-4. Station publishes Station.PowerOutput message which contains the actual power provided by the station.
-5. Station sends a Status message with value "ready". 
+1. Station receives an `Epoch` message for a new epoch. The epoch number for the first epoch is 1.
+2. Station publishes `Station.StationState` message which contains epoch number, station id, and max power.
+3. Station listens to `IntelligenceControl.PowerRequirement` message from the IntelligenceControl component which contains the charging requirements (power) that needs to be provided by the station.
+4. Station publishes `Station.PowerOutput` message which contains the actual power provided by the station.
+5. Station sends a `Status` message with value "ready".
 
 
 
 ## Implementation details
 
-### Language and platform
+### Language
 
 | Property | Value |
 | --- | --- |
-| Programming language | Python |
-| Platform | Python 3.7.6 |
-| Operating system | Docker Debian 10 (python:3.7.9) |
+| Programming language | Python 3.7.9 |
 
 
 ### External packages
