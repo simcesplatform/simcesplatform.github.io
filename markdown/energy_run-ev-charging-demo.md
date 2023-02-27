@@ -51,10 +51,10 @@ To be able to use the [User](energy_user-component.md), [Station](energy_station
     This script will fetch the Docker images and component manifest files for the domain components.
 
 5. Copy the ready-made simulation configuration file from [simulation_configuration_ev_charging.yml](https://github.com/simcesplatform/Platform-Manager/blob/master/simulation_configuration_ev_charging.yml) to the `platform` folder.
-   a. Either copy the file manually or use the following command line instruction:
+    - Either copy the file manually or use the following command line instruction:
 
-        :::bash
-        wget https://raw.githubusercontent.com/EVCommunities/Components/main/simulation_configuration_ev_charging.yml
+            :::bash
+            wget https://raw.githubusercontent.com/EVCommunities/Components/main/simulation_configuration_ev_charging.yml
 
 6. (Optional) Look through the simulation configuration file and see how it corresponds to the scenario description at [EV charging demo scenario](energy_scenario-ev-charging-demo.md).
 
