@@ -44,18 +44,18 @@ This component uses the block "UserComponent" in startup parameters.
 
 ## Input parameters
 
-| Property | Datatype | Example |
-| --- | --- | --- |
-| user_id | Number | 1 |
-| user_name | String | testUser1 |
-| car_model | String | testModel1 |
-| car_battery_capacity | Float | 120.0 (KWh) |
-| car_max_power | Float | 22.0 (KW) |
-| station_id | String | 1 |
-| state_of_charge | Float | 20.0 (%) |
-| target_state_of_charge | Float | 80.0 (%) |
-| arrival_time | ISO 8601 datetime | 2023-01-11T12:00:00.000Z |
-| target_time | ISO 8601 datetime | 2023-01-11T14:00:00.000Z |
+| Property | Datatype | Unit | Example |
+| --- | --- | --- | --- |
+| UserId | Integer | | 1 |
+| UserName | String | | testUser1 |
+| CarModel | String | | testModel1 |
+| CarBatteryCapacity | Float | kWh | 120.0 |
+| CarMaxPower | Float (> 0) | kW | 22.0 |
+| StationId | String | | 1 |
+| StateOfCharge | Float (0-100) | % | 20.0 |
+| TargetStateOfCharge | Float (0-100) | % | 80.0 |
+| ArrivalTime | ISO 8601 datetime | | 2023-01-11T12:00:00.000Z |
+| TargetTime | ISO 8601 datetime | | 2023-01-11T14:00:00.000Z |
 
 
 
@@ -73,24 +73,22 @@ This component does not have any initialization workflow.
 
 In each epoch, the component does the following:
 
-1. User receives an Epoch message for a new epoch. The epoch number for the first epoch is 1. 
-2. User publishes User.CarMetaData message if it is the epoch 1, the Intelligence Control component is the recipient of the message. 
-3. User publishes User.UserState message which contains epoch no, user id, target SoC, target time. 
-4. User listens to Station.PowerOutput message from the Station component which contains the actual power provided by the station. 
-5. At the end of the epoch, User publishes User.CarState message which contains the epoch number, station id, user id, state of charge. 
-6. User sends a Status message with value "ready". 
+1. User receives an `Epoch` message for a new epoch. The epoch number for the first epoch is 1.
+2. User publishes `User.CarMetaData` message if it is the epoch 1, the Intelligence Control component is the recipient of the message.
+3. User publishes `User.UserState` message which contains epoch no, user id, target SoC, target time.
+4. User listens for `Station.PowerOutput` message from the Station component which contains the actual power provided by the station.
+5. After receiving `Station.PowerOutput` message, user publishes `User.CarState` message which contains the epoch number, station id, user id, and the state of charge at the end of the epoch.
+6. User sends a `Status` message with value "ready".
 
 
 
 ## Implementation details
 
-### Language and platform
+### Language
 
 | Property | Value |
 | --- | --- |
-| Programming language | Python |
-| Platform | Python 3.7.6 |
-| Operating system | Docker Debian 10 (python:3.7.9) |
+| Programming language | Python 3.7.9 |
 
 
 ### External packages
