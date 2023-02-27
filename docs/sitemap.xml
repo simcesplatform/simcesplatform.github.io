@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://simcesplatform.github.io/energy_ic-component/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://simcesplatform.github.io/energy_msg-controlstate-powersetpoint/</loc>
          <lastmod>2023-02-24</lastmod>
          <changefreq>daily</changefreq>
@@ -421,7 +426,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://simcesplatform.github.io/energy_run-ev-charging-demo/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://simcesplatform.github.io/energy_scenario-ec-demo/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://simcesplatform.github.io/energy_scenario-ev-charging-demo/</loc>
          <lastmod>2023-02-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -432,6 +447,11 @@
     </url>
     <url>
          <loc>https://simcesplatform.github.io/energy_static-time-series-resource/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://simcesplatform.github.io/energy_station-component/</loc>
          <lastmod>2023-02-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -457,6 +477,11 @@
     </url>
     <url>
          <loc>https://simcesplatform.github.io/energy_topics/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://simcesplatform.github.io/energy_user-component/</loc>
          <lastmod>2023-02-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
