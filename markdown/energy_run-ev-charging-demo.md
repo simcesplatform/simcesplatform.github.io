@@ -50,7 +50,7 @@ To be able to use the [User](energy_user-component.md), [Station](energy_station
 
     This script will fetch the Docker images and component manifest files for the domain components.
 
-5. Copy the ready-made simulation configuration file from [simulation_configuration_ev_charging.yml](https://github.com/simcesplatform/Platform-Manager/blob/master/simulation_configuration_ev_charging.yml) to the `platform` folder.
+5. Copy the ready-made simulation configuration file from [simulation_configuration_ev_charging.yml](https://github.com/EVCommunities/Components/blob/main/simulation_configuration_ev_charging.yml) to the `platform` folder.
     - Either copy the file manually or use the following command line instruction:
 
             :::bash
@@ -71,5 +71,213 @@ To follow the simulation run while it is running see the page: [Following a runn
 
 After the simulation run has been completed you should be able to use the [Log Reader](core_log-api.md) to look through the messages used in the simulation. A couple of examples of using the Log Reader API are given below. In all examples, `<simulation_id>` should be replaced by the simulation id given by the Platform Manager.
 
-- `TODO`: add Log reader examples for an user to be able to confirm that the scenario has been run correctly
-- `TODO`: add a link to the EVCommunities GUI demo page
+- Get a list of messages sent from the Intelligent controller component (ic1) at epoch 1.
+
+    - Request:
+
+        [`http://localhost:8080/simulations/<simulation_id>/messages?process=ic1&epoch=1`](http://localhost:8080/simulations/<simulation_id>/messages?process=ic1&epoch=1)
+
+    - Response:
+
+            :::json
+            [
+                {
+                    "AffectedUsers": [
+                        "uc2",
+                        "uc1",
+                        "uc4"
+                    ],
+                    "AvailableEnergy": 86.05851979345955,
+                    "EpochNumber": 1,
+                    "MessageId": "ic1-2",
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "ic1",
+                    "Timestamp": "2023-02-23T08:31:37.604000Z",
+                    "Topic": "Requirements.Warning",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-2"
+                    ],
+                    "Type": "RequirementsWarning"
+                },
+                {
+                    "EpochNumber": 1,
+                    "MessageId": "ic1-3",
+                    "Power": 20,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "ic1",
+                    "StationId": "1",
+                    "Timestamp": "2023-02-23T08:31:37.607000Z",
+                    "Topic": "PowerRequirementTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-2"
+                    ],
+                    "Type": "PowerRequirement",
+                    "UserId": 1
+                },
+                {
+                    "EpochNumber": 1,
+                    "MessageId": "ic1-4",
+                    "Power": 10,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "ic1",
+                    "StationId": "3",
+                    "Timestamp": "2023-02-23T08:31:37.608000Z",
+                    "Topic": "PowerRequirementTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-2"
+                    ],
+                    "Type": "PowerRequirement",
+                    "UserId": 4
+                },
+                {
+                    "EpochNumber": 1,
+                    "MessageId": "ic1-5",
+                    "Power": 0,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "ic1",
+                    "StationId": "2",
+                    "Timestamp": "2023-02-23T08:31:37.610000Z",
+                    "Topic": "PowerRequirementTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-2"
+                    ],
+                    "Type": "PowerRequirement",
+                    "UserId": 2
+                },
+                {
+                    "EpochNumber": 1,
+                    "MessageId": "ic1-6",
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "ic1",
+                    "Timestamp": "2023-02-23T08:31:37.621000Z",
+                    "Topic": "Status.Ready",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-2"
+                    ],
+                    "Type": "Status",
+                    "Value": "ready"
+                }
+            ]
+
+- Get a list of messages with topic name of PowerOutputTopic at epoch 2.
+
+    - Request:
+
+        [`http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&epoch=2`](http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&epoch=2)
+
+    - Response:
+
+            :::json
+            [
+                {
+                    "EpochNumber": 2,
+                    "MessageId": "s1-6",
+                    "PowerOutput": 20,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "s1",
+                    "StationId": "1",
+                    "Timestamp": "2023-02-23T08:31:37.639000Z",
+                    "Topic": "PowerOutputTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-3"
+                    ],
+                    "Type": "PowerOutput",
+                    "UserId": 1
+                },
+                {
+                    "EpochNumber": 2,
+                    "MessageId": "s3-6",
+                    "PowerOutput": 10,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "s3",
+                    "StationId": "3",
+                    "Timestamp": "2023-02-23T08:31:37.640000Z",
+                    "Topic": "PowerOutputTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-3"
+                    ],
+                    "Type": "PowerOutput",
+                    "UserId": 4
+                },
+                {
+                    "EpochNumber": 2,
+                    "MessageId": "s2-6",
+                    "PowerOutput": 0,
+                    "SimulationId": "2023-02-23T08:31:20.924Z",
+                    "SourceProcessId": "s2",
+                    "StationId": "2",
+                    "Timestamp": "2023-02-23T08:31:37.641000Z",
+                    "Topic": "PowerOutputTopic",
+                    "TriggeringMessageIds": [
+                        "SimulationManager-3"
+                    ],
+                    "Type": "PowerOutput",
+                    "UserId": 2
+                }
+            ]
+
+- Get a list of messages with topic name of PowerOutputTopic for station 2 component (s2) between epoch 3 and epoch 5.
+
+    - Request:
+
+        [`http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5`](http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5)
+
+    - Response:
+
+            :::json
+                [
+                    {
+                        "EpochNumber": 3,
+                        "MessageId": "s2-9",
+                        "PowerOutput": 12,
+                        "SimulationId": "2023-02-23T08:31:20.924Z",
+                        "SourceProcessId": "s2",
+                        "StationId": "2",
+                        "Timestamp": "2023-02-23T08:31:37.670000Z",
+                        "Topic": "PowerOutputTopic",
+                        "TriggeringMessageIds": [
+                            "SimulationManager-4"
+                        ],
+                        "Type": "PowerOutput",
+                        "UserId": 2
+                    },
+                    {
+                        "EpochNumber": 4,
+                        "MessageId": "s2-12",
+                        "PowerOutput": 12,
+                        "SimulationId": "2023-02-23T08:31:20.924Z",
+                        "SourceProcessId": "s2",
+                        "StationId": "2",
+                        "Timestamp": "2023-02-23T08:31:37.701000Z",
+                        "Topic": "PowerOutputTopic",
+                        "TriggeringMessageIds": [
+                            "SimulationManager-5"
+                        ],
+                        "Type": "PowerOutput",
+                        "UserId": 2
+                    },
+                    {
+                        "EpochNumber": 5,
+                        "MessageId": "s2-15",
+                        "PowerOutput": 12,
+                        "SimulationId": "2023-02-23T08:31:20.924Z",
+                        "SourceProcessId": "s2",
+                        "StationId": "2",
+                        "Timestamp": "2023-02-23T08:31:37.727000Z",
+                        "Topic": "PowerOutputTopic",
+                        "TriggeringMessageIds": [
+                            "SimulationManager-6"
+                        ],
+                        "Type": "PowerOutput",
+                        "UserId": 2
+                    }
+                ]
+
+## Running the simulation and checking the graphs on remote server
+
+The simulation can be run using an application that is hosted on a server. Simulation output can be displayed as graphs in the application. The application can be accessed using the following link: [`https://evc.tlt-cityiot.rd.tuni.fi/`](https://evc.tlt-cityiot.rd.tuni.fi/). The application portal requires user authentication.
+
+
+## Running the simulation and checking the graphs locally
+
+The application that is hosted on the server can also be run locally. Instructions to run the application locally can be found from the following link: [`https://github.com/EVCommunities/GUI`](https://github.com/EVCommunities/GUI).
