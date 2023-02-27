@@ -75,7 +75,7 @@ After the simulation run has been completed you should be able to use the [Log R
 
     - Request:
 
-        [`http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?process=ic1&epoch=1`](http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?process=ic1&epoch=1)
+        [`http://localhost:8080/simulations/<simulation_id>/messages?process=ic1&epoch=1`](http://localhost:8080/simulations/<simulation_id>/messages?process=ic1&epoch=1)
 
     - Response:
 
@@ -163,7 +163,7 @@ After the simulation run has been completed you should be able to use the [Log R
 
     - Request:
 
-        [`http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?topic=PowerOutputTopic&epoch=2`](http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?topic=PowerOutputTopic&epoch=2)
+        [`http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&epoch=2`](http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&epoch=2)
 
     - Response:
 
@@ -220,7 +220,7 @@ After the simulation run has been completed you should be able to use the [Log R
 
     - Request:
 
-        [`http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5`](http://localhost:8080/simulations/2023-02-23T08:31:20.924Z/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5)
+        [`http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5`](http://localhost:8080/simulations/<simulation_id>/messages?topic=PowerOutputTopic&process=s2&startEpoch=3&endEpoch=5)
 
     - Response:
 
@@ -273,6 +273,11 @@ After the simulation run has been completed you should be able to use the [Log R
                     }
                 ]
 
-## Running and checking the graphs on the server
+## Running the simulation and checking the graphs on remote server
 
-The simulation can be run using and application that is hosted in a server. Simulation output can be displayed as graphs in the application. The application can be accessed using the following link: [`https://evc.tlt-cityiot.rd.tuni.fi/`](https://evc.tlt-cityiot.rd.tuni.fi/). The application portal requires user authentication.
+The simulation can be run using an application that is hosted on a server. Simulation output can be displayed as graphs in the application. The application can be accessed using the following link: [`https://evc.tlt-cityiot.rd.tuni.fi/`](https://evc.tlt-cityiot.rd.tuni.fi/). The application portal requires user authentication.
+
+
+## Running the simulation and checking the graphs locally
+
+The application that is hosted on the server can also be run locally. Instructions to run the application locally can be found from the following link: [`https://github.com/EVCommunities/GUI`](https://github.com/EVCommunities/GUI).

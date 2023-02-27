@@ -592,6 +592,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#running-the-simulation-and-checking-the-graphs-on-remote-server" class="nav-link">Running the simulation and checking the graphs on remote server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#running-the-simulation-and-checking-the-graphs-locally" class="nav-link">Running the simulation and checking the graphs locally</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -650,7 +658,7 @@ Type: GitHub
 <p>This script will fetch the Docker images and component manifest files for the domain components.</p>
 </li>
 <li>
-<p>Copy the ready-made simulation configuration file from <a href="https://github.com/simcesplatform/Platform-Manager/blob/master/simulation_configuration_ev_charging.yml">simulation_configuration_ev_charging.yml</a> to the <code>platform</code> folder.</p>
+<p>Copy the ready-made simulation configuration file from <a href="https://github.com/EVCommunities/Components/blob/main/simulation_configuration_ev_charging.yml">simulation_configuration_ev_charging.yml</a> to the <code>platform</code> folder.</p>
 <ul>
 <li>Either copy the file manually or use the following command line instruction:<pre class="codehilite"><code class="language-bash">wget https://raw.githubusercontent.com/EVCommunities/Components/main/simulation_configuration_ev_charging.yml
 </code></pre>
@@ -671,9 +679,225 @@ Type: GitHub
 <h2 id="checking-the-results-from-the-simulation-run">Checking the results from the simulation run</h2>
 <p>After the simulation run has been completed you should be able to use the <a href="../core_log-api/">Log Reader</a> to look through the messages used in the simulation. A couple of examples of using the Log Reader API are given below. In all examples, <code>&lt;simulation_id&gt;</code> should be replaced by the simulation id given by the Platform Manager.</p>
 <ul>
-<li><code>TODO</code>: add Log reader examples for an user to be able to confirm that the scenario has been run correctly</li>
-<li><code>TODO</code>: add a link to the EVCommunities GUI demo page</li>
-</ul></div>
+<li>
+<p>Get a list of messages sent from the Intelligent controller component (ic1) at epoch 1.</p>
+<ul>
+<li>
+<p>Request:</p>
+<p><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?process=ic1&amp;epoch=1"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?process=ic1&amp;epoch=1</code></a></p>
+</li>
+<li>
+<p>Response:</p>
+<pre class="codehilite"><code class="language-json">[
+    {
+        &quot;AffectedUsers&quot;: [
+            &quot;uc2&quot;,
+            &quot;uc1&quot;,
+            &quot;uc4&quot;
+        ],
+        &quot;AvailableEnergy&quot;: 86.05851979345955,
+        &quot;EpochNumber&quot;: 1,
+        &quot;MessageId&quot;: &quot;ic1-2&quot;,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;ic1&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.604000Z&quot;,
+        &quot;Topic&quot;: &quot;Requirements.Warning&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-2&quot;
+        ],
+        &quot;Type&quot;: &quot;RequirementsWarning&quot;
+    },
+    {
+        &quot;EpochNumber&quot;: 1,
+        &quot;MessageId&quot;: &quot;ic1-3&quot;,
+        &quot;Power&quot;: 20,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;ic1&quot;,
+        &quot;StationId&quot;: &quot;1&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.607000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerRequirementTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-2&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerRequirement&quot;,
+        &quot;UserId&quot;: 1
+    },
+    {
+        &quot;EpochNumber&quot;: 1,
+        &quot;MessageId&quot;: &quot;ic1-4&quot;,
+        &quot;Power&quot;: 10,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;ic1&quot;,
+        &quot;StationId&quot;: &quot;3&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.608000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerRequirementTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-2&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerRequirement&quot;,
+        &quot;UserId&quot;: 4
+    },
+    {
+        &quot;EpochNumber&quot;: 1,
+        &quot;MessageId&quot;: &quot;ic1-5&quot;,
+        &quot;Power&quot;: 0,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;ic1&quot;,
+        &quot;StationId&quot;: &quot;2&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.610000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerRequirementTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-2&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerRequirement&quot;,
+        &quot;UserId&quot;: 2
+    },
+    {
+        &quot;EpochNumber&quot;: 1,
+        &quot;MessageId&quot;: &quot;ic1-6&quot;,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;ic1&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.621000Z&quot;,
+        &quot;Topic&quot;: &quot;Status.Ready&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-2&quot;
+        ],
+        &quot;Type&quot;: &quot;Status&quot;,
+        &quot;Value&quot;: &quot;ready&quot;
+    }
+]
+</code></pre>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Get a list of messages with topic name of PowerOutputTopic at epoch 2.</p>
+<ul>
+<li>
+<p>Request:</p>
+<p><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=PowerOutputTopic&amp;epoch=2"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=PowerOutputTopic&amp;epoch=2</code></a></p>
+</li>
+<li>
+<p>Response:</p>
+<pre class="codehilite"><code class="language-json">[
+    {
+        &quot;EpochNumber&quot;: 2,
+        &quot;MessageId&quot;: &quot;s1-6&quot;,
+        &quot;PowerOutput&quot;: 20,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;s1&quot;,
+        &quot;StationId&quot;: &quot;1&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.639000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-3&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerOutput&quot;,
+        &quot;UserId&quot;: 1
+    },
+    {
+        &quot;EpochNumber&quot;: 2,
+        &quot;MessageId&quot;: &quot;s3-6&quot;,
+        &quot;PowerOutput&quot;: 10,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;s3&quot;,
+        &quot;StationId&quot;: &quot;3&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.640000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-3&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerOutput&quot;,
+        &quot;UserId&quot;: 4
+    },
+    {
+        &quot;EpochNumber&quot;: 2,
+        &quot;MessageId&quot;: &quot;s2-6&quot;,
+        &quot;PowerOutput&quot;: 0,
+        &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+        &quot;SourceProcessId&quot;: &quot;s2&quot;,
+        &quot;StationId&quot;: &quot;2&quot;,
+        &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.641000Z&quot;,
+        &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+        &quot;TriggeringMessageIds&quot;: [
+            &quot;SimulationManager-3&quot;
+        ],
+        &quot;Type&quot;: &quot;PowerOutput&quot;,
+        &quot;UserId&quot;: 2
+    }
+]
+</code></pre>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Get a list of messages with topic name of PowerOutputTopic for station 2 component (s2) between epoch 3 and epoch 5.</p>
+<ul>
+<li>
+<p>Request:</p>
+<p><a href="http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=PowerOutputTopic&amp;process=s2&amp;startEpoch=3&amp;endEpoch=5"><code>http://localhost:8080/simulations/&lt;simulation_id&gt;/messages?topic=PowerOutputTopic&amp;process=s2&amp;startEpoch=3&amp;endEpoch=5</code></a></p>
+</li>
+<li>
+<p>Response:</p>
+<pre class="codehilite"><code class="language-json">    [
+        {
+            &quot;EpochNumber&quot;: 3,
+            &quot;MessageId&quot;: &quot;s2-9&quot;,
+            &quot;PowerOutput&quot;: 12,
+            &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+            &quot;SourceProcessId&quot;: &quot;s2&quot;,
+            &quot;StationId&quot;: &quot;2&quot;,
+            &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.670000Z&quot;,
+            &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+            &quot;TriggeringMessageIds&quot;: [
+                &quot;SimulationManager-4&quot;
+            ],
+            &quot;Type&quot;: &quot;PowerOutput&quot;,
+            &quot;UserId&quot;: 2
+        },
+        {
+            &quot;EpochNumber&quot;: 4,
+            &quot;MessageId&quot;: &quot;s2-12&quot;,
+            &quot;PowerOutput&quot;: 12,
+            &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+            &quot;SourceProcessId&quot;: &quot;s2&quot;,
+            &quot;StationId&quot;: &quot;2&quot;,
+            &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.701000Z&quot;,
+            &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+            &quot;TriggeringMessageIds&quot;: [
+                &quot;SimulationManager-5&quot;
+            ],
+            &quot;Type&quot;: &quot;PowerOutput&quot;,
+            &quot;UserId&quot;: 2
+        },
+        {
+            &quot;EpochNumber&quot;: 5,
+            &quot;MessageId&quot;: &quot;s2-15&quot;,
+            &quot;PowerOutput&quot;: 12,
+            &quot;SimulationId&quot;: &quot;2023-02-23T08:31:20.924Z&quot;,
+            &quot;SourceProcessId&quot;: &quot;s2&quot;,
+            &quot;StationId&quot;: &quot;2&quot;,
+            &quot;Timestamp&quot;: &quot;2023-02-23T08:31:37.727000Z&quot;,
+            &quot;Topic&quot;: &quot;PowerOutputTopic&quot;,
+            &quot;TriggeringMessageIds&quot;: [
+                &quot;SimulationManager-6&quot;
+            ],
+            &quot;Type&quot;: &quot;PowerOutput&quot;,
+            &quot;UserId&quot;: 2
+        }
+    ]
+</code></pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="running-the-simulation-and-checking-the-graphs-on-remote-server">Running the simulation and checking the graphs on remote server</h2>
+<p>The simulation can be run using an application that is hosted on a server. Simulation output can be displayed as graphs in the application. The application can be accessed using the following link: <a href="https://evc.tlt-cityiot.rd.tuni.fi/"><code>https://evc.tlt-cityiot.rd.tuni.fi/</code></a>. The application portal requires user authentication.</p>
+<h2 id="running-the-simulation-and-checking-the-graphs-locally">Running the simulation and checking the graphs locally</h2>
+<p>The application that is hosted on the server can also be run locally. Instructions to run the application locally can be found from the following link: <a href="https://github.com/EVCommunities/GUI"><code>https://github.com/EVCommunities/GUI</code></a>.</p></div>
             </div>
         </div>
 
