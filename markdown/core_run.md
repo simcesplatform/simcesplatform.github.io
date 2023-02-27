@@ -10,6 +10,7 @@ Current version of simulation platform can only start one simulation run at a ti
 
 - To test the platform installation, see the page [Running first test simulation](core_run-first.md)
 - To test the platform with the Energy Community demo scenario, see the page [Running EC scenario demo simulation](energy_run-ec-demo.md)
+- Additionally, to test the platform with an additional demo scenario, see the page [Running the EV Charging demo scenario simulation](energy_run-ev-charging-demo.md)
 
 ## Configuring platform settings
 
