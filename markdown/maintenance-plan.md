@@ -21,8 +21,8 @@ The responsible persons (RP) are as follows (in alphabetical order):
 |-|-|
 | Antti Keski-Koukkari, VTT | [antti.keski-koukkari@vtt.fi](mailto:antti.keski-koukkari@vtt.fi) |
 | Kari Systä, Tampere University | [kari.systa@tuni.fi](mailto:kari.systa@tuni.fi) |
-| Petri Kannisto, Tampere University | [petri.kannisto@tuni.fi](mailto:petri.kannisto@tuni.fi) |
 | Sami Repo, Tampere University | [sami.repo@tuni.fi](mailto:sami.repo@tuni.fi) |
+| Ville Heikkilä, Tampere University | [ville.heikkila@tuni.fi](mailto:ville.heikkila@tuni.fi) |
 
 The group of RPs may change if the existing RPs find this appropriate. 
 For instance, this should occur if a person moves to another employer or if SimCES is to be developed further in a new research project.

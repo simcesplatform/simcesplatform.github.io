@@ -6,7 +6,7 @@ While SimCES is distributed as separate components, it has been agreed that the 
 
 MIT License
 
-Copyright (c) 2021-2022 Tampere University and VTT Technical Research Centre of
+Copyright (c) 2021-2023 Tampere University and VTT Technical Research Centre of
 Finland
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
