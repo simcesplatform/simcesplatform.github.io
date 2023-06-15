@@ -12,6 +12,7 @@ The simulation platform and these instructions have been tested on Ubuntu 18.04 
     - For Windows, Bash is included with the [Git for Windows](https://git-scm.com/downloads), for other operating systems it is likely available by default.
     - On Windows the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) can also be used, though setting it up requires more technical knowledge than installing Git for Windows.
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
+    - A recent version of Docker includes Docker Compose, so a separate installation of Docker Compose is not necessary in that case.
     - For running platform managed components for the simulations.
     - For running the local RabbitMQ message bus as well as the local MongoDB database. These are installed by the installation scripts.
     - Installing the most up-to-date versions of Docker and Docker Compose is the recommended option.
@@ -132,10 +133,12 @@ After these steps, the simulation platform should be ready for starting test sim
 
 The following commands are to be used in the installation folder using a terminal that supports Bash.
 
+Note: if you are using an old version of Docker and separately installed Docker Compose, replace `docker compose` with `docker-compose` in the following commands.
+
 - To stop the running core components:
 
         :::bash
-        docker-compose -f background/docker-compose-background.yml down --remove-orphans
+        docker compose -f background/docker-compose-background.yml down --remove-orphans
 
 - To remove the platform components entirely from the system (WARNING: this will remove all Docker images that are not in use, regardless of whether they are related to the simulation platform or not. However, the logged messages in the database from simulations will not be removed):
 
@@ -148,7 +151,7 @@ The following commands are to be used in the installation folder using a termina
     - To stop and remove the background components:
 
             :::bash
-            docker-compose -f background/docker-compose-background.yml down --remove-orphans
+            docker compose -f background/docker-compose-background.yml down --remove-orphans
 
     - To stop and remove the Docker containers related to the platform (removes those containers that start with "simces" or "Sim"):
 
